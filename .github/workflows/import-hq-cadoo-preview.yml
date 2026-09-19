@@ -1,0 +1,44 @@
+name: Import HQ Cadoo preview assets
+
+on:
+  push:
+    branches: [portfolio-preview]
+    paths:
+      - ".github/workflows/import-hq-cadoo-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: portfolio-preview
+      - name: Download original Cadoo PNGs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p preview/assets/cadoo
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-7d88-8210-a5dc-d2d4f389b96e/raw?se=2026-09-19T19%3A29%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=b35fc9c1-4c0a-5e65-a6c1-0750687ff65a&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T07%3A25%3A32Z&ske=2026-09-20T07%3A25%3A32Z&sks=b&skv=2026-02-06&sig=rEQa0oWhK9JthcpUIxZ/67jfoOb4dCZImoIpzbbKt18%3D' -o preview/assets/cadoo/cadoo-10.png
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-0a28-8210-acfd-b7056a5463fa/raw?se=2026-09-19T19%3A29%3A09Z&sp=r&sv=2026-02-06&sr=b&scid=8336a536-0bdb-5130-8dcb-44515c6144d4&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T08%3A17%3A23Z&ske=2026-09-20T08%3A17%3A23Z&sks=b&skv=2026-02-06&sig=6ZSyyU0NVZNvjRBOjnIQ15%2Bc%2BnnjwXg6PLA3ENStlNA%3D' -o preview/assets/cadoo/cadoo-01.png
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-92b4-8210-a647-53707b2ab470/raw?se=2026-09-19T19%3A29%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=909e7ebb-ccdf-5dbb-91e8-d7c4d2d776ea&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T09%3A25%3A23Z&ske=2026-09-20T09%3A25%3A23Z&sks=b&skv=2026-02-06&sig=LnLoJkVvqZDn5SGmbWQHEs%2Beus9dRRBtI9fNuACnr0A%3D' -o preview/assets/cadoo/cadoo-02.png
+          curl -fL 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-266c-81f4-acb6-7a92dfd5aa11/raw?se=2026-09-19T19%3A29%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=5cfc2e37-f03a-57fb-9368-2100232fead3&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T05%3A45%3A28Z&ske=2026-09-20T05%3A45%3A28Z&sks=b&skv=2026-02-06&sig=CnDuC/jn7NgqcorwrbsJp0QUrcuEMVyPmeGyR8Blthk%3D' -o preview/assets/cadoo/cadoo-03.png
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-6160-8210-9b21-741fa68cc6c9/raw?se=2026-09-19T19%3A29%3A05Z&sp=r&sv=2026-02-06&sr=b&scid=4cf3f554-1f35-568f-bc92-6f5506130c7a&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T15%3A26%3A17Z&ske=2026-09-20T15%3A26%3A17Z&sks=b&skv=2026-02-06&sig=0/BnBnUyFURk4Sxncw3lXye3FwdXqTvnLC7IZtzPX1g%3D' -o preview/assets/cadoo/cadoo-04.png
+          curl -fL 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-4b14-81f4-82e2-b951ea1cb3dc/raw?se=2026-09-19T19%3A29%3A04Z&sp=r&sv=2026-02-06&sr=b&scid=4ea14f8b-4804-5876-8c7a-25675ac56a7c&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T09%3A25%3A25Z&ske=2026-09-20T09%3A25%3A25Z&sks=b&skv=2026-02-06&sig=VyTs6ysHEX2PsH8fQzuJfTk7YzBEBzywxCUgzGsgpx8%3D' -o preview/assets/cadoo/cadoo-05.png
+          curl -fL 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-1a84-81f4-b885-973e2db0168a/raw?se=2026-09-19T19%3A29%3A29Z&sp=r&sv=2026-02-06&sr=b&scid=95fb08e8-f3b7-57dd-b55c-2c6ca219272f&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T08%3A17%3A23Z&ske=2026-09-20T08%3A17%3A23Z&sks=b&skv=2026-02-06&sig=5VdRqUnArxBhNw2nmmyMOSMV37i0eTej%2BIxVbwY4KnQ%3D' -o preview/assets/cadoo/cadoo-06.png
+          curl -fL 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-31b8-81f4-9936-4f2dca603318/raw?se=2026-09-19T19%3A29%3A28Z&sp=r&sv=2026-02-06&sr=b&scid=f1d546c8-51bd-5a5c-91d6-e2146073c3ae&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T18%3A09%3A41Z&ske=2026-09-20T18%3A09%3A41Z&sks=b&skv=2026-02-06&sig=KV2og1naLBPZhXIzbkaIsrFQvNxZxPntu9EUeFYotOQ%3D' -o preview/assets/cadoo/cadoo-07.png
+          curl -fL 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-b9d4-820a-99c4-d90a722fbfb9/raw?se=2026-09-19T19%3A29%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=d2d0f79d-60f0-5a49-8f84-784d32278109&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T05%3A13%3A30Z&ske=2026-09-20T05%3A13%3A30Z&sks=b&skv=2026-02-06&sig=LX6RpLQ%2Brc76QTv3HwqdlINXNl/O617SzelOMJHl8F0%3D' -o preview/assets/cadoo/cadoo-08.png
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-e800-8210-86b9-7efa10e4447f/raw?se=2026-09-19T19%3A29%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=22447177-992e-52a9-b867-adf15b55175c&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T15%3A51%3A20Z&ske=2026-09-20T15%3A51%3A20Z&sks=b&skv=2026-02-06&sig=bzih/Q6aRQM3Qe6OwYAB/fF%2BN9ySoAN%2BF0EXiCd5XGA%3D' -o preview/assets/cadoo/cadoo-09.png
+      - name: Commit originals to preview branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/assets/cadoo
+          git diff --cached --quiet && exit 0
+          git commit -m "Use original-quality Cadoo images in preview"
+          git push origin HEAD:portfolio-preview
