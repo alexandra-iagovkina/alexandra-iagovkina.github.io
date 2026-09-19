@@ -255,30 +255,274 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 800px) {
-  .target-header { padding:0 16px; }
-  .target-header-inner { min-height:62px; }
-  .target-brand { width:42px; height:26px; }
-  .target-brand-mark { width:42px; height:26px; }
-  .target-nav { gap:18px; }
-  .target-nav a { font-size:9px; }
-  .hero-target { padding:100px 16px 32px; }
-  .hero-target h1 { font-size:clamp(58px,17vw,96px); }
-  .hero-rule { margin-top:28px; }
-  .hero-bottom { grid-template-columns:1fr; gap:28px; }
-  .hero-copy { font-size:15px; }
-  .hero-scroll { justify-self:start; }
-  .section-target { padding:100px 16px; }
-  .work-grid { grid-template-columns:1fr; gap:62px; }
-  .about-target { grid-template-columns:1fr; gap:52px; }
-  .about-copy { font-size:24px; }
-  .case-page { padding:120px 16px 70px; }
-  .case-intro { grid-template-columns:1fr; gap:26px; }
-  .case-description { grid-template-columns:1fr; gap:18px; padding:54px 0 72px; }
-  .case-gallery { width:calc(100% - 16px); gap:10px; }
-  .case-nav { width:calc(100% - 32px); }
+  html { scroll-padding-top:68px; }
+  #work,#about,#contact { scroll-margin-top:68px; }
+
+  .site-shell {
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .target-header {
+    padding:0 14px;
+    background:rgba(10,10,10,.68);
+    -webkit-backdrop-filter:blur(16px) saturate(145%);
+    backdrop-filter:blur(16px) saturate(145%);
+  }
+  .target-header-inner {
+    width:100%;
+    min-height:60px;
+  }
+  .target-brand {
+    width:38px;
+    height:25px;
+    flex:0 0 auto;
+  }
+  .target-brand-mark {
+    width:38px;
+    height:25px;
+  }
+  .target-nav {
+    gap:15px;
+    margin-left:16px;
+  }
+  .target-nav a {
+    font-size:9px;
+    letter-spacing:.10em;
+  }
+
+  .hero-target {
+    min-height:100svh;
+    padding:104px 16px 30px;
+    align-items:flex-end;
+  }
+  .hero-target-inner {
+    width:100%;
+  }
+  .hero-target h1 {
+    max-width:100%;
+    font-size:clamp(52px,16.3vw,78px);
+    line-height:.87;
+    letter-spacing:-.055em;
+    overflow-wrap:anywhere;
+  }
+  .hero-rule {
+    margin-top:28px;
+  }
+  .hero-bottom {
+    grid-template-columns:1fr;
+    gap:24px;
+    padding-top:22px;
+  }
+  .hero-copy {
+    max-width:92%;
+    margin:0;
+    font-size:15px;
+    line-height:1.48;
+  }
+  .hero-scroll {
+    justify-self:start;
+    font-size:9px;
+    padding-bottom:0;
+  }
+
+  .section-target {
+    padding:92px 16px;
+  }
+  .section-kicker {
+    font-size:9px;
+  }
+  .section-title {
+    margin:12px 0 44px;
+    font-size:clamp(46px,14vw,70px);
+    line-height:.93;
+  }
+
+  .work-grid {
+    grid-template-columns:1fr;
+    gap:52px;
+  }
+  .work-card {
+    min-width:0;
+  }
+  .work-media {
+    aspect-ratio:4/3;
+  }
+  .work-media img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .work-placeholder strong {
+    font-size:clamp(26px,9vw,42px);
+    padding:0 18px;
+  }
+  .work-meta {
+    margin-top:12px;
+    padding-top:11px;
+    gap:14px;
+  }
+  .work-title {
+    min-width:0;
+    font-size:24px;
+    line-height:1.05;
+  }
+  .work-num {
+    flex:0 0 auto;
+    font-size:9px;
+  }
+
+  .about-target {
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+  .about-target h2 {
+    font-size:clamp(58px,18vw,86px);
+    line-height:.9;
+  }
+  .about-copy {
+    font-size:22px;
+    line-height:1.38;
+  }
+  .about-copy p {
+    margin-bottom:22px;
+  }
+  .about-copy .small {
+    max-width:100%;
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  .contact-target {
+    min-height:68svh;
+    align-items:flex-end;
+  }
+  .contact-target h2 {
+    font-size:clamp(54px,16vw,82px);
+    line-height:.9;
+  }
+  .contact-links {
+    margin-top:32px;
+    gap:18px 24px;
+    font-size:10px;
+  }
+
+  .case-page {
+    padding:104px 16px 64px;
+  }
+  .case-top {
+    width:100%;
+  }
+  .case-back {
+    display:inline-block;
+    margin-bottom:0;
+    font-size:9px;
+  }
+  .case-title {
+    margin:48px 0 30px;
+    max-width:100%;
+    font-size:clamp(56px,16vw,88px);
+    line-height:.88;
+    letter-spacing:-.05em;
+    overflow-wrap:anywhere;
+  }
+  .case-intro {
+    grid-template-columns:1fr;
+    gap:0;
+    padding:8px 0 0;
+  }
+  .case-fact {
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.09);
+  }
+  .case-fact:last-child {
+    border-bottom:0;
+  }
+  .case-fact dt,
+  .case-description-label {
+    margin-bottom:8px;
+    font-size:9px;
+  }
+  .case-fact dd {
+    min-height:0;
+    font-size:15px;
+    line-height:1.45;
+  }
+  .case-description {
+    grid-template-columns:1fr;
+    gap:16px;
+    padding:42px 0 64px;
+  }
+  .case-description-copy {
+    min-height:0;
+    padding-top:15px;
+    font-size:15px;
+    line-height:1.58;
+  }
+  .case-description-copy p {
+    margin-bottom:18px;
+  }
+
+  .case-gallery {
+    width:100%;
+    gap:10px;
+  }
+  .case-shot {
+    width:100%;
+    overflow:hidden;
+  }
+  .case-shot img {
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .case-placeholder {
+    aspect-ratio:4/3;
+    padding:14px;
+  }
+
+  .case-nav {
+    width:100%;
+    margin:62px auto 0;
+    padding-top:20px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  .case-nav a {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+  }
+  .case-nav a:last-child {
+    align-items:flex-end;
+    text-align:right;
+  }
+  .case-nav span {
+    margin-left:0;
+    font-size:22px;
+    line-height:1.15;
+  }
+
+  .reveal {
+    transform:translateY(16px);
+  }
+}
+
+@media (max-width: 390px) {
+  .target-nav { gap:12px; }
+  .target-nav a { font-size:8px; }
+  .hero-target h1 { font-size:clamp(48px,15.4vw,66px); }
+  .work-title { font-size:22px; }
+  .about-copy { font-size:20px; }
 }
 
 html,body,#app{min-height:100%}
+html{scroll-padding-top:88px}
+img{max-width:100%}
+#work,#about,#contact{scroll-margin-top:88px}
 .work-placeholder strong{font-family:"Playfair Display",serif;font-size:clamp(28px,2.6vw,48px);font-weight:400;letter-spacing:-.035em;color:#555;text-align:center;padding:0 24px}
 .work-placeholder span{font-size:12px;letter-spacing:.18em;color:#3f3f3f}
 .route-fade{animation:routeFade .24s ease both}
@@ -289,7 +533,7 @@ html,body,#app{min-height:100%}
 <div id="app"></div>
 <script>
 const projects=[
-{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"assets/cadoo/cadoo-03.png",gallery:Array.from({length:10},function(_,i){return "assets/cadoo/cadoo-"+String(i+1).padStart(2,"0")+".webp"}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a complete cat-care brand identity built from the ground up, from naming and visual language to packaging, campaign imagery and brand applications. The system centers on a character-driven mascot and a flexible color architecture that allows product lines, flavours and formats to feel distinct while remaining unmistakably part of one brand.","I developed the creative direction, identity, packaging system and art direction across food, treats, accessories, social media and outdoor communication, creating a playful but commercially polished world designed to scale across physical and digital touchpoints."]},
+{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"assets/cadoo/cadoo-03.png",gallery:Array.from({length:10},function(_,i){return "assets/cadoo/cadoo-"+String(i+1).padStart(2,"0")+".png"}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a complete cat-care brand identity built from the ground up, from naming and visual language to packaging, campaign imagery and brand applications. The system centers on a character-driven mascot and a flexible color architecture that allows product lines, flavours and formats to feel distinct while remaining unmistakably part of one brand.","I developed the creative direction, identity, packaging system and art direction across food, treats, accessories, social media and outdoor communication, creating a playful but commercially polished world designed to scale across physical and digital touchpoints."]},
 {id:"2",slug:"lushy",number:"02",title:"LUSHY",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
 {id:"3",slug:"system-integrator",number:"03",title:"System Integrator",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
 {id:"4",slug:"industrial-asphalt-plant",number:"04",title:"Industrial / Asphalt Plant",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
