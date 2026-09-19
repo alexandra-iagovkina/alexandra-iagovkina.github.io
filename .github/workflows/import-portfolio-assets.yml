@@ -1,0 +1,43 @@
+name: Import portfolio assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/import-portfolio-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-assets:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download approved portfolio assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/cadoo
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-0ac8-8210-adfc-2eb659430488/raw?se=2026-09-19T18%3A26%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=f9adf2aa-fc1d-5c9e-bc26-a06552b81ac7&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T08%3A17%3A23Z&ske=2026-09-20T08%3A17%3A23Z&sks=b&skv=2026-02-06&sig=zzY5EE/TOeE5HADXrD8p%2BFKjiiacsdS0G%2BPpcLnuqTY%3D' -o assets/cadoo/cadoo-01.webp
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-2a7c-8210-bf7d-0ff54f3d4681/raw?se=2026-09-19T18%3A26%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=862f09e1-12a1-51ec-b44e-12237bb46c58&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T09%3A25%3A26Z&ske=2026-09-20T09%3A25%3A26Z&sks=b&skv=2026-02-06&sig=xc5ChbfMmLmXy2aEhq23yLWJiOoDJHfneAqCs0efnfM%3D' -o assets/cadoo/cadoo-02.webp
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-6a38-8210-8de5-d068b85c9b12/raw?se=2026-09-19T18%3A26%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=3cb6ba1b-3169-5b61-8209-b642d310c975&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T08%3A17%3A23Z&ske=2026-09-20T08%3A17%3A23Z&sks=b&skv=2026-02-06&sig=e2EPmbJ1b0foJstlU1jV3Wtk2hGCZXZL8q3G1HKnc1s%3D' -o assets/cadoo/cadoo-03.webp
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-bb10-8210-bb70-ea92c2fc9b2d/raw?se=2026-09-19T18%3A26%3A24Z&sp=r&sv=2026-02-06&sr=b&scid=b77083c0-fc52-59dd-b516-1228fadad349&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T07%3A26%3A39Z&ske=2026-09-20T07%3A26%3A39Z&sks=b&skv=2026-02-06&sig=bIQa6hQszlRiJ7MU9O8G84qQ1oA0lxZzXgnusmXHQ0A%3D' -o assets/cadoo/cadoo-04.webp
+          curl -fL 'https://sdmntprukwest.oaiusercontent.com/files/00000000-b080-8243-9a94-11d4d0f52217/raw?se=2026-09-19T18%3A26%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=3760a42f-f8a5-5fb6-a28c-38a6a9588fbf&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T17%3A30%3A35Z&ske=2026-09-20T17%3A30%3A35Z&sks=b&skv=2026-02-06&sig=grh4U0K6uOYd5qsG7%2BPPZtgLyV2D1PkUaBFUdO4LPAg%3D' -o assets/cadoo/cadoo-05.webp
+          curl -fL 'https://sdmntprukwest.oaiusercontent.com/files/00000000-3ef0-8243-a8a4-3704e0eb8f6d/raw?se=2026-09-19T18%3A26%3A22Z&sp=r&sv=2026-02-06&sr=b&scid=c608ccc8-d620-5a2a-9c05-b42ece56fd32&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T07%3A26%3A32Z&ske=2026-09-20T07%3A26%3A32Z&sks=b&skv=2026-02-06&sig=wwt3gA%2BMETCT9erA%2BDYPwuj6EVITf5OQhl6ga0ctBes%3D' -o assets/cadoo/cadoo-06.webp
+          curl -fL 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-ac68-820a-933f-21bb41eb0aca/raw?se=2026-09-19T18%3A26%3A21Z&sp=r&sv=2026-02-06&sr=b&scid=40a1df8a-c0f6-5005-a5f0-9bb729697459&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T08%3A17%3A23Z&ske=2026-09-20T08%3A17%3A23Z&sks=b&skv=2026-02-06&sig=x0tLdCsKHxtPC6VqH0WOZXgm8mbTTP1MQN6/hTHCyj8%3D' -o assets/cadoo/cadoo-07.webp
+          curl -fL 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-d30c-820a-a375-73cf7b5872cb/raw?se=2026-09-19T18%3A26%3A21Z&sp=r&sv=2026-02-06&sr=b&scid=6d0604e5-4cad-529e-b847-265b873f7e2b&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T01%3A24%3A19Z&ske=2026-09-20T01%3A24%3A19Z&sks=b&skv=2026-02-06&sig=09Rr8BuyQJj0ubnTq/lORA4ZRiWdxYJKWOpZ4WTOioI%3D' -o assets/cadoo/cadoo-08.webp
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-8c70-8210-bdd0-fdfc76748945/raw?se=2026-09-19T18%3A26%3A20Z&sp=r&sv=2026-02-06&sr=b&scid=17578c95-8010-5663-a6f5-fb20e87da804&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T05%3A45%3A26Z&ske=2026-09-20T05%3A45%3A26Z&sks=b&skv=2026-02-06&sig=lFGPeEwvAGTC0UCuA2TKHVXyQybTPQDDDtOw6OIjiVs%3D' -o assets/cadoo/cadoo-09.webp
+          curl -fL 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-d1c8-81f4-8d3d-d63b00517e93/raw?se=2026-09-19T18%3A26%3A19Z&sp=r&sv=2026-02-06&sr=b&scid=b35bbb73-5eb1-52c1-a057-2cbabe43b2f9&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T07%3A25%3A31Z&ske=2026-09-20T07%3A25%3A31Z&sks=b&skv=2026-02-06&sig=BdglJNfEMt6Kvc%2BQpJIPFcQ1TIl6yy8LCsYtggGa3fg%3D' -o assets/cadoo/cadoo-10.webp
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-7bb0-8210-ad21-7db81ad81926/raw?se=2026-09-19T18%3A46%3A54Z&sp=r&sv=2026-02-06&sr=b&scid=56d0803b-4e19-5aaf-868c-5cb81c8d1124&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T06%3A49%3A44Z&ske=2026-09-20T06%3A49%3A44Z&sks=b&skv=2026-02-06&sig=4YrIGpIKsqksJqp7Mpki2ES/7sdOWvuBfV6ir7LGseI%3D' -o assets/logo.png
+      - name: Commit approved assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet && exit 0
+          git commit -m "Import approved portfolio assets"
+          git push
