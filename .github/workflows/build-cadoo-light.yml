@@ -1,0 +1,60 @@
+name: Build lighter Cadoo preview images
+
+on:
+  push:
+    branches: [portfolio-preview]
+    paths:
+      - ".github/workflows/build-cadoo-light.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: portfolio-preview
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Build lighter responsive WebP assets
+        shell: bash
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageFilter
+          from pathlib import Path
+
+          src_dir = Path("preview/assets/cadoo")
+          for src in sorted(src_dir.glob("cadoo-*.png")):
+              im = Image.open(src).convert("RGB")
+
+              for width, suffix, quality, sharp in [
+                  (1200, "-1200", 78, 118),
+                  (720, "-720", 76, 114),
+              ]:
+                  h = round(im.height * width / im.width)
+                  out = im.resize((width, h), Image.Resampling.LANCZOS)
+                  out = out.filter(ImageFilter.UnsharpMask(radius=1.25, percent=sharp, threshold=2))
+                  dest = src.with_name(src.stem + suffix + ".webp")
+                  out.save(dest, "WEBP", quality=quality, method=6)
+                  print(dest, dest.stat().st_size)
+          PY
+
+      - name: Commit lighter assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/assets/cadoo/*-1200.webp preview/assets/cadoo/*-720.webp
+          git diff --cached --quiet && exit 0
+          git commit -m "Build lighter responsive Cadoo images"
+          git push origin HEAD:portfolio-preview
