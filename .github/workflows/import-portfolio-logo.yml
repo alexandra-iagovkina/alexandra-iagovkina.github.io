@@ -1,0 +1,34 @@
+name: Import portfolio logo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/import-portfolio-logo.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-logo:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download approved logo
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p portfolio/assets
+          curl -fL 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-2a84-8210-abae-a17b809cf1d6/raw?se=2026-09-19T18%3A31%3A53Z&sp=r&sv=2026-02-06&sr=b&scid=006b929c-8302-5d21-8c7a-c7818e2fd6c2&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T12%3A50%3A04Z&ske=2026-09-20T12%3A50%3A04Z&sks=b&skv=2026-02-06&sig=PphtFhgCIXOTu7LvREgisP1BwKDxXVb/LFUyIMVu25M%3D' -o portfolio/assets/logo.png
+          test "$(stat -c%s portfolio/assets/logo.png)" -gt 5000
+      - name: Commit logo
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio/assets/logo.png
+          git diff --cached --quiet && exit 0
+          git commit -m "Add approved portfolio logo"
+          git push
