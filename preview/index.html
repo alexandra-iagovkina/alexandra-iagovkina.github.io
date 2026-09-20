@@ -225,6 +225,8 @@ a { color: inherit; text-decoration: none; }
 .case-description-copy p { margin:0 0 22px; }
 .case-description-copy p:last-child { margin-bottom:0; }
 .case-gallery { width:min(1600px, calc(100% - 32px)); margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+.case-flow { width:min(1600px, calc(100% - 32px)); margin:0 auto; display:flex; flex-direction:column; gap:26px; }
+.case-flow-item { width:100%; }
 .case-shot {
   width:100%;
   background:#0f0f0f;
@@ -239,6 +241,43 @@ a { color: inherit; text-decoration: none; }
   filter:contrast(1.02) saturate(1.008);
   transform:translateZ(0);
 }
+.case-pair {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+.case-text-block {
+  width:min(1370px, calc(100% - 48px));
+  margin:68px auto;
+  padding:34px 0 10px;
+  border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:minmax(180px,.62fr) minmax(0,1.55fr);
+  gap:72px;
+}
+.case-text-kicker {
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#777;
+}
+.case-text-content h3 {
+  margin:0 0 24px;
+  max-width:820px;
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(42px,4.5vw,76px);
+  line-height:.96;
+  letter-spacing:-.045em;
+}
+.case-text-content p {
+  margin:0 0 20px;
+  max-width:850px;
+  color:#9a9a9a;
+  font-size:18px;
+  line-height:1.68;
+}
+.case-text-content p:last-child { margin-bottom:0; }
 .case-placeholder {
   aspect-ratio:16/9; border:1px solid rgba(255,255,255,.08);
   display:flex; align-items:flex-end; justify-content:flex-end; padding:18px;
@@ -484,9 +523,31 @@ a { color: inherit; text-decoration: none; }
     margin-bottom:18px;
   }
 
-  .case-gallery {
+  .case-gallery,
+  .case-flow {
     width:100%;
+    padding:0 16px;
     gap:10px;
+  }
+  .case-pair {
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .case-text-block {
+    width:100%;
+    margin:38px auto;
+    padding:26px 16px 4px;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .case-text-content h3 {
+    margin-bottom:18px;
+    font-size:clamp(38px,12vw,58px);
+    line-height:.98;
+  }
+  .case-text-content p {
+    font-size:15px;
+    line-height:1.62;
   }
   .case-shot {
     width:100%;
@@ -553,7 +614,22 @@ img{max-width:100%}
 <div id="app"></div>
 <script>
 const projects=[
-{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-03-720.webp",gallery:Array.from({length:10},function(_,i){return "https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-"+String(i+1).padStart(2,"0")}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a complete cat-care brand identity built from the ground up, from naming and visual language to packaging, campaign imagery and brand applications. The system centers on a character-driven mascot and a flexible color architecture that allows product lines, flavours and formats to feel distinct while remaining unmistakably part of one brand.","I developed the creative direction, identity, packaging system and art direction across food, treats, accessories, social media and outdoor communication, creating a playful but commercially polished world designed to scale across physical and digital touchpoints."]},
+{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-03-720.webp",gallery:Array.from({length:10},function(_,i){return "https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-"+String(i+1).padStart(2,"0")}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a complete cat-care brand identity built from the ground up, from naming and visual language to packaging, campaign imagery and brand applications. The system centers on a character-driven mascot and a flexible color architecture that allows product lines, flavours and formats to feel distinct while remaining unmistakably part of one brand.","I developed the creative direction, identity, packaging system and art direction across food, treats, accessories, social media and outdoor communication, creating a playful but commercially polished world designed to scale across physical and digital touchpoints."],blocks:[
+{type:"image",images:[0]},
+{type:"text",eyebrow:"Concept",title:"A brand with a point of view",body:["Cadoo was designed to feel expressive rather than clinical. The goal was to build a cat-care identity with enough personality to be instantly recognisable, while keeping the system structured enough to work across multiple products and formats.","Instead of treating the mascot as a decorative add-on, I made it part of the brand language itself. The character can scale from a packaging hero to a cropped graphic device, a product illustration or a social-media moment without losing recognition."]},
+{type:"pair",images:[1,5]},
+{type:"text",eyebrow:"Visual system",title:"Recognition first, variation second",body:["The identity combines a compact wordmark, a strong outlined mascot and a controlled palette of soft but distinctive colours. The eye detail, dark contour and simplified geometry act as fixed anchors, while the colour combinations create enough variation for different recipes and product families.","This balance lets the system feel playful without becoming visually noisy. Every application can change in colour, crop or composition while still reading as the same brand."]},
+{type:"image",images:[2]},
+{type:"text",eyebrow:"Packaging architecture",title:"A scalable system across the range",body:["The packaging hierarchy was built to make recognition immediate: brand and mascot first, product type and flavour second, functional information third. That gives the packs a strong shelf presence while keeping the information architecture clear and repeatable.","Sterilised and non-sterilised lines use different colour pairings and labels, but the underlying proportions, typography, illustration logic and information bands remain consistent. The result is a family rather than a collection of unrelated packs."]},
+{type:"pair",images:[3,4]},
+{type:"text",eyebrow:"Brand expansion",title:"Beyond the food bag",body:["Once the core system was established, I extended it into adjacent cat-care categories including treats, catnip, bowls, collars, toys and scratching products. The aim was not to paste the same mascot onto every object, but to adapt the visual language to the function and scale of each product.","That created a broader brand world in which packaging, accessories and physical objects feel related through colour, typography, illustration style and character behaviour."]},
+{type:"image",images:[6]},
+{type:"text",eyebrow:"Art direction",title:"Soft, graphic and commercially polished",body:["The art direction uses pastel architectural spaces, rounded forms, controlled shadows and generous negative space to keep the brand world light and premium. Product photography and mockups are composed to make the packaging the focal point rather than treating the background as decoration.","Where real cats appear, they introduce warmth and scale while the graphic packaging provides the contrast. This gives the campaign imagery a recognisable tension between tactile realism and flat visual identity."]},
+{type:"image",images:[7]},
+{type:"image",images:[8]},
+{type:"text",eyebrow:"System logic",title:"Built to stay coherent across touchpoints",body:["The identity board defines the recurring elements that keep Cadoo consistent: the wordmark, mascot construction, eye motif, palette, whisker lines, paw symbol and supporting graphic language. These elements can be recombined rather than repeated literally.","That modular approach makes it possible to move from packaging to campaign imagery, social content and product extensions while keeping the tone recognisable and the system easy to art-direct."]},
+{type:"image",images:[9]}
+]},
 {id:"2",slug:"lushy",number:"02",title:"LUSHY",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
 {id:"3",slug:"system-integrator",number:"03",title:"System Integrator",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
 {id:"4",slug:"industrial-asphalt-plant",number:"04",title:"Industrial / Asphalt Plant",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
@@ -568,13 +644,32 @@ const app=document.getElementById("app");
 function esc(s){return String(s).replace(/[&<>"\']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#039;"}[m]})}
 function nav(){return '<header class="target-header"><div class="target-header-inner"><a href="#" class="target-brand js-home" aria-label="Aleksandra Iagovkina — Home"><img src="../portfolio/assets/logo.png" alt="" class="target-brand-mark"/></a><nav class="target-nav" aria-label="Primary"><a href="#work" data-home-target="#work">Work</a><a href="#about" data-home-target="#about">About</a><a href="#contact" data-home-target="#contact">Contact</a></nav></div></header>'}
 function home(){var cards=projects.map(function(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'+esc(p.title)+'" width="720" height="405" loading="lazy" decoding="async" fetchpriority="low"/>':'<div class="work-placeholder"><span>'+p.number+'</span><strong>'+esc(p.title)+'</strong><small>Visual coming soon</small></div>';return '<a href="#/work/'+p.slug+'" data-project="'+p.slug+'" class="work-card"><div class="work-media">'+media+'</div><div class="work-meta"><div class="work-title">'+esc(p.title)+'</div><div class="work-num">'+p.number+'</div></div></a>'}).join("");return nav()+'<main class="route-fade"><section class="hero-target"><div class="hero-target-inner"><h1>Aleksandra<br/>Iagovkina</h1><div class="hero-rule"></div><div class="hero-bottom"><p class="hero-copy"><span class="muted">Art Director &amp; Designer. </span>Creating precise identity systems from first mark through real-world applications.</p><div class="hero-scroll">Scroll to explore</div></div></div></section><section id="work" class="section-target"><div class="site-shell"><div class="section-kicker">Work</div><h2 class="section-title">Selected Projects</h2><div class="work-grid">'+cards+'</div></div></section><section id="about" class="section-target"><div class="site-shell about-target"><h2>About</h2><div class="about-copy"><p>Independent multidisciplinary designer and art director working across brand identity, graphic design, UI/UX and web. My focus today is increasingly on creative direction: defining the idea, visual language and system behind a project, then guiding it from concept to final execution.</p><p class="small">I lead the creative process, make key visual decisions, structure the work and maintain consistency across every touchpoint. Where appropriate, I delegate production and technical execution to junior designers while retaining art direction, review and quality control. This allows me to focus on concept, direction, decision-making and the overall coherence of the project.</p></div></div></section><section id="contact" class="section-target contact-target"><div class="site-shell"><div class="section-kicker">Contact</div><h2>Have a project<br/>in mind?</h2><div class="contact-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div></div></section></main>'}
-function projectPage(p){var idx=projects.findIndex(function(x){return x.slug===p.slug});var prev=projects[(idx-1+projects.length)%projects.length];var next=projects[(idx+1)%projects.length];var gallery=p.gallery.map(function(img,i){
+function caseImageMarkup(img,i){
   if(!img){return '<div class="case-shot"><div class="case-placeholder">Image '+String(i+1).padStart(2,"0")+'</div></div>'}
   var mobile=img+"-720.webp";
   var desktop=img+"-1200.webp";
   var eager=i===0;
-  return '<div class="case-shot"><img src="'+desktop+'" srcset="'+mobile+' 720w, '+desktop+' 1200w" sizes="(max-width:800px) calc(100vw - 32px), min(1200px, calc(100vw - 32px))" width="1200" height="676" alt="'+esc(p.title)+' project image '+(i+1)+'" loading="'+(eager?"eager":"lazy")+'" fetchpriority="'+(eager?"high":"low")+'" decoding="async"/></div>'
-}).join("");var desc=p.description.map(function(t){return '<p>'+esc(t)+'</p>'}).join("");return nav()+'<article class="case-page route-fade"><div class="case-top"><a href="#work" data-home-target="#work" class="case-back">← Back to work</a><h1 class="case-title">'+esc(p.title)+'</h1><dl class="case-intro"><div class="case-fact"><dt>Duration</dt><dd>'+esc(p.duration)+'</dd></div><div class="case-fact"><dt>What I did</dt><dd>'+esc(p.role)+'</dd></div><div class="case-fact"><dt>Scope</dt><dd>'+esc(p.scope)+'</dd></div></dl><div class="case-description"><div class="case-description-label">Project description</div><div class="case-description-copy">'+desc+'</div></div></div><div class="case-gallery">'+gallery+'</div><nav class="case-nav"><a href="#/work/'+prev.slug+'" data-project="'+prev.slug+'">Previous <span>'+esc(prev.title)+'</span></a><a href="#/work/'+next.slug+'" data-project="'+next.slug+'">Next <span>'+esc(next.title)+'</span></a></nav></article>'}
+  return '<div class="case-shot"><img src="'+desktop+'" srcset="'+mobile+' 720w, '+desktop+' 1200w" sizes="(max-width:800px) calc(100vw - 32px), min(1200px, calc(100vw - 32px))" width="1200" height="676" alt="Project image '+(i+1)+'" loading="'+(eager?"eager":"lazy")+'" fetchpriority="'+(eager?"high":"low")+'" decoding="async"/></div>'
+}
+function caseBlocks(p){
+  if(!p.blocks){
+    return '<div class="case-gallery">'+p.gallery.map(function(img,i){return caseImageMarkup(img,i)}).join("")+'</div>'
+  }
+  return '<div class="case-flow">'+p.blocks.map(function(block){
+    if(block.type==="text"){
+      return '<section class="case-text-block case-flow-item"><div class="case-text-kicker">'+esc(block.eyebrow||"")+'</div><div class="case-text-content"><h3>'+esc(block.title||"")+'</h3>'+block.body.map(function(t){return '<p>'+esc(t)+'</p>'}).join("")+'</div></section>'
+    }
+    if(block.type==="pair"){
+      return '<div class="case-pair case-flow-item">'+block.images.map(function(idx){return caseImageMarkup(p.gallery[idx],idx)}).join("")+'</div>'
+    }
+    if(block.type==="image"){
+      var idx=block.images[0];
+      return '<div class="case-flow-item">'+caseImageMarkup(p.gallery[idx],idx)+'</div>'
+    }
+    return ''
+  }).join("")+'</div>'
+}
+function projectPage(p){var idx=projects.findIndex(function(x){return x.slug===p.slug});var prev=projects[(idx-1+projects.length)%projects.length];var next=projects[(idx+1)%projects.length];var desc=p.description.map(function(t){return '<p>'+esc(t)+'</p>'}).join("");return nav()+'<article class="case-page route-fade"><div class="case-top"><a href="#work" data-home-target="#work" class="case-back">← Back to work</a><h1 class="case-title">'+esc(p.title)+'</h1><dl class="case-intro"><div class="case-fact"><dt>Duration</dt><dd>'+esc(p.duration)+'</dd></div><div class="case-fact"><dt>What I did</dt><dd>'+esc(p.role)+'</dd></div><div class="case-fact"><dt>Scope</dt><dd>'+esc(p.scope)+'</dd></div></dl><div class="case-description"><div class="case-description-label">Project description</div><div class="case-description-copy">'+desc+'</div></div></div>'+caseBlocks(p)+'<nav class="case-nav"><a href="#/work/'+prev.slug+'" data-project="'+prev.slug+'">Previous <span>'+esc(prev.title)+'</span></a><a href="#/work/'+next.slug+'" data-project="'+next.slug+'">Next <span>'+esc(next.title)+'</span></a></nav></article>'}
 function render(){var m=location.hash.match(/^#\/work\/([^/]+)\/?$/);if(m){var p=projects.find(function(x){return x.slug===m[1]});app.innerHTML=p?projectPage(p):home()}else{app.innerHTML=home()}bind();requestAnimationFrame(initReveal)}
 function toHome(target){location.hash=target;render();requestAnimationFrame(function(){var el=document.querySelector(target);if(el)el.scrollIntoView({behavior:"smooth"})})}
 function initReveal(){
@@ -595,6 +690,7 @@ function initReveal(){
     ".case-fact",
     ".case-description-label",
     ".case-description-copy",
+    ".case-text-block",
     ".case-shot",
     ".case-nav a"
   ];
