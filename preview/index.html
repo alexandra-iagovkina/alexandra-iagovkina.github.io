@@ -238,9 +238,36 @@ a { color: inherit; text-decoration: none; }
 .case-shot img {
   width:100%; height:auto; display:block;
   image-rendering:auto;
-  filter:contrast(1.02) saturate(1.008);
+  filter:contrast(1.025) saturate(1.01);
   transform:translateZ(0);
 }
+.case-caption {
+  margin-top:11px;
+  padding:0 2px;
+  color:#85817d;
+  font-size:10px;
+  line-height:1.55;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.case-quote {
+  width:min(1370px, calc(100% - 48px));
+  margin:42px auto 62px;
+  padding:48px 0 54px;
+  border-top:1px solid rgba(255,255,255,.15);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  text-align:center;
+}
+.case-quote p {
+  margin:0 auto;
+  max-width:980px;
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(38px,4.7vw,74px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.case-pair > div { min-width:0; }
 .case-pair {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -248,8 +275,8 @@ a { color: inherit; text-decoration: none; }
 }
 .case-text-block {
   width:min(1370px, calc(100% - 48px));
-  margin:68px auto;
-  padding:34px 0 10px;
+  margin:76px auto 66px;
+  padding:38px 0 12px;
   border-top:1px solid var(--line);
   display:grid;
   grid-template-columns:minmax(180px,.62fr) minmax(0,1.55fr);
@@ -271,11 +298,11 @@ a { color: inherit; text-decoration: none; }
   letter-spacing:-.045em;
 }
 .case-text-content p {
-  margin:0 0 20px;
+  margin:0 0 21px;
   max-width:850px;
-  color:#9a9a9a;
+  color:#9b9792;
   font-size:18px;
-  line-height:1.68;
+  line-height:1.72;
 }
 .case-text-content p:last-child { margin-bottom:0; }
 .case-placeholder {
@@ -549,6 +576,20 @@ a { color: inherit; text-decoration: none; }
     font-size:15px;
     line-height:1.62;
   }
+  .case-quote {
+    width:100%;
+    margin:28px auto 38px;
+    padding:34px 16px 38px;
+  }
+  .case-quote p {
+    font-size:clamp(30px,10vw,46px);
+    line-height:1.04;
+  }
+  .case-caption {
+    margin-top:8px;
+    font-size:8px;
+    line-height:1.5;
+  }
   .case-shot {
     width:100%;
     overflow:hidden;
@@ -614,21 +655,21 @@ img{max-width:100%}
 <div id="app"></div>
 <script>
 const projects=[
-{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-03-720.webp",gallery:Array.from({length:10},function(_,i){return "https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-"+String(i+1).padStart(2,"0")}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a complete cat-care brand identity built from the ground up, from naming and visual language to packaging, campaign imagery and brand applications. The system centers on a character-driven mascot and a flexible color architecture that allows product lines, flavours and formats to feel distinct while remaining unmistakably part of one brand.","I developed the creative direction, identity, packaging system and art direction across food, treats, accessories, social media and outdoor communication, creating a playful but commercially polished world designed to scale across physical and digital touchpoints."],blocks:[
-{type:"image",images:[0]},
-{type:"text",eyebrow:"Concept",title:"A brand with a point of view",body:["Cadoo was designed to feel expressive rather than clinical. The goal was to build a cat-care identity with enough personality to be instantly recognisable, while keeping the system structured enough to work across multiple products and formats.","Instead of treating the mascot as a decorative add-on, I made it part of the brand language itself. The character can scale from a packaging hero to a cropped graphic device, a product illustration or a social-media moment without losing recognition."]},
-{type:"pair",images:[1,5]},
-{type:"text",eyebrow:"Visual system",title:"Recognition first, variation second",body:["The identity combines a compact wordmark, a strong outlined mascot and a controlled palette of soft but distinctive colours. The eye detail, dark contour and simplified geometry act as fixed anchors, while the colour combinations create enough variation for different recipes and product families.","This balance lets the system feel playful without becoming visually noisy. Every application can change in colour, crop or composition while still reading as the same brand."]},
-{type:"image",images:[2]},
-{type:"text",eyebrow:"Packaging architecture",title:"A scalable system across the range",body:["The packaging hierarchy was built to make recognition immediate: brand and mascot first, product type and flavour second, functional information third. That gives the packs a strong shelf presence while keeping the information architecture clear and repeatable.","Sterilised and non-sterilised lines use different colour pairings and labels, but the underlying proportions, typography, illustration logic and information bands remain consistent. The result is a family rather than a collection of unrelated packs."]},
-{type:"pair",images:[3,4]},
-{type:"text",eyebrow:"Brand expansion",title:"Beyond the food bag",body:["Once the core system was established, I extended it into adjacent cat-care categories including treats, catnip, bowls, collars, toys and scratching products. The aim was not to paste the same mascot onto every object, but to adapt the visual language to the function and scale of each product.","That created a broader brand world in which packaging, accessories and physical objects feel related through colour, typography, illustration style and character behaviour."]},
-{type:"image",images:[6]},
-{type:"text",eyebrow:"Art direction",title:"Soft, graphic and commercially polished",body:["The art direction uses pastel architectural spaces, rounded forms, controlled shadows and generous negative space to keep the brand world light and premium. Product photography and mockups are composed to make the packaging the focal point rather than treating the background as decoration.","Where real cats appear, they introduce warmth and scale while the graphic packaging provides the contrast. This gives the campaign imagery a recognisable tension between tactile realism and flat visual identity."]},
-{type:"image",images:[7]},
-{type:"image",images:[8]},
-{type:"text",eyebrow:"System logic",title:"Built to stay coherent across touchpoints",body:["The identity board defines the recurring elements that keep Cadoo consistent: the wordmark, mascot construction, eye motif, palette, whisker lines, paw symbol and supporting graphic language. These elements can be recombined rather than repeated literally.","That modular approach makes it possible to move from packaging to campaign imagery, social content and product extensions while keeping the tone recognisable and the system easy to art-direct."]},
-{type:"image",images:[9]}
+{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@71ee5f05b2b4215f0e0216d9dd8873fcb41ab72b/preview/assets/cadoo/cadoo-03-800.webp",gallery:Array.from({length:10},function(_,i){return "https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@71ee5f05b2b4215f0e0216d9dd8873fcb41ab72b/preview/assets/cadoo/cadoo-"+String(i+1).padStart(2,"0")}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a premium cat-care brand system built to feel expressive, emotionally warm and commercially polished. The project covers the brand from core identity through packaging, mockups, campaign applications and product extensions.","The aim was to create a mascot-led system with strong recognition, enough flexibility for multiple product lines and a visual language that could scale across both physical and digital touchpoints."],blocks:[
+{type:"image",images:[0],caption:"Outdoor communication: the packaging system translated into a premium brand-awareness visual."},
+{type:"text",eyebrow:"Concept",title:"A brand with a point of view",body:["Cadoo was designed to feel expressive rather than clinical. The objective was to build a cat-care identity with enough personality to be instantly recognisable, while keeping the system structured enough to work across multiple categories and formats.","Instead of treating the mascot as a decorative element, I made it part of the brand language itself. The character works as packaging hero, cropped graphic device and brand shorthand across campaign materials."]},
+{type:"quote",text:"Playful in tone. Precise in system. Commercially polished in execution."},
+{type:"pair",images:[1,5],captions:["Primary pack presentation with close-up emphasis on the mascot and packaging finish.","Range architecture showing sterilised and non-sterilised logic through colour grouping and repeated structure."]},
+{type:"text",eyebrow:"Visual system",title:"Recognition first, variation second",body:["The identity combines a compact wordmark, a strong outlined mascot and a controlled pastel palette. The eye detail, bold contour and simplified geometry act as fixed anchors, while colour combinations create enough differentiation for recipes, product families and applications.","This balance keeps the system playful without becoming visually noisy. Every application can shift in crop, colour or scale while remaining recognisably part of one brand."]},
+{type:"image",images:[2],caption:"Range presentation with hero pack, supporting SKUs and cat presence to add warmth and scale."},
+{type:"text",eyebrow:"Packaging architecture",title:"A scalable system across the range",body:["The packaging hierarchy was built to make recognition immediate: brand and mascot first, product type and flavour second, functional information third. That gives the packs strong shelf presence while keeping the information architecture clear and repeatable.","Sterilised and non-sterilised lines use different labels and colour pairings, but the proportions, typography and information rhythm stay consistent throughout the range."]},
+{type:"pair",images:[3,4],captions:["Brand extensions into treats, bowls and catnip, using the same system in softer supporting formats.","Accessory applications translating the brand language into collars, toys and scratching products."]},
+{type:"text",eyebrow:"Brand world",title:"Beyond the food bag",body:["Once the core identity was established, I extended it into adjacent cat-care categories including treats, catnip, bowls, collars, toys and scratching products. The goal was not to paste the same motif onto every object, but to adapt the visual language to the function and scale of each product.","That created a broader brand world in which packaging, accessories and physical products feel related through colour, typography, illustration logic and shape language."]},
+{type:"image",images:[6],caption:"Close-up packaging application focused on materiality, character expression and premium shelf presence."},
+{type:"pair",images:[7,8],captions:["Social media direction combining product, mascot and lifestyle cues in a clean campaign frame.","Identity board summarising the logo, mascot construction, palette and recurring brand elements."]},
+{type:"text",eyebrow:"Art direction",title:"Soft, graphic and commercially polished",body:["The art direction uses pastel architectural environments, rounded forms, controlled shadows and generous negative space to keep the brand world light and premium. Product imagery is composed to make the packaging the focal point rather than treating the background as decoration.","Where real cats appear, they introduce warmth and scale while the graphic packaging provides contrast. This gives the case a friendly emotional register without losing structure or clarity."]},
+{type:"text",eyebrow:"System logic",title:"Built to stay coherent across touchpoints",body:["The identity is designed as a modular system rather than a fixed template. The wordmark, mascot construction, eye motif, palette and supporting graphic language can be recombined without losing the core character of the brand.","That makes it possible to move from packaging to social content, outdoor communication and product extensions while keeping the same visual DNA and making future art direction easier to control."]},
+{type:"image",images:[9],caption:"Final system overview showing how multiple SKUs remain distinct while still feeling part of one coherent identity."}
 ]},
 {id:"2",slug:"lushy",number:"02",title:"LUSHY",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
 {id:"3",slug:"system-integrator",number:"03",title:"System Integrator",gallery:[null,null,null],duration:"—",role:"—",scope:"—",description:["Case study details will be added here."]},
@@ -644,27 +685,30 @@ const app=document.getElementById("app");
 function esc(s){return String(s).replace(/[&<>"\']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#039;"}[m]})}
 function nav(){return '<header class="target-header"><div class="target-header-inner"><a href="#" class="target-brand js-home" aria-label="Aleksandra Iagovkina — Home"><img src="../portfolio/assets/logo.png" alt="" class="target-brand-mark"/></a><nav class="target-nav" aria-label="Primary"><a href="#work" data-home-target="#work">Work</a><a href="#about" data-home-target="#about">About</a><a href="#contact" data-home-target="#contact">Contact</a></nav></div></header>'}
 function home(){var cards=projects.map(function(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'+esc(p.title)+'" width="720" height="405" loading="lazy" decoding="async" fetchpriority="low"/>':'<div class="work-placeholder"><span>'+p.number+'</span><strong>'+esc(p.title)+'</strong><small>Visual coming soon</small></div>';return '<a href="#/work/'+p.slug+'" data-project="'+p.slug+'" class="work-card"><div class="work-media">'+media+'</div><div class="work-meta"><div class="work-title">'+esc(p.title)+'</div><div class="work-num">'+p.number+'</div></div></a>'}).join("");return nav()+'<main class="route-fade"><section class="hero-target"><div class="hero-target-inner"><h1>Aleksandra<br/>Iagovkina</h1><div class="hero-rule"></div><div class="hero-bottom"><p class="hero-copy"><span class="muted">Art Director &amp; Designer. </span>Creating precise identity systems from first mark through real-world applications.</p><div class="hero-scroll">Scroll to explore</div></div></div></section><section id="work" class="section-target"><div class="site-shell"><div class="section-kicker">Work</div><h2 class="section-title">Selected Projects</h2><div class="work-grid">'+cards+'</div></div></section><section id="about" class="section-target"><div class="site-shell about-target"><h2>About</h2><div class="about-copy"><p>Independent multidisciplinary designer and art director working across brand identity, graphic design, UI/UX and web. My focus today is increasingly on creative direction: defining the idea, visual language and system behind a project, then guiding it from concept to final execution.</p><p class="small">I lead the creative process, make key visual decisions, structure the work and maintain consistency across every touchpoint. Where appropriate, I delegate production and technical execution to junior designers while retaining art direction, review and quality control. This allows me to focus on concept, direction, decision-making and the overall coherence of the project.</p></div></div></section><section id="contact" class="section-target contact-target"><div class="site-shell"><div class="section-kicker">Contact</div><h2>Have a project<br/>in mind?</h2><div class="contact-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div></div></section></main>'}
-function caseImageMarkup(img,i){
+function caseImageMarkup(img,i,caption){
   if(!img){return '<div class="case-shot"><div class="case-placeholder">Image '+String(i+1).padStart(2,"0")+'</div></div>'}
-  var mobile=img+"-720.webp";
-  var desktop=img+"-1200.webp";
+  var mobile=img+"-800.webp";
+  var desktop=img+"-1440.webp";
   var eager=i===0;
-  return '<div class="case-shot"><img src="'+desktop+'" srcset="'+mobile+' 720w, '+desktop+' 1200w" sizes="(max-width:800px) calc(100vw - 32px), min(1200px, calc(100vw - 32px))" width="1200" height="676" alt="Project image '+(i+1)+'" loading="'+(eager?"eager":"lazy")+'" fetchpriority="'+(eager?"high":"low")+'" decoding="async"/></div>'
+  return '<div><div class="case-shot"><img src="'+desktop+'" srcset="'+mobile+' 800w, '+desktop+' 1440w" sizes="(max-width:800px) calc(100vw - 32px), min(1440px, calc(100vw - 32px))" width="1440" height="810" alt="Project image '+(i+1)+'" loading="'+(eager?"eager":"lazy")+'" fetchpriority="'+(eager?"high":"low")+'" decoding="async"/></div>'+(caption?'<div class="case-caption">'+esc(caption)+'</div>':'')+'</div>'
 }
 function caseBlocks(p){
   if(!p.blocks){
-    return '<div class="case-gallery">'+p.gallery.map(function(img,i){return caseImageMarkup(img,i)}).join("")+'</div>'
+    return '<div class="case-gallery">'+p.gallery.map(function(img,i){return caseImageMarkup(img,i,"")}).join("")+'</div>'
   }
   return '<div class="case-flow">'+p.blocks.map(function(block){
     if(block.type==="text"){
       return '<section class="case-text-block case-flow-item"><div class="case-text-kicker">'+esc(block.eyebrow||"")+'</div><div class="case-text-content"><h3>'+esc(block.title||"")+'</h3>'+block.body.map(function(t){return '<p>'+esc(t)+'</p>'}).join("")+'</div></section>'
     }
+    if(block.type==="quote"){
+      return '<section class="case-quote case-flow-item"><p>'+esc(block.text||"")+'</p></section>'
+    }
     if(block.type==="pair"){
-      return '<div class="case-pair case-flow-item">'+block.images.map(function(idx){return caseImageMarkup(p.gallery[idx],idx)}).join("")+'</div>'
+      return '<div class="case-pair case-flow-item">'+block.images.map(function(idx,k){return caseImageMarkup(p.gallery[idx],idx,(block.captions||[])[k]||"")}).join("")+'</div>'
     }
     if(block.type==="image"){
       var idx=block.images[0];
-      return '<div class="case-flow-item">'+caseImageMarkup(p.gallery[idx],idx)+'</div>'
+      return '<div class="case-flow-item">'+caseImageMarkup(p.gallery[idx],idx,block.caption||"")+'</div>'
     }
     return ''
   }).join("")+'</div>'
@@ -691,7 +735,9 @@ function initReveal(){
     ".case-description-label",
     ".case-description-copy",
     ".case-text-block",
+    ".case-quote",
     ".case-shot",
+    ".case-caption",
     ".case-nav a"
   ];
   var items=Array.from(document.querySelectorAll(selectors.join(",")));
