@@ -1,0 +1,45 @@
+name: Build LUSHY responsive assets
+
+on:
+  push:
+    branches: [portfolio-preview]
+    paths:
+      - ".github/workflows/build-lushy-responsive.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: portfolio-preview
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - name: Build 1440 web images
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageFilter
+          from pathlib import Path
+          for src in sorted(Path("preview/assets/lushy").glob("lushy-??-hq.webp")):
+              im=Image.open(src).convert("RGB")
+              w=1440
+              h=round(im.height*w/im.width)
+              out=im.resize((w,h),Image.Resampling.LANCZOS)
+              out=out.filter(ImageFilter.UnsharpMask(radius=1.05,percent=118,threshold=2))
+              out.save(src.with_name(src.name.replace("-hq.webp","-1440.webp")),"WEBP",quality=87,method=6)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/assets/lushy/*-1440.webp
+          git diff --cached --quiet && exit 0
+          git commit -m "Build LUSHY responsive images"
+          git push origin HEAD:portfolio-preview
