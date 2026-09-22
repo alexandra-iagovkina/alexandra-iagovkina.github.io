@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Aleksandra Iagovkina — Portfolio Preview</title>
-<meta name="description" content="Independent multidisciplinary designer and art director working across brand identity, graphic design, UI/UX and web."/>
+<title>Aleksandra Iagovkina — Business Concept & Brand Strategist</title>
+<meta name="description" content="Business concept and brand strategist helping people turn personal potential into clear business ideas, positioning, identity and visual systems."/>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
@@ -745,6 +745,165 @@ img{max-width:100%}
 .work-placeholder span{font-size:12px;letter-spacing:.18em;color:#3f3f3f}
 .route-fade{animation:routeFade .24s ease both}
 @keyframes routeFade{from{opacity:.35}to{opacity:1}}
+
+/* Strategy-led portfolio expansion */
+.target-nav{gap:24px}
+.target-nav a.nav-cta{padding:9px 13px;border:1px solid rgba(255,255,255,.18);border-radius:999px}
+.target-nav a.nav-cta:hover{border-color:var(--accent)}
+
+.hero-target--strategy{align-items:flex-end}
+.hero-target--strategy .hero-kicker{margin-bottom:28px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8d8d8d}
+.hero-target--strategy h1{max-width:1280px;font-size:clamp(64px,7.15vw,132px);line-height:.88}
+.hero-target--strategy .hero-copy{max-width:650px}
+.hero-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.btn-primary,.btn-secondary{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);
+  transition:background .25s ease,color .25s ease,border-color .25s ease
+}
+.btn-primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+.editorial-section{padding:136px 24px;border-top:1px solid var(--line)}
+.editorial-inner{width:min(1370px,100%);margin:0 auto}
+.editorial-head{display:grid;grid-template-columns:.62fr 1.38fr;gap:90px;align-items:start;margin-bottom:72px}
+.editorial-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#777;padding-top:8px}
+.editorial-head h2,.page-title,.cta-panel h2{
+  margin:0;font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-.05em;text-transform:uppercase
+}
+.editorial-head h2{font-size:clamp(48px,5.8vw,104px);line-height:.94}
+.editorial-lead{max-width:860px;margin:26px 0 0;color:#9b9792;font-size:19px;line-height:1.65}
+.statement{font-family:"Playfair Display",serif;font-size:clamp(40px,4.7vw,78px);line-height:1.02;letter-spacing:-.045em}
+.statement .muted{color:#666}
+.stage-grid,.service-grid,.value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.stage-card,.service-card,.value-card{border-top:1px solid rgba(255,255,255,.16);padding:22px 0 38px}
+.stage-card .num,.service-card .num,.value-card .num{font-size:9px;letter-spacing:.15em;color:#686868;text-transform:uppercase}
+.stage-card h3,.service-card h3,.value-card h3{margin:24px 0 12px;font-family:"Playfair Display",serif;font-weight:400;font-size:34px;letter-spacing:-.035em}
+.stage-card p,.service-card p,.value-card p{margin:0;color:#8d8d8d;max-width:590px;font-size:15px;line-height:1.65}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.path-step{min-height:220px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.path-step .path-num{font-size:9px;letter-spacing:.15em;color:#666}
+.path-step h3{margin:40px 0 12px;font-family:"Playfair Display",serif;font-size:32px;font-weight:400}
+.path-step p{margin:0;color:#85817d;font-size:14px;line-height:1.6}
+.work-card-sub{margin-top:7px;font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:#6f6f6f;line-height:1.5}
+.work-note{display:grid;grid-template-columns:.62fr 1.38fr;gap:90px;margin-top:86px;padding-top:28px;border-top:1px solid var(--line)}
+.work-note p{margin:0;max-width:850px;font-family:"Playfair Display",serif;font-size:clamp(30px,3.3vw,52px);line-height:1.1;letter-spacing:-.035em}
+.work-note p span{color:#696969}
+.text-link{display:inline-flex;margin-top:34px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:6px}
+.text-link:hover{color:var(--accent);border-color:var(--accent)}
+.method-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.method-column{padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
+.method-column h3{margin:0 0 16px;font-family:"Playfair Display",serif;font-size:28px;font-weight:400}
+.method-column p{margin:0;color:#85817d;font-size:14px;line-height:1.65}
+.method-note{margin-top:56px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:.62fr 1.38fr;gap:90px}
+.method-note p{margin:0;color:#9b9792;font-size:16px;line-height:1.7;max-width:820px}
+.about-preview{display:grid;grid-template-columns:.75fr 1.25fr;gap:100px}
+.about-preview h2{margin:0;font-family:"Playfair Display",serif;font-size:clamp(58px,6.7vw,116px);font-weight:400;line-height:.9;letter-spacing:-.05em;text-transform:uppercase}
+.about-preview-copy{font-size:27px;line-height:1.4;letter-spacing:-.03em}
+.about-preview-copy p{margin:0 0 26px}
+.about-preview-copy .small{font-size:16px;line-height:1.65;color:#8d8d8d;max-width:780px}
+
+.cta-panel{min-height:68vh;display:flex;align-items:flex-end}
+.cta-panel h2{font-size:clamp(58px,7.5vw,136px);line-height:.88}
+.cta-panel p{max-width:700px;color:#8d8d8d;font-size:18px;line-height:1.6;margin:30px 0 0}
+
+.page-view{padding:150px 24px 110px}
+.page-shell{width:min(1370px,100%);margin:0 auto}
+.page-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#777}
+.page-title{font-size:clamp(72px,9vw,164px);line-height:.86;margin:52px 0 44px}
+.page-intro{display:grid;grid-template-columns:.62fr 1.38fr;gap:90px;padding:30px 0 78px;border-top:1px solid var(--line)}
+.page-intro p{margin:0;max-width:900px;font-size:22px;line-height:1.55;letter-spacing:-.02em}
+.page-intro .muted{color:#85817d}
+.page-section{padding:96px 0;border-top:1px solid var(--line)}
+.page-section-head{display:grid;grid-template-columns:.62fr 1.38fr;gap:90px;margin-bottom:54px}
+.page-section-head h2{margin:0;font-family:"Playfair Display",serif;font-size:clamp(42px,4.8vw,78px);line-height:.98;font-weight:400;letter-spacing:-.04em}
+.page-section-head p{margin:0;color:#8d8d8d;font-size:16px;line-height:1.7;max-width:800px}
+
+.service-detail{display:grid;grid-template-columns:.55fr 1.45fr;gap:80px;padding:52px 0;border-top:1px solid rgba(255,255,255,.14)}
+.service-detail h3{margin:0;font-family:"Playfair Display",serif;font-size:clamp(36px,4vw,62px);font-weight:400;line-height:1}
+.service-detail-copy>p{margin:0 0 24px;color:#9b9792;font-size:17px;line-height:1.7;max-width:820px}
+.deliverables{display:flex;flex-wrap:wrap;gap:9px}
+.pill{padding:8px 11px;border:1px solid rgba(255,255,255,.13);border-radius:999px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#9a9690}
+
+.method-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.method-step{padding:34px;min-height:250px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.method-step .num{font-size:9px;letter-spacing:.15em;color:#666}
+.method-step h3{margin:54px 0 12px;font-family:"Playfair Display",serif;font-size:34px;font-weight:400}
+.method-step p{margin:0;color:#85817d;font-size:15px;line-height:1.65}
+.astrology-box{display:grid;grid-template-columns:.62fr 1.38fr;gap:90px;padding:54px 0;border-top:1px solid var(--line)}
+.astrology-box h3{margin:0;font-family:"Playfair Display",serif;font-size:42px;font-weight:400;line-height:1.04}
+.astrology-box p{margin:0 0 18px;color:#9b9792;font-size:16px;line-height:1.75;max-width:820px}
+
+.about-story{display:grid;grid-template-columns:.62fr 1.38fr;gap:90px;padding:74px 0;border-top:1px solid var(--line)}
+.about-story-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#777}
+.about-story-copy{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,62px);line-height:1.12;letter-spacing:-.04em}
+.about-story-copy p{margin:0 0 34px}
+.about-story-copy .small{font-family:"DM Sans",sans-serif;font-size:17px;line-height:1.75;letter-spacing:0;color:#8d8d8d;max-width:850px}
+
+.start-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:80px;padding-top:44px;border-top:1px solid var(--line)}
+.start-copy h2{margin:0 0 20px;font-family:"Playfair Display",serif;font-size:46px;font-weight:400;line-height:1}
+.start-copy p{margin:0 0 22px;color:#8d8d8d;font-size:16px;line-height:1.7}
+.start-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:34px;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.start-links a:hover{color:var(--accent)}
+.project-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}
+.form-field{display:flex;flex-direction:column;gap:9px}
+.form-field--full{grid-column:1/-1}
+.form-field label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#777}
+.form-field input,.form-field select,.form-field textarea{
+  width:100%;border:0;border-bottom:1px solid rgba(255,255,255,.18);border-radius:0;background:transparent;color:var(--fg);
+  font:400 15px/1.5 "DM Sans",sans-serif;padding:12px 0;outline:none
+}
+.form-field textarea{min-height:120px;resize:vertical}
+.form-field select option{background:#111;color:#f2efea}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--accent)}
+.form-submit{grid-column:1/-1;margin-top:12px;justify-self:start;cursor:pointer}
+.form-note{grid-column:1/-1;color:#666;font-size:11px;line-height:1.6}
+
+.case-concept-label{display:inline-flex;margin-top:28px;padding:8px 11px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#8d8d8d}
+
+@media(max-width:800px){
+  .target-nav{gap:10px;margin-left:10px}
+  .target-nav a{font-size:7.5px;letter-spacing:.08em}
+  .target-nav a.nav-cta{padding:7px 8px}
+  .hero-target--strategy .hero-kicker{margin-bottom:20px}
+  .hero-target--strategy h1{font-size:clamp(48px,14.2vw,70px);line-height:.91}
+  .hero-actions{gap:12px}
+  .btn-primary,.btn-secondary{min-height:40px;padding:0 13px;font-size:8px}
+  .editorial-section{padding:88px 16px}
+  .editorial-head,.work-note,.method-note,.page-intro,.page-section-head,.service-detail,.astrology-box,.about-story,.start-layout{grid-template-columns:1fr;gap:24px}
+  .editorial-head{margin-bottom:44px}
+  .editorial-head h2{font-size:clamp(44px,13vw,66px)}
+  .editorial-lead{font-size:16px}
+  .statement{font-size:clamp(34px,10vw,48px)}
+  .stage-grid,.service-grid,.value-grid,.method-steps{grid-template-columns:1fr}
+  .path-grid{grid-template-columns:1fr;border-left:0}
+  .path-step{min-height:auto;border-left:1px solid var(--line)}
+  .method-columns{grid-template-columns:1fr 1fr;gap:36px 18px}
+  .about-preview{grid-template-columns:1fr;gap:34px}
+  .about-preview-copy{font-size:21px}
+  .cta-panel{min-height:58svh}
+  .page-view{padding:112px 16px 72px}
+  .page-title{font-size:clamp(56px,16vw,86px);margin:42px 0 30px}
+  .page-intro{padding:22px 0 54px}
+  .page-intro p{font-size:18px}
+  .page-section{padding:66px 0}
+  .service-detail{padding:40px 0}
+  .method-step{min-height:auto;padding:26px}
+  .method-step h3{margin-top:36px}
+  .about-story{padding:50px 0}
+  .start-layout{padding-top:30px}
+  .project-form{grid-template-columns:1fr}
+  .form-field--full,.form-submit,.form-note{grid-column:auto}
+  .work-note{margin-top:58px}
+}
+@media(max-width:390px){
+  .target-nav{gap:7px}
+  .target-nav a{font-size:7px}
+  .target-nav a.nav-cta{padding:6px 7px}
+  .method-columns{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -789,8 +948,34 @@ const projects=[
 ];
 const app=document.getElementById("app");
 function esc(s){return String(s).replace(/[&<>"\']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#039;"}[m]})}
-function nav(){return '<header class="target-header"><div class="target-header-inner"><a href="#" class="target-brand js-home" aria-label="Aleksandra Iagovkina — Home"><img src="../portfolio/assets/logo.png" alt="" class="target-brand-mark"/></a><nav class="target-nav" aria-label="Primary"><a href="#work" data-home-target="#work">Work</a><a href="#about" data-home-target="#about">About</a><a href="#contact" data-home-target="#contact">Contact</a></nav></div></header>'}
-function home(){var cards=projects.map(function(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'+esc(p.title)+'" width="720" height="405" loading="lazy" decoding="async" fetchpriority="low"/>':'<div class="work-placeholder"><span>'+p.number+'</span><strong>'+esc(p.title)+'</strong><small>Visual coming soon</small></div>';return '<a href="#/work/'+p.slug+'" data-project="'+p.slug+'" class="work-card"><div class="work-media">'+media+'</div><div class="work-meta"><div class="work-title">'+esc(p.title)+'</div><div class="work-num">'+p.number+'</div></div></a>'}).join("");return nav()+'<main class="route-fade"><section class="hero-target"><div class="hero-target-inner"><h1>Aleksandra<br/>Iagovkina</h1><div class="hero-rule"></div><div class="hero-bottom"><p class="hero-copy"><span class="muted">Art Director &amp; Designer. </span>Creating precise identity systems from first mark through real-world applications.</p><div class="hero-scroll">Scroll to explore</div></div></div></section><section id="work" class="section-target"><div class="site-shell"><div class="section-kicker">Work</div><h2 class="section-title">Selected Projects</h2><div class="work-grid">'+cards+'</div></div></section><section id="about" class="section-target"><div class="site-shell about-target"><h2>About</h2><div class="about-copy"><p>Independent multidisciplinary designer and art director working across brand identity, graphic design, UI/UX and web. My focus today is increasingly on creative direction: defining the idea, visual language and system behind a project, then guiding it from concept to final execution.</p><p class="small">I lead the creative process, make key visual decisions, structure the work and maintain consistency across every touchpoint. Where appropriate, I delegate production and technical execution to junior designers while retaining art direction, review and quality control. This allows me to focus on concept, direction, decision-making and the overall coherence of the project.</p></div></div></section><section id="contact" class="section-target contact-target"><div class="site-shell"><div class="section-kicker">Contact</div><h2>Have a project<br/>in mind?</h2><div class="contact-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div></div></section></main>'}
+
+function routeLink(href,label,cls){return '<a href="'+href+'" data-route="'+href+'"'+(cls?' class="'+cls+'"':'')+'>'+label+'</a>'}
+function nav(){return '<header class="target-header"><div class="target-header-inner"><a href="#" class="target-brand js-home" aria-label="Aleksandra Iagovkina — Home"><img src="../portfolio/assets/logo.png" alt="" class="target-brand-mark"/></a><nav class="target-nav" aria-label="Primary">'+routeLink("#/work","Work")+routeLink("#/services","Services")+routeLink("#/method","Method")+routeLink("#/about","About")+routeLink("#/start-a-project","Start","nav-cta")+'</nav></div></header>'}
+function projectCard(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'+esc(p.title)+'" width="720" height="405" loading="lazy" decoding="async" fetchpriority="low"/>':'<div class="work-placeholder"><span>'+p.number+'</span><strong>'+esc(p.title)+'</strong><small>Visual coming soon</small></div>';return '<a href="#/work/'+p.slug+'" data-project="'+p.slug+'" class="work-card"><div class="work-media">'+media+'</div><div class="work-meta"><div><div class="work-title">'+esc(p.title)+'</div><div class="work-card-sub">Self-initiated business &amp; brand concept</div></div><div class="work-num">'+p.number+'</div></div></a>'}
+function cardsMarkup(items){return items.map(projectCard).join("")}
+function home(){
+  return nav()+'<main class="route-fade">'+
+  '<section class="hero-target hero-target--strategy"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Business Concept &amp; Brand Strategist · Creative Director</div><h1>From personal<br/>potential to a<br/>business worth<br/>building.</h1><div class="hero-rule"></div><div class="hero-bottom"><div><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div><div class="hero-scroll">Strategy → concept → brand</div></div></div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">What I actually do</div><div><h2>I do not just design brands. I help define what should exist in the first place.</h2><p class="editorial-lead">You can come with a vague ambition, several competing ideas, a clear concept or an existing business. We start exactly where you are.</p></div></div><div class="stage-grid"><div class="stage-card"><div class="num">01 · No idea yet</div><h3>I want something of my own.</h3><p>We explore your strengths, interests, working style, resources and constraints to find directions that make sense for both you and the market.</p></div><div class="stage-card"><div class="num">02 · Early idea</div><h3>I have ideas, but they are not clear.</h3><p>We turn scattered possibilities into a focused concept with an audience, offer, positioning and realistic path forward.</p></div><div class="stage-card"><div class="num">03 · Defined concept</div><h3>I know what I want to build.</h3><p>We shape the name, narrative, brand strategy, identity and the wider system around the business.</p></div><div class="stage-card"><div class="num">04 · Existing business</div><h3>I need a stronger direction.</h3><p>We clarify what the brand stands for, where it should move next and how strategy should translate into design.</p></div></div></div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">From you to the brand</div><div><h2>A business can begin before the business idea does.</h2></div></div><div class="path-grid"><div class="path-step"><div class="path-num">01</div><h3>You</h3><p>Strengths, interests, experience, motivations and preferred way of working.</p></div><div class="path-step"><div class="path-num">02</div><h3>Direction</h3><p>What fits, what does not, and which business territories deserve further exploration.</p></div><div class="path-step"><div class="path-num">03</div><h3>Concept</h3><p>Offer, audience, business format, positioning and the reason the idea should exist.</p></div><div class="path-step"><div class="path-num">04</div><h3>Brand</h3><p>Naming, narrative, personality, strategic territory and communication principles.</p></div><div class="path-step"><div class="path-num">05</div><h3>Identity</h3><p>Visual system, website direction, packaging, campaigns and key touchpoints.</p></div><div class="path-step"><div class="path-num">06</div><h3>Growth</h3><p>A direction for how the idea can expand without losing what makes it distinct.</p></div></div></div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Featured work</div><div><h2>Ideas built from a blank page.</h2><p class="editorial-lead">Selected self-initiated business and brand concepts, developed from the original idea through strategy and visual execution.</p></div></div><div class="work-grid">'+cardsMarkup(projects.slice(0,4))+'</div><div class="work-note"><div class="editorial-kicker">About the portfolio</div><div><p>These projects were not created from client briefs. <span>I created the brief.</span> Each one began with a business idea, then developed through naming, positioning, identity and a possible direction for growth.</p>'+routeLink("#/work","View all 10 concepts","text-link")+'</div></div></div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">The method</div><div><h2>Business starts with the person building it.</h2><p class="editorial-lead">Traditional consulting often begins with the market. I begin one step earlier, with the person, and then connect that insight to practical and strategic reality.</p></div></div><div class="method-columns"><div class="method-column"><h3>Personal</h3><p>Strengths, motivations, experience, lifestyle priorities and the kind of work you can realistically sustain.</p></div><div class="method-column"><h3>Practical</h3><p>Budget, time, geography, resources, constraints and the scale that is actually possible now.</p></div><div class="method-column"><h3>Strategic</h3><p>Audience, offer, differentiation, positioning, commercial logic and routes for development.</p></div><div class="method-column"><h3>Astrological</h3><p>When relevant, natal astrology can be used as an optional reflective layer for recurring strengths, motivations and working patterns.</p></div></div><div class="method-note"><div class="editorial-kicker">Important</div><p>Astrology does not replace market research, financial judgment or business strategy. It adds another perspective to the discovery process, and it is always optional.</p></div>'+routeLink("#/method","Explore the method","text-link")+'</div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Services</div><div><h2>Start where you are.</h2><p class="editorial-lead">The work can begin with self-discovery, a half-formed idea, a defined business concept or a brand that already exists.</p></div></div><div class="service-grid"><div class="service-card"><div class="num">01</div><h3>Direction &amp; Potential</h3><p>For people who know they want to build something but do not yet know what.</p></div><div class="service-card"><div class="num">02</div><h3>Business Concept</h3><p>For turning a promising direction into a clear offer, audience, format and position.</p></div><div class="service-card"><div class="num">03</div><h3>Brand Strategy &amp; Identity</h3><p>For ideas that are ready to become a coherent name, narrative and visual system.</p></div><div class="service-card"><div class="num">04</div><h3>Full Concept-to-Brand</h3><p>From “I want to create something” to a complete strategic and visual brand foundation.</p></div></div>'+routeLink("#/services","Explore services","text-link")+'</div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Philosophy</div><div><h2>A profitable idea is not automatically the right idea.</h2><p class="editorial-lead">I am interested in the overlap between what can work commercially and what a person can genuinely see themselves building for years.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Can you sustain it?</h3><p>The business should fit the life, energy and working style of the person who has to run it.</p></div><div class="value-card"><div class="num">02</div><h3>Are you good at it?</h3><p>We look for directions that use real strengths rather than forcing a fashionable niche.</p></div><div class="value-card"><div class="num">03</div><h3>Does anyone need it?</h3><p>Personal fit still has to meet a real audience, a useful offer and strategic logic.</p></div><div class="value-card"><div class="num">04</div><h3>Can it grow with you?</h3><p>The concept should leave room for evolution rather than locking you into a role you will outgrow.</p></div></div></div></section>'+
+  '<section class="editorial-section"><div class="editorial-inner about-preview"><h2>About</h2><div class="about-preview-copy"><p>My background is in design and creative direction, but the question that interests me most comes before the visual work: <em>what should this business be in the first place?</em></p><p class="small">I combine concept development, brand strategy and visual execution in one process. That means the work does not end with a recommendation deck. I can take the idea forward into naming, identity, digital direction, packaging and the wider brand world.</p>'+routeLink("#/about","About Aleksandra","text-link")+'</div></div></section>'+
+  '<section class="editorial-section cta-panel"><div class="editorial-inner"><div class="editorial-kicker">Start a project</div><h2>You do not need<br/>to have the idea yet.</h2><p>Tell me where you are now. “I do not know yet” is a perfectly valid place to begin.</p>'+routeLink("#/start-a-project","Tell me where you are","btn-primary")+'</div></section>'+
+  '</main>'
+}
+function workPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Work</div><h1 class="page-title">Selected Concepts</h1><div class="page-intro"><div class="editorial-kicker">10 self-initiated projects</div><p>Ten business and brand concepts developed from scratch, from the original idea and naming to positioning, identity and visual direction. <span class="muted">Each project began without a client brief. I created the brief.</span></p></div><div class="work-grid">'+cardsMarkup(projects)+'</div><div class="work-note"><div class="editorial-kicker">Why self-initiated?</div><div><p>This is not only a portfolio of design outcomes. <span>It is a portfolio of ideas, decisions and systems.</span></p></div></div></div></main>'}
+function servicesPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Services</div><h1 class="page-title">Start Where You Are</h1><div class="page-intro"><div class="editorial-kicker">How we can work</div><p>You can come with a business, an early idea or simply the feeling that you want to create something of your own. The scope begins with the question you actually need answered.</p></div>'+
+'<section class="service-detail"><h3>Direction &amp; Potential</h3><div class="service-detail-copy"><p>For people who want to build something of their own but do not yet know which direction fits. We map strengths, interests, motivations, working style, resources and constraints, then identify business territories worth exploring.</p><div class="deliverables"><span class="pill">Deep consultation</span><span class="pill">Strengths &amp; patterns</span><span class="pill">Possible directions</span><span class="pill">Fit &amp; constraints</span><span class="pill">Next-step recommendations</span></div></div></section>'+
+'<section class="service-detail"><h3>Business Concept Development</h3><div class="service-detail-copy"><p>For turning a direction or rough idea into a coherent concept. We define what the business offers, who it is for, why it should exist, how it can be positioned and where the strongest opportunities lie.</p><div class="deliverables"><span class="pill">Concept</span><span class="pill">Audience</span><span class="pill">Offer</span><span class="pill">Positioning</span><span class="pill">Business format</span><span class="pill">Growth territories</span></div></div></section>'+
+'<section class="service-detail"><h3>Brand Strategy &amp; Identity</h3><div class="service-detail-copy"><p>For a defined idea or existing business that needs a distinctive brand. Strategy and creative direction are translated into a name, narrative, identity and visual system rather than treated as separate exercises.</p><div class="deliverables"><span class="pill">Positioning</span><span class="pill">Naming</span><span class="pill">Brand narrative</span><span class="pill">Identity</span><span class="pill">Creative direction</span><span class="pill">Digital / packaging direction</span></div></div></section>'+
+'<section class="service-detail"><h3>Full Concept-to-Brand</h3><div class="service-detail-copy"><p>The flagship engagement. We can begin at “I know I want something of my own” and move all the way through business direction, concept, positioning, naming, identity and the visual ecosystem around it.</p><div class="deliverables"><span class="pill">Personal discovery</span><span class="pill">Business direction</span><span class="pill">Concept</span><span class="pill">Naming</span><span class="pill">Strategy</span><span class="pill">Identity</span><span class="pill">Creative direction</span></div>'+routeLink("#/start-a-project","Discuss a project","btn-primary")+'</div></section>'+
+'</div></main>'}
+function methodPage(){var steps=[["01","Understand the person","Strengths, interests, experience, motivations, lifestyle priorities and preferred way of working."],["02","Understand the reality","Budget, time, geography, resources, constraints and the level of risk that is actually possible."],["03","Find the direction","Identify business territories that make sense at the intersection of personal fit and external opportunity."],["04","Shape the concept","Define the offer, audience, format, reason to exist and the first version of the positioning."],["05","Test the strategic logic","Pressure-test the idea against real needs, differentiation, feasibility and possible development."],["06","Build the brand","Create naming, narrative, personality, strategic territory and communication principles."],["07","Build the visual system","Translate the strategy into identity, digital direction, packaging, campaigns and touchpoints."],["08","Define what comes next","Map how the business and brand can expand while keeping a coherent core."]];return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title">Person → Business → Brand</h1><div class="page-intro"><div class="editorial-kicker">The principle</div><p>A business should work on paper and for the person running it. My process connects personal insight with practical constraints, commercial logic and brand-building.</p></div><div class="method-steps">'+steps.map(function(s){return '<div class="method-step"><div class="num">'+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>'}).join("")+'</div><section class="page-section"><div class="astrology-box"><h3>The astrological layer is optional.</h3><div><p>When relevant, I use natal astrology as an additional reflective framework for exploring recurring strengths, motivations, working patterns and areas of potential.</p><p>It does not replace research, financial judgment, market analysis or business strategy. It adds another perspective to the discovery stage and can be included or left out completely.</p></div></div></section><section class="page-section"><div class="page-section-head"><div class="editorial-kicker">The goal</div><div><h2>Not a “hot niche”. A direction you can actually build.</h2><p>The aim is not to manufacture certainty or promise an easy path. It is to make a more informed choice about what deserves your energy, then give that choice a strong strategic and visual form.</p></div></div>'+routeLink("#/start-a-project","Start the process","btn-primary")+'</section></div></main>'}
+function aboutPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>I became more interested in the question before the design.</p><p class="small">My background spans graphic design, brand identity, digital design, photography and creative direction. Over time, the most interesting part of the work became less “How should this brand look?” and more “Why should this brand exist at all, who should build it, and what would make it sustainable for that person?”</p><p class="small">That is why my practice now sits between business concept development, brand strategy and creative direction. I can help define the idea and then carry it into a name, identity, website direction, packaging and the wider visual system.</p></div></div><section class="page-section"><div class="page-section-head"><div class="editorial-kicker">What I bring</div><div><h2>Strategy does not disappear into a deck.</h2><p>I work across concept and execution, so the strategic decisions can continue all the way into the actual brand world. The thinking and the design stay connected.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Concept thinking</h3><p>Finding the central idea and turning ambiguity into a direction.</p></div><div class="value-card"><div class="num">02</div><h3>Brand strategy</h3><p>Making audience, positioning, narrative and differentiation work as one system.</p></div><div class="value-card"><div class="num">03</div><h3>Creative direction</h3><p>Defining the visual language and maintaining coherence across touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Design execution</h3><p>Taking the strategy into identity, digital, packaging and communication.</p></div></div></section>'+routeLink("#/start-a-project","Start a project","btn-primary")+'</div></main>'}
+function startPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Start a project</div><h1 class="page-title">You Do Not Need a Perfect Brief</h1><div class="page-intro"><div class="editorial-kicker">Begin here</div><p>Tell me what you know so far. “I do not know yet” is also a valid answer.</p></div><div class="start-layout"><div class="start-copy"><h2>Where are you now?</h2><p>The form is designed to give me enough context for a useful first conversation, not to make you write a business plan before we speak.</p><p>If you prefer, you can contact me directly.</p><div class="start-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div></div><form class="project-form" id="project-form"><div class="form-field"><label for="pf-name">Name</label><input id="pf-name" name="name" required/></div><div class="form-field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required/></div><div class="form-field"><label for="pf-stage">Where are you currently?</label><select id="pf-stage" name="stage"><option>I do not know what business to build yet</option><option>I have several ideas</option><option>I already have a business idea</option><option>I have an existing brand</option></select></div><div class="form-field"><label for="pf-help">What would you like help with?</label><select id="pf-help" name="help"><option>Direction & Potential</option><option>Business concept</option><option>Naming / brand strategy</option><option>Visual identity</option><option>Full concept-to-brand</option><option>I am not sure yet</option></select></div><div class="form-field"><label for="pf-astro">Include the astrological layer?</label><select id="pf-astro" name="astro"><option>I am curious but not sure</option><option>Yes</option><option>No</option></select></div><div class="form-field"><label for="pf-budget">Approximate budget</label><select id="pf-budget" name="budget"><option>Not sure yet</option><option>Under €1,000</option><option>€1,000–€3,000</option><option>€3,000–€7,000</option><option>€7,000+</option></select></div><div class="form-field form-field--full"><label for="pf-timeline">Timeline</label><input id="pf-timeline" name="timeline" placeholder="When would you like to begin?"/></div><div class="form-field form-field--full"><label for="pf-details">Tell me about yourself / the project</label><textarea id="pf-details" name="details" placeholder="What are you thinking about, what feels unclear, and what would a useful outcome look like?"></textarea></div><button type="submit" class="btn-primary form-submit">Email this brief</button><div class="form-note">Submitting opens your email client with the brief pre-filled. Nothing is uploaded or stored by this page.</div></form></div></div></main>'}
 function caseImageMarkup(img,i,caption,variant){
   if(!img){return '<div class="case-shot"><div class="case-placeholder">Image '+String(i+1).padStart(2,"0")+'</div></div>'}
   variant=variant||"full";
@@ -841,34 +1026,32 @@ function caseBlocks(p){
     return ''
   }).join("")+'</div>'
 }
-function projectPage(p){var idx=projects.findIndex(function(x){return x.slug===p.slug});var prev=projects[(idx-1+projects.length)%projects.length];var next=projects[(idx+1)%projects.length];var desc=p.description.map(function(t){return '<p>'+esc(t)+'</p>'}).join("");return nav()+'<article class="case-page route-fade"><div class="case-top"><a href="#work" data-home-target="#work" class="case-back">← Back to work</a><h1 class="case-title">'+esc(p.title)+'</h1><dl class="case-intro"><div class="case-fact"><dt>Duration</dt><dd>'+esc(p.duration)+'</dd></div><div class="case-fact"><dt>What I did</dt><dd>'+esc(p.role)+'</dd></div><div class="case-fact"><dt>Scope</dt><dd>'+esc(p.scope)+'</dd></div></dl><div class="case-description"><div class="case-description-label">Project description</div><div class="case-description-copy">'+desc+'</div></div></div>'+caseBlocks(p)+'<nav class="case-nav"><a href="#/work/'+prev.slug+'" data-project="'+prev.slug+'">Previous <span>'+esc(prev.title)+'</span></a><a href="#/work/'+next.slug+'" data-project="'+next.slug+'">Next <span>'+esc(next.title)+'</span></a></nav></article>'}
-function render(){var m=location.hash.match(/^#\/work\/([^/]+)\/?$/);if(m){var p=projects.find(function(x){return x.slug===m[1]});app.innerHTML=p?projectPage(p):home()}else{app.innerHTML=home()}bind();requestAnimationFrame(initReveal)}
-function toHome(target){location.hash=target;render();requestAnimationFrame(function(){var el=document.querySelector(target);if(el)el.scrollIntoView({behavior:"smooth"})})}
+
+function projectPage(p){var idx=projects.findIndex(function(x){return x.slug===p.slug});var prev=projects[(idx-1+projects.length)%projects.length];var next=projects[(idx+1)%projects.length];var desc=p.description.map(function(t){return '<p>'+esc(t)+'</p>'}).join("");return nav()+'<article class="case-page route-fade"><div class="case-top"><a href="#/work" data-route="#/work" class="case-back">← Back to work</a><div class="case-concept-label">Self-initiated business &amp; brand concept</div><h1 class="case-title">'+esc(p.title)+'</h1><dl class="case-intro"><div class="case-fact"><dt>Project type</dt><dd>Self-initiated concept</dd></div><div class="case-fact"><dt>What I did</dt><dd>'+esc(p.role)+'</dd></div><div class="case-fact"><dt>Scope</dt><dd>'+esc(p.scope)+'</dd></div></dl><div class="case-description"><div class="case-description-label">Concept</div><div class="case-description-copy">'+desc+'</div></div></div>'+caseBlocks(p)+'<nav class="case-nav"><a href="#/work/'+prev.slug+'" data-project="'+prev.slug+'">Previous <span>'+esc(prev.title)+'</span></a><a href="#/work/'+next.slug+'" data-project="'+next.slug+'">Next <span>'+esc(next.title)+'</span></a></nav></article>'}
+function render(){
+  var h=location.hash||"";
+  var m=h.match(/^#\/work\/([^/]+)\/?$/);
+  if(m){var p=projects.find(function(x){return x.slug===m[1]});app.innerHTML=p?projectPage(p):workPage()}
+  else if(h==="#/work"){app.innerHTML=workPage()}
+  else if(h==="#/services"){app.innerHTML=servicesPage()}
+  else if(h==="#/method"){app.innerHTML=methodPage()}
+  else if(h==="#/about"){app.innerHTML=aboutPage()}
+  else if(h==="#/start-a-project"){app.innerHTML=startPage()}
+  else{app.innerHTML=home()}
+  bind();
+  requestAnimationFrame(initReveal)
+}
+function toRoute(target){if(location.hash===target){render();window.scrollTo(0,0)}else{location.hash=target}}
 function initReveal(){
   var selectors=[
-    ".hero-target h1",
-    ".hero-rule",
-    ".hero-copy",
-    ".hero-scroll",
-    ".section-kicker",
-    ".section-title",
-    ".work-card",
-    ".about-target h2",
-    ".about-copy p",
-    ".contact-target h2",
-    ".contact-links a",
-    ".case-back",
-    ".case-title",
-    ".case-fact",
-    ".case-description-label",
-    ".case-description-copy",
-    ".case-text-block",
-    ".case-feature",
-    ".case-closing",
-    ".case-quote",
-    ".case-shot",
-    ".case-caption",
-    ".case-nav a"
+    ".hero-target h1",".hero-kicker",".hero-rule",".hero-copy",".hero-scroll",".hero-actions",
+    ".editorial-kicker",".editorial-head h2",".editorial-lead",".stage-card",".path-step",".work-card",
+    ".work-note",".method-column",".method-note",".service-card",".value-card",".about-preview h2",
+    ".about-preview-copy p",".cta-panel h2",".cta-panel p",".page-kicker",".page-title",".page-intro",
+    ".page-section-head",".service-detail",".method-step",".astrology-box",".about-story",".start-layout",
+    ".case-back",".case-concept-label",".case-title",".case-fact",".case-description-label",
+    ".case-description-copy",".case-text-block",".case-feature",".case-closing",".case-quote",
+    ".case-shot",".case-caption",".case-nav a"
   ];
   var items=Array.from(document.querySelectorAll(selectors.join(",")));
   items.forEach(function(el){
@@ -876,24 +1059,32 @@ function initReveal(){
     var parent=el.parentElement;
     var siblings=parent ? Array.from(parent.children).filter(function(x){return items.indexOf(x)!==-1}) : [];
     var idx=Math.max(0,siblings.indexOf(el));
-    el.style.setProperty("--reveal-delay", Math.min(idx*85,340)+"ms");
+    el.style.setProperty("--reveal-delay", Math.min(idx*70,280)+"ms");
   });
-  if(!("IntersectionObserver" in window)){
-    items.forEach(function(el){el.classList.add("is-visible")});
-    return;
-  }
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:.12,rootMargin:"0px 0px -7% 0px"});
-  items.forEach(function(el){observer.observe(el)});
+  if(!("IntersectionObserver" in window)){items.forEach(function(el){el.classList.add("is-visible")});return}
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:"0px 0px -6% 0px"});
+  items.forEach(function(el){observer.observe(el)})
 }
-function bind(){document.querySelectorAll("[data-project]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();location.hash="/work/"+a.getAttribute("data-project");window.scrollTo(0,0)})});document.querySelectorAll("[data-home-target]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toHome(a.getAttribute("data-home-target"))})});document.querySelectorAll(".js-home").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();location.hash="";window.scrollTo(0,0);render()})})}
-window.addEventListener("hashchange",function(){render();if(location.hash && !location.hash.startsWith("#/work/")){setTimeout(function(){var el=document.querySelector(location.hash);if(el)el.scrollIntoView()},0)}else{window.scrollTo(0,0)}});render();
+function bind(){
+  document.querySelectorAll("[data-project]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toRoute("#/work/"+a.getAttribute("data-project"))})});
+  document.querySelectorAll("[data-route]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toRoute(a.getAttribute("data-route"))})});
+  document.querySelectorAll(".js-home").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();location.hash="";window.scrollTo(0,0);render()})});
+  var form=document.getElementById("project-form");
+  if(form){form.addEventListener("submit",function(e){e.preventDefault();var fd=new FormData(form);var body=[
+    "Name: "+(fd.get("name")||""),
+    "Email: "+(fd.get("email")||""),
+    "Current stage: "+(fd.get("stage")||""),
+    "Help needed: "+(fd.get("help")||""),
+    "Astrological layer: "+(fd.get("astro")||""),
+    "Approximate budget: "+(fd.get("budget")||""),
+    "Timeline: "+(fd.get("timeline")||""),
+    "",
+    "About me / the project:",
+    fd.get("details")||""
+  ].join("\n");window.location.href="mailto:aleksandra.iagovkina@gmail.com?subject="+encodeURIComponent("Project inquiry from "+(fd.get("name")||"website"))+"&body="+encodeURIComponent(body)})}
+}
+window.addEventListener("hashchange",function(){render();window.scrollTo(0,0)});
+render();
 (function(){
   var doPrefetch=function(){
     ["https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-01-720.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@e81d95f2070aca67b0e330c1ea3ec4bfafaaef31/preview/assets/cadoo/cadoo-02-720.webp"].forEach(function(url){
@@ -908,7 +1099,6 @@ window.addEventListener("hashchange",function(){render();if(location.hash && !lo
   else{setTimeout(doPrefetch,1800)}
 })();
 
-if(location.hash&&!location.hash.startsWith("#/work/")){setTimeout(function(){var el=document.querySelector(location.hash);if(el)el.scrollIntoView()},0)}
 </script>
 </body>
 </html>
