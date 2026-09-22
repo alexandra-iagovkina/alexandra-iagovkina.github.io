@@ -1110,6 +1110,425 @@ img{max-width:100%}
   .form-field select{font-size:14px}
 }
 
+
+/* Final art-direction pass — typography, accents, journey, forms */
+:root{--accent:#ad0026}
+
+/* Accent language: red means hierarchy / direction, grey means supporting copy */
+.page-kicker,
+.editorial-kicker,
+.stage-card .num,
+.service-card .num,
+.value-card .num,
+.path-num,
+.method-step-label,
+.case-text-kicker,
+.case-feature-kicker,
+.case-closing-kicker{
+  color:var(--accent);
+}
+.hero-copy .muted,
+.work-note p span,
+.accent-text{
+  color:var(--accent);
+}
+.text-link{
+  color:var(--accent);
+  border-color:rgba(173,0,38,.55);
+}
+.text-link:hover{color:#f2efea;border-color:#f2efea}
+
+/* Statement blocks: intentional line breaks, never accidental collisions */
+.statement-section{
+  padding-top:96px;
+  padding-bottom:96px;
+}
+.statement-layout{
+  display:grid;
+  grid-template-columns:minmax(150px,.42fr) minmax(0,1.58fr);
+  gap:88px;
+  align-items:start;
+}
+.statement-title{
+  margin:0;
+  max-width:980px;
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(50px,5.35vw,82px);
+  line-height:1.01;
+  letter-spacing:-.048em;
+  text-transform:none;
+  text-wrap:balance;
+}
+.statement-copy{
+  margin:34px 0 0;
+  max-width:820px;
+  color:#96918c;
+  font-size:17px;
+  line-height:1.72;
+  text-wrap:pretty;
+}
+.statement-copy + .btn-primary,
+.statement-layout .btn-primary{
+  margin-top:34px;
+}
+
+/* Keep generic section headings from becoming poster-size in narrow columns */
+.page-section-head h2{
+  font-size:clamp(42px,4.15vw,68px);
+  line-height:1.04;
+}
+.page-section-head h2 + p{
+  margin-top:30px;
+}
+.editorial-head h2{
+  line-height:.98;
+}
+.editorial-head h2 + .editorial-lead{
+  margin-top:28px;
+}
+
+/* Method title: directed two-line composition */
+.method-title-flow{
+  margin:50px 0 56px;
+  padding-bottom:46px;
+  border-bottom:1px solid var(--line);
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(74px,9vw,154px);
+  line-height:.84;
+  letter-spacing:-.058em;
+  text-transform:uppercase;
+}
+.method-title-row{
+  display:flex;
+  align-items:center;
+  width:100%;
+  white-space:nowrap;
+}
+.method-title-row--top{
+  justify-content:flex-start;
+  gap:.22em;
+}
+.method-title-row--bottom{
+  justify-content:flex-start;
+  gap:.18em;
+}
+.method-title-row--bottom > span:last-child{
+  margin-left:auto;
+}
+.method-flow-arrow{
+  color:var(--accent);
+  font-family:"DM Sans",sans-serif;
+  font-weight:300;
+  font-size:.72em;
+  line-height:1;
+  letter-spacing:0;
+  transform:translateY(-.05em);
+}
+
+/* Method journey: one continuous route, not anonymous boxes */
+.method-journey{
+  position:relative;
+  width:min(1260px,100%);
+  margin:34px auto 30px;
+  padding:34px 0;
+}
+.method-journey-line{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(to bottom,transparent 0,var(--accent) 5%,var(--accent) 95%,transparent 100%);
+  opacity:.72;
+}
+.method-step{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);
+  align-items:center;
+  min-height:230px;
+  padding:34px 0;
+  border:0;
+}
+.method-step::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:calc(50% - 46px);
+  height:1px;
+  background:linear-gradient(90deg,rgba(173,0,38,.08),rgba(173,0,38,.7));
+}
+.method-step--left::before{left:0}
+.method-step--right::before{
+  right:0;
+  transform:scaleX(-1);
+}
+.method-step-content{
+  max-width:510px;
+  min-width:0;
+}
+.method-step--left .method-step-content{
+  grid-column:1;
+  justify-self:end;
+  padding-right:42px;
+  text-align:right;
+}
+.method-step--right .method-step-content{
+  grid-column:3;
+  justify-self:start;
+  padding-left:42px;
+}
+.method-step--left .method-step-node{grid-column:2}
+.method-step--right .method-step-node{grid-column:2;grid-row:1}
+.method-step--right .method-step-spacer{grid-column:1;grid-row:1}
+.method-step-node{
+  z-index:2;
+  width:58px;
+  height:58px;
+  justify-self:center;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--accent);
+  border-radius:50%;
+  background:#0a0a0a;
+  box-shadow:0 0 0 10px #0a0a0a;
+}
+.method-step-node span{
+  color:var(--accent);
+  font-size:10px;
+  letter-spacing:.14em;
+}
+.method-step-label{
+  margin-bottom:16px;
+  font-size:9px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.method-step h3{
+  margin:0 0 15px;
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(34px,3vw,48px);
+  line-height:1.03;
+  letter-spacing:-.035em;
+}
+.method-step p{
+  margin:0;
+  color:#918d88;
+  font-size:15px;
+  line-height:1.68;
+}
+.method-step--left .method-step-label,
+.method-step--left p{margin-left:auto}
+.method-astro-section{margin-top:28px}
+
+/* Existing home process gets clearer accents without turning into a second timeline */
+.path-step{
+  position:relative;
+  transition:border-color .25s ease,background .25s ease;
+}
+.path-step::after{
+  content:"→";
+  position:absolute;
+  right:22px;
+  top:20px;
+  color:var(--accent);
+  font-size:18px;
+  opacity:.72;
+}
+.path-step:last-child::after{content:"•"}
+.path-step h3{font-size:34px}
+.path-step:hover{background:rgba(173,0,38,.035);border-color:rgba(173,0,38,.5)}
+
+/* Cards get a visible hierarchy */
+.stage-card,.service-card,.value-card{
+  border-top-color:rgba(173,0,38,.45);
+}
+.stage-card h3,.service-card h3,.value-card h3{
+  font-size:clamp(30px,2.5vw,38px);
+}
+.stage-card p,.service-card p,.value-card p{
+  color:#918d88;
+}
+
+/* Form fields: proper controls, not text grazing thin rules */
+.project-form{
+  gap:28px 20px;
+}
+.form-field{
+  gap:10px;
+}
+.form-field label{
+  color:var(--accent);
+  font-size:9px;
+  letter-spacing:.15em;
+}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  width:100%;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.012);
+  color:var(--fg);
+  border-radius:0;
+  padding:0 17px;
+  font:400 15px/1.4 "DM Sans",sans-serif;
+  outline:none;
+  transition:border-color .2s ease,background .2s ease;
+}
+.form-field input,
+.form-field select{
+  height:58px;
+}
+.form-field textarea{
+  min-height:150px;
+  padding-top:16px;
+  padding-bottom:16px;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  border-color:var(--accent);
+  background:rgba(173,0,38,.025);
+}
+.form-field select{
+  appearance:auto;
+  text-overflow:ellipsis;
+}
+.form-field select option{
+  background:#111;
+  color:#f2efea;
+}
+.form-submit{
+  margin-top:8px;
+}
+
+/* Production section breathes */
+.scope-grid{
+  margin-top:70px;
+}
+.scope-card{
+  border-top-color:rgba(173,0,38,.45);
+}
+.scope-card h3{
+  font-size:38px;
+  line-height:1.04;
+}
+
+/* Buttons stay separate from copy */
+.page-shell>.btn-primary{
+  margin-top:44px;
+}
+.statement-layout .btn-primary{
+  display:inline-flex;
+}
+
+/* Responsive */
+@media (min-width:801px) and (max-width:1100px){
+  .statement-layout{grid-template-columns:150px minmax(0,1fr);gap:48px}
+  .statement-title{font-size:clamp(46px,5.4vw,62px)}
+  .method-title-flow{font-size:clamp(70px,9vw,104px)}
+  .method-step{grid-template-columns:minmax(0,1fr) 76px minmax(0,1fr)}
+  .method-step::before{width:calc(50% - 38px)}
+  .method-step--left .method-step-content{padding-right:28px}
+  .method-step--right .method-step-content{padding-left:28px}
+}
+
+@media (max-width:800px){
+  .statement-section{padding-top:66px;padding-bottom:66px}
+  .statement-layout{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .statement-title{
+    font-size:clamp(40px,11vw,58px);
+    line-height:1.02;
+  }
+  .statement-copy{
+    margin-top:24px;
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .method-title-flow{
+    margin:34px 0 42px;
+    padding-bottom:34px;
+    font-size:clamp(50px,14vw,74px);
+    line-height:.88;
+  }
+  .method-title-row--bottom{
+    flex-wrap:wrap;
+  }
+  .method-title-row--bottom > span:last-child{
+    margin-left:auto;
+  }
+  .method-flow-arrow{
+    font-size:.62em;
+  }
+
+  .method-journey{
+    margin:10px 0 8px;
+    padding:18px 0;
+  }
+  .method-journey-line{
+    left:29px;
+    transform:none;
+  }
+  .method-step{
+    grid-template-columns:58px minmax(0,1fr);
+    min-height:0;
+    padding:28px 0;
+  }
+  .method-step::before{
+    left:29px!important;
+    right:auto!important;
+    top:57px;
+    width:38px;
+    transform:none!important;
+    background:linear-gradient(90deg,var(--accent),rgba(173,0,38,.1));
+  }
+  .method-step-node,
+  .method-step--left .method-step-node,
+  .method-step--right .method-step-node{
+    grid-column:1;
+    grid-row:1;
+    width:42px;
+    height:42px;
+    justify-self:start;
+    margin-left:8px;
+    box-shadow:0 0 0 7px #0a0a0a;
+  }
+  .method-step-content,
+  .method-step--left .method-step-content,
+  .method-step--right .method-step-content{
+    grid-column:2;
+    grid-row:1;
+    justify-self:stretch;
+    padding:0 0 0 20px;
+    text-align:left;
+    max-width:none;
+  }
+  .method-step-spacer{display:none}
+  .method-step h3{font-size:32px}
+  .method-step--left .method-step-label,
+  .method-step--left p{margin-left:0}
+
+  .path-step::after{right:16px;top:16px}
+  .scope-grid{margin-top:46px}
+  .form-field input,.form-field select{height:56px}
+}
+
+@media (max-width:420px){
+  .method-title-flow{font-size:clamp(45px,13vw,62px)}
+  .method-title-row--top{gap:.12em}
+  .method-title-row--bottom{gap:.10em}
+  .statement-title{font-size:clamp(38px,10.8vw,50px)}
+  .form-field input,.form-field select,.form-field textarea{font-size:14px}
+}
+
 </style>
 </head>
 <body>
@@ -1177,10 +1596,10 @@ function servicesPage(){return nav()+'<main class="page-view route-fade"><div cl
 '<section class="service-detail"><h3>Direction &amp; Potential</h3><div class="service-detail-copy"><p>For people who want to build something of their own but do not yet know which direction fits. We map strengths, interests, motivations, working style, resources and constraints, then identify business territories worth exploring.</p><div class="deliverables"><span class="pill">Deep consultation</span><span class="pill">Strengths &amp; patterns</span><span class="pill">Possible directions</span><span class="pill">Fit &amp; constraints</span><span class="pill">Next-step recommendations</span></div></div></section>'+
 '<section class="service-detail"><h3>Business Concept Development</h3><div class="service-detail-copy"><p>For turning a direction or rough idea into a coherent concept. We define what the business offers, who it is for, why it should exist, how it can be positioned and where the strongest opportunities lie.</p><div class="deliverables"><span class="pill">Concept</span><span class="pill">Audience</span><span class="pill">Offer</span><span class="pill">Positioning</span><span class="pill">Business format</span><span class="pill">Growth territories</span></div></div></section>'+
 '<section class="service-detail"><h3>Brand Strategy &amp; Identity</h3><div class="service-detail-copy"><p>For a defined idea or existing business that needs a distinctive brand. Strategy and creative direction are translated into a name, narrative, identity and visual system rather than treated as separate exercises.</p><div class="deliverables"><span class="pill">Positioning</span><span class="pill">Naming</span><span class="pill">Brand narrative</span><span class="pill">Identity</span><span class="pill">Creative direction</span><span class="pill">Digital / packaging direction</span></div></div></section>'+
-'<section class="service-detail"><h3>Full Concept-to-Brand</h3><div class="service-detail-copy"><p>The flagship engagement. We can begin at “I know I want something of my own” and move all the way through business direction, concept, positioning, naming, identity and the visual ecosystem around it.</p><div class="deliverables"><span class="pill">Personal discovery</span><span class="pill">Business direction</span><span class="pill">Concept</span><span class="pill">Naming</span><span class="pill">Strategy</span><span class="pill">Identity</span><span class="pill">Creative direction</span></div>'+routeLink("#/start-a-project","Discuss a project","btn-primary")+'</div></section>'+'<section class="page-section"><div class="page-section-head"><div class="editorial-kicker">Execution &amp; handoff</div><div><h2>Clear ownership from idea to production.</h2><p>I stay closely involved through design, technical preparation and handoff, while specialist production work is handled by the appropriate expert when needed.</p></div></div><div class="scope-grid"><div class="scope-card"><h3>What I handle</h3><p>I can take the project from concept through the complete visual system and prepare it properly for real-world use.</p><div class="scope-list"><div class="scope-item">Brand strategy, naming, identity and creative direction</div><div class="scope-item">Website UX/UI and visual design, including simple micro-interactions and light interface motion</div><div class="scope-item">Packaging, print layouts and production-ready artwork</div><div class="scope-item">Technical print preparation: bleeds, colour setup, dielines, export specifications and proof corrections</div><div class="scope-item">Direct communication with your selected print house to resolve production details and protect design quality</div></div></div><div class="scope-card"><h3>Specialist handoff</h3><p>Some production disciplines sit outside my scope. I define what is needed, prepare the design for handoff and can collaborate with the specialist you appoint.</p><div class="scope-list"><div class="scope-item">3D modelling and specialist CGI production</div><div class="scope-item">Website development and coding</div><div class="scope-item">Complex motion design, character animation or full-scale animation production</div><div class="scope-item">Sourcing or selecting print houses and production vendors</div></div></div></div><p class="scope-note">For print projects, you choose the production partner. Once selected, I can communicate with them directly on technical requirements, files, proofs and adjustments so the final result stays as close as possible to the approved design.</p></section>'+
+'<section class="service-detail"><h3>Full Concept-to-Brand</h3><div class="service-detail-copy"><p>The flagship engagement. We can begin at “I know I want something of my own” and move all the way through business direction, concept, positioning, naming, identity and the visual ecosystem around it.</p><div class="deliverables"><span class="pill">Personal discovery</span><span class="pill">Business direction</span><span class="pill">Concept</span><span class="pill">Naming</span><span class="pill">Strategy</span><span class="pill">Identity</span><span class="pill">Creative direction</span></div>'+routeLink("#/start-a-project","Discuss a project","btn-primary")+'</div></section>'+'<section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">Execution &amp; handoff</div><div><h2 class="statement-title">Clear ownership<br/>from idea to <span class="accent-text">production.</span></h2><p class="statement-copy">I stay closely involved through design, technical preparation and handoff, while specialist production work is handled by the appropriate expert when needed.</p></div></div><div class="scope-grid"><div class="scope-card"><h3>What I handle</h3><p>I can take the project from concept through the complete visual system and prepare it properly for real-world use.</p><div class="scope-list"><div class="scope-item">Brand strategy, naming, identity and creative direction</div><div class="scope-item">Website UX/UI and visual design, including simple micro-interactions and light interface motion</div><div class="scope-item">Packaging, print layouts and production-ready artwork</div><div class="scope-item">Technical print preparation: bleeds, colour setup, dielines, export specifications and proof corrections</div><div class="scope-item">Direct communication with your selected print house to resolve production details and protect design quality</div></div></div><div class="scope-card"><h3>Specialist handoff</h3><p>Some production disciplines sit outside my scope. I define what is needed, prepare the design for handoff and can collaborate with the specialist you appoint.</p><div class="scope-list"><div class="scope-item">3D modelling and specialist CGI production</div><div class="scope-item">Website development and coding</div><div class="scope-item">Complex motion design, character animation or full-scale animation production</div><div class="scope-item">Sourcing or selecting print houses and production vendors</div></div></div></div><p class="scope-note">For print projects, you choose the production partner. Once selected, I can communicate with them directly on technical requirements, files, proofs and adjustments so the final result stays as close as possible to the approved design.</p></section>'+
 '</div></main>'}
-function methodPage(){var steps=[["01","Understand the person","Strengths, interests, experience, motivations, lifestyle priorities and preferred way of working."],["02","Understand the reality","Budget, time, geography, resources, constraints and the level of risk that is actually possible."],["03","Find the direction","Identify business territories that make sense at the intersection of personal fit and external opportunity."],["04","Shape the concept","Define the offer, audience, format, reason to exist and the first version of the positioning."],["05","Test the strategic logic","Pressure-test the idea against real needs, differentiation, feasibility and possible development."],["06","Build the brand","Create naming, narrative, personality, strategic territory and communication principles."],["07","Build the visual system","Translate the strategy into identity, digital direction, packaging, campaigns and touchpoints."],["08","Define what comes next","Map how the business and brand can expand while keeping a coherent core."]];return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title">Person → Business → Brand</h1><div class="page-intro"><div class="editorial-kicker">The principle</div><p>A business should work on paper and for the person running it. My process connects personal insight with practical constraints, commercial logic and brand-building.</p></div><div class="method-steps">'+steps.map(function(s){return '<div class="method-step"><div class="num">'+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>'}).join("")+'</div><section class="page-section"><div class="astrology-box"><h3>The astrological layer is optional.</h3><div><p>When relevant, I use natal astrology as an additional reflective framework for exploring recurring strengths, motivations, working patterns and areas of potential.</p><p>It does not replace research, financial judgment, market analysis or business strategy. It adds another perspective to the discovery stage and can be included or left out completely.</p></div></div></section><section class="page-section"><div class="page-section-head"><div class="editorial-kicker">The goal</div><div><h2>Not a “hot niche”. A direction you can actually build.</h2><p>The aim is not to manufacture certainty or promise an easy path. It is to make a more informed choice about what deserves your energy, then give that choice a strong strategic and visual form.</p></div></div>'+routeLink("#/start-a-project","Start the process","btn-primary")+'</section></div></main>'}
-function aboutPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>I became more interested in the question before the design.</p><p class="small">My background spans graphic design, brand identity, digital design, photography and creative direction. Over time, the most interesting part of the work became less “How should this brand look?” and more “Why should this brand exist at all, who should build it, and what would make it sustainable for that person?”</p><p class="small">That is why my practice now sits between business concept development, brand strategy and creative direction. I can help define the idea and then carry it into a name, identity, website direction, packaging and the wider visual system.</p></div></div><section class="page-section"><div class="page-section-head"><div class="editorial-kicker">What I bring</div><div><h2>Strategy does not disappear into a deck.</h2><p>I work across concept and execution, so the strategic decisions can continue all the way into the actual brand world. The thinking and the design stay connected.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Concept thinking</h3><p>Finding the central idea and turning ambiguity into a direction.</p></div><div class="value-card"><div class="num">02</div><h3>Brand strategy</h3><p>Making audience, positioning, narrative and differentiation work as one system.</p></div><div class="value-card"><div class="num">03</div><h3>Creative direction</h3><p>Defining the visual language and maintaining coherence across touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Design execution</h3><p>Taking the strategy into identity, digital, packaging and communication.</p></div></div></section>'+routeLink("#/start-a-project","Start a project","btn-primary")+'</div></main>'}
+function methodPage(){var steps=[["01","Understand the person","Strengths, interests, experience, motivations, lifestyle priorities and preferred way of working."],["02","Understand the reality","Budget, time, geography, resources, constraints and the level of risk that is actually possible."],["03","Find the direction","Identify business territories that make sense at the intersection of personal fit and external opportunity."],["04","Shape the concept","Define the offer, audience, format, reason to exist and the first version of the positioning."],["05","Test the strategic logic","Pressure-test the idea against real needs, differentiation, feasibility and possible development."],["06","Build the brand","Create naming, narrative, personality, strategic territory and communication principles."],["07","Build the visual system","Translate the strategy into identity, digital direction, packaging, campaigns and touchpoints."],["08","Define what comes next","Map how the business and brand can expand while keeping a coherent core."]];return nav()+'<main class="page-view route-fade method-page"><div class="page-shell"><div class="page-kicker">Method</div><div class="method-title-flow" aria-label="Person to Business to Brand"><div class="method-title-row method-title-row--top"><span>PERSON</span><span class="method-flow-arrow">→</span></div><div class="method-title-row method-title-row--bottom"><span>BUSINESS</span><span class="method-flow-arrow">→</span><span>BRAND</span></div></div><div class="page-intro"><div class="editorial-kicker">The principle</div><p>A business should work on paper and for the person running it. My process connects personal insight with practical constraints, commercial logic and brand-building.</p></div><section class="method-journey" aria-label="Eight-step method"><div class="method-journey-line" aria-hidden="true"></div>'+steps.map(function(s,i){return '<article class="method-step method-step--'+((i%2===0)?"left":"right")+'"><div class="method-step-content"><div class="method-step-label">Step '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><div class="method-step-node" aria-hidden="true"><span>'+s[0]+'</span></div><div class="method-step-spacer"></div></article>'}).join("")+'</section><section class="page-section method-astro-section"><div class="astrology-box"><h3>The astrological layer is <span class="accent-text">optional.</span></h3><div><p>When relevant, I use natal astrology as an additional reflective framework for exploring recurring strengths, motivations, working patterns and areas of potential.</p><p>It does not replace research, financial judgment, market analysis or business strategy. It adds another perspective to the discovery stage and can be included or left out completely.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">The goal</div><div><h2 class="statement-title">Not a “hot niche”.<br/><span class="accent-text">A direction you can actually build.</span></h2><p class="statement-copy">The aim is not to manufacture certainty or promise an easy path. It is to make a more informed choice about what deserves your energy, then give that choice a strong strategic and visual form.</p>'+routeLink("#/start-a-project","Start the process","btn-primary")+'</div></div></section></div></main>'}
+function aboutPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>I became more interested in the question before the design.</p><p class="small">My background spans graphic design, brand identity, digital design, photography and creative direction. Over time, the most interesting part of the work became less “How should this brand look?” and more “Why should this brand exist at all, who should build it, and what would make it sustainable for that person?”</p><p class="small">That is why my practice now sits between business concept development, brand strategy and creative direction. I can help define the idea and then carry it into a name, identity, website direction, packaging and the wider visual system.</p></div></div><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">What I bring</div><div><h2 class="statement-title">Strategy does not disappear<br/>into a <span class="accent-text">deck.</span></h2><p class="statement-copy">I work across concept and execution, so the strategic decisions can continue all the way into the actual brand world. The thinking and the design stay connected.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Concept thinking</h3><p>Finding the central idea and turning ambiguity into a direction.</p></div><div class="value-card"><div class="num">02</div><h3>Brand strategy</h3><p>Making audience, positioning, narrative and differentiation work as one system.</p></div><div class="value-card"><div class="num">03</div><h3>Creative direction</h3><p>Defining the visual language and maintaining coherence across touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Design execution</h3><p>Taking the strategy into identity, digital, packaging and communication.</p></div></div></section>'+routeLink("#/start-a-project","Start a project","btn-primary")+'</div></main>'}
 function startPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Start a project</div><h1 class="page-title">Start a Project</h1><div class="page-intro"><div class="editorial-kicker">Begin here</div><p>You do not need a perfect brief. Tell me what you know so far. “I do not know yet” is also a valid answer.</p></div><div class="start-layout"><div class="start-copy"><h2>Where are you now?</h2><p>The form is designed to give me enough context for a useful first conversation, not to make you write a business plan before we speak.</p><p>If you prefer, you can contact me directly.</p><div class="start-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div><p class="scope-note">Please note: I do not provide 3D modelling, website development/coding, complex animation production or print-vendor sourcing. I can prepare production-ready files and coordinate directly with your selected print house or other production specialist.</p></div><form class="project-form" id="project-form"><div class="form-field"><label for="pf-name">Name</label><input id="pf-name" name="name" required/></div><div class="form-field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required/></div><div class="form-field"><label for="pf-stage">Where are you currently?</label><select id="pf-stage" name="stage"><option>I do not know what business to build yet</option><option>I have several ideas</option><option>I already have a business idea</option><option>I have an existing brand</option></select></div><div class="form-field"><label for="pf-help">What would you like help with?</label><select id="pf-help" name="help"><option>Direction & Potential</option><option>Business concept</option><option>Naming / brand strategy</option><option>Visual identity</option><option>Full concept-to-brand</option><option>I am not sure yet</option></select></div><div class="form-field"><label for="pf-astro">Include the astrological layer?</label><select id="pf-astro" name="astro"><option>I am curious but not sure</option><option>Yes</option><option>No</option></select></div><div class="form-field"><label for="pf-budget">Approximate budget</label><select id="pf-budget" name="budget"><option>Not sure yet</option><option>Under €1,000</option><option>€1,000–€3,000</option><option>€3,000–€7,000</option><option>€7,000+</option></select></div><div class="form-field form-field--full"><label for="pf-timeline">Timeline</label><input id="pf-timeline" name="timeline" placeholder="When would you like to begin?"/></div><div class="form-field form-field--full"><label for="pf-details">Tell me about yourself / the project</label><textarea id="pf-details" name="details" placeholder="What are you thinking about, what feels unclear, and what would a useful outcome look like?"></textarea></div><button type="submit" class="btn-primary form-submit">Email this brief</button><div class="form-note">Submitting opens your email client with the brief pre-filled. Nothing is uploaded or stored by this page.</div></form></div></div></main>'}
 function caseImageMarkup(img,i,caption,variant){
   if(!img){return '<div class="case-shot"><div class="case-placeholder">Image '+String(i+1).padStart(2,"0")+'</div></div>'}
