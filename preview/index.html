@@ -1078,6 +1078,38 @@ img{max-width:100%}
   .page-title{font-size:clamp(50px,15vw,68px)}
 }
 
+
+/* Overflow safety */
+.editorial-inner,.page-shell,.site-shell,.hero-target-inner,
+.editorial-head>*,.page-intro>*,.page-section-head>*,
+.service-detail>*,.start-layout>*,.about-preview>*,
+.about-story>*,.work-note>*,.method-note>*,.astrology-box>*,
+.scope-card,.service-detail-copy,.project-form,.form-field,.work-meta>div{
+  min-width:0;
+}
+.work-title,.scope-item,.service-detail h3,.page-section-head h2{
+  overflow-wrap:break-word;
+}
+.pill{
+  max-width:100%;
+  white-space:normal;
+  line-height:1.35;
+}
+.form-field input,.form-field select,.form-field textarea{
+  min-width:0;
+}
+@media(max-width:420px){
+  .target-nav{
+    max-width:calc(100vw - 62px);
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  .target-nav::-webkit-scrollbar{display:none}
+  .form-field select{font-size:14px}
+}
+
 </style>
 </head>
 <body>
