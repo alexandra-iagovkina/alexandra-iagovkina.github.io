@@ -2518,6 +2518,355 @@ img{max-width:100%}
   background:#0a0a0a!important;
 }
 
+
+/* ===== CELESTIAL EDITORIAL ART DIRECTION =====
+   Sparse by design: portrait = human anchor, red = event, beige celestial marks = reflective layer. */
+.decor-star,.decor-zodiac,.decor-blob{
+  position:absolute;
+  pointer-events:none;
+  user-select:none;
+}
+.hero-target--strategy,
+.cosmic-method-section,
+.home-about-section,
+.cosmic-astro-section,
+.about-page-hero{
+  position:relative;
+  overflow:hidden;
+}
+.hero-target-inner,
+.cosmic-method-section .editorial-inner,
+.home-about-section .editorial-inner,
+.cosmic-astro-section .astrology-box,
+.about-page-hero-copy{
+  position:relative;
+  z-index:2;
+}
+
+/* Home hero: one small celestial signature */
+.hero-star{
+  z-index:1;
+  width:66px;
+  height:auto;
+  right:7vw;
+  top:26%;
+  opacity:.72;
+  transform:rotate(11deg);
+  filter:drop-shadow(0 0 18px rgba(242,193,170,.08));
+}
+
+/* Venture Shaping: zodiac language lives here */
+.cosmic-method-section{isolation:isolate}
+.cosmic-zodiac--home{
+  z-index:0;
+  width:min(54vw,760px);
+  height:auto;
+  right:-230px;
+  top:50%;
+  transform:translateY(-46%) rotate(7deg);
+  opacity:.13;
+}
+.cosmic-method-star{
+  z-index:1;
+  right:16%;
+  top:17%;
+  width:46px;
+  height:auto;
+  opacity:.58;
+  transform:rotate(-17deg);
+}
+.cosmic-method-section .method-column:last-child{
+  position:relative;
+  background:linear-gradient(135deg,rgba(242,193,170,.035),rgba(173,0,38,.018));
+  border-top-color:rgba(242,193,170,.34);
+}
+.cosmic-method-section .method-column:last-child::after{
+  content:"";
+  position:absolute;
+  width:5px;height:5px;
+  border-radius:50%;
+  background:#e6b59f;
+  right:18px;top:18px;
+  box-shadow:0 0 0 5px rgba(230,181,159,.055);
+}
+
+/* Home portrait moment */
+.about-preview--portrait{
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+  gap:clamp(48px,6vw,96px)!important;
+  align-items:center;
+}
+.about-preview-visual{
+  position:relative;
+  min-height:690px;
+  isolation:isolate;
+}
+.about-portrait{
+  position:absolute;
+  z-index:3;
+  left:50%;
+  bottom:-18px;
+  transform:translateX(-48%);
+  width:min(95%,560px);
+  height:auto;
+  max-height:690px;
+  object-fit:contain;
+  object-position:center bottom;
+}
+.about-blob{
+  z-index:1;
+  width:min(120%,680px);
+  height:auto;
+  left:44%;
+  bottom:15px;
+  transform:translateX(-50%) rotate(-7deg);
+  opacity:.72;
+  filter:saturate(.88) contrast(1.04);
+}
+.about-preview-visual::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:68%;
+  aspect-ratio:1;
+  border:1px solid rgba(242,193,170,.13);
+  border-radius:50%;
+  left:8%;
+  top:12%;
+}
+.about-star--a{
+  z-index:4;
+  width:46px;
+  height:auto;
+  left:8%;
+  top:17%;
+  opacity:.78;
+}
+.about-star--b{
+  z-index:4;
+  width:58px;
+  height:auto;
+  right:4%;
+  bottom:21%;
+  opacity:.72;
+  transform:rotate(22deg);
+}
+.about-preview--portrait .about-preview-copy{
+  max-width:680px;
+}
+.about-preview--portrait .about-preview-copy h2{
+  margin:14px 0 28px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(44px,4.2vw,70px);
+  line-height:.98;
+  font-weight:400;
+  letter-spacing:-.045em;
+}
+.about-preview--portrait .about-preview-copy p{max-width:650px}
+
+/* About page opening */
+.about-page-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(360px,.94fr);
+  gap:clamp(36px,6vw,96px);
+  align-items:end;
+  min-height:660px;
+  padding-bottom:28px;
+  border-bottom:1px solid var(--line);
+}
+.about-page-hero-copy{
+  align-self:center;
+  padding-bottom:64px;
+}
+.about-page-hero .page-title{
+  max-width:760px!important;
+  margin-bottom:24px!important;
+}
+.about-hero-role{
+  margin:0;
+  color:#918d88;
+  font-size:11px;
+  line-height:1.5;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.about-page-hero-visual{
+  position:relative;
+  min-height:620px;
+  isolation:isolate;
+}
+.about-page-portrait{
+  position:absolute;
+  z-index:3;
+  right:2%;
+  bottom:-28px;
+  width:min(100%,520px);
+  height:auto;
+  max-height:640px;
+  object-fit:contain;
+  object-position:right bottom;
+}
+.about-page-blob{
+  z-index:1;
+  width:min(124%,670px);
+  height:auto;
+  right:-12%;
+  bottom:24px;
+  opacity:.68;
+  transform:rotate(8deg);
+}
+.about-page-hero-visual::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:74%;
+  aspect-ratio:1;
+  border:1px solid rgba(242,193,170,.12);
+  border-radius:50%;
+  right:4%;
+  top:10%;
+}
+.about-page-star--a{
+  z-index:4;
+  width:45px;
+  height:auto;
+  left:6%;
+  top:18%;
+  opacity:.72;
+  transform:rotate(-14deg);
+}
+.about-page-star--b{
+  z-index:4;
+  width:54px;
+  height:auto;
+  right:2%;
+  top:38%;
+  opacity:.68;
+}
+
+/* Dedicated astrology block: wheel is watermark, copy stays dominant */
+.cosmic-astro-section{
+  isolation:isolate;
+  min-height:430px;
+}
+.cosmic-zodiac--method{
+  z-index:0;
+  width:min(52vw,700px);
+  height:auto;
+  right:-220px;
+  top:50%;
+  transform:translateY(-50%) rotate(-5deg);
+  opacity:.20;
+}
+.cosmic-astro-star{
+  z-index:1;
+  width:56px;
+  height:auto;
+  right:25%;
+  top:20%;
+  opacity:.72;
+  transform:rotate(9deg);
+}
+.cosmic-astro-section .astrology-box{max-width:1180px}
+.cosmic-astro-section .astrology-box > *{
+  position:relative;
+  z-index:2;
+}
+
+/* Keep it sparse on smaller screens */
+@media(max-width:1000px){
+  .about-preview--portrait{gap:44px!important}
+  .about-preview-visual{min-height:570px}
+  .about-portrait{max-height:580px}
+  .about-page-hero{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.78fr);
+    min-height:590px;
+  }
+  .about-page-hero-visual{min-height:540px}
+  .about-page-portrait{max-height:555px}
+  .cosmic-zodiac--home{right:-300px;opacity:.10}
+}
+@media(max-width:800px){
+  .hero-star{
+    width:44px;
+    right:7%;
+    top:19%;
+    opacity:.55;
+  }
+  .about-preview--portrait{
+    grid-template-columns:1fr!important;
+    gap:22px!important;
+  }
+  .about-preview-visual{
+    min-height:520px;
+    max-width:520px;
+    width:100%;
+    margin:0 auto;
+  }
+  .about-portrait{
+    max-height:530px;
+    width:min(92%,430px);
+  }
+  .about-blob{
+    width:min(112%,530px);
+    opacity:.64;
+  }
+  .about-preview--portrait .about-preview-copy h2{
+    font-size:clamp(38px,10.5vw,54px);
+  }
+  .about-page-hero{
+    grid-template-columns:1fr;
+    min-height:0;
+    gap:0;
+  }
+  .about-page-hero-copy{padding-bottom:8px}
+  .about-page-hero-visual{
+    min-height:510px;
+    max-width:520px;
+    width:100%;
+    margin:0 auto;
+  }
+  .about-page-portrait{
+    left:50%;
+    right:auto;
+    transform:translateX(-48%);
+    max-height:520px;
+    width:min(92%,440px);
+  }
+  .about-page-blob{
+    width:min(116%,540px);
+    right:auto;
+    left:50%;
+    transform:translateX(-50%) rotate(7deg);
+    opacity:.62;
+  }
+  .cosmic-zodiac--home{
+    width:620px;
+    right:-390px;
+    opacity:.075;
+  }
+  .cosmic-method-star{display:none}
+  .cosmic-zodiac--method{
+    width:520px;
+    right:-330px;
+    opacity:.13;
+  }
+  .cosmic-astro-star{
+    right:8%;
+    top:14%;
+    opacity:.52;
+  }
+}
+@media(max-width:480px){
+  .hero-star{display:none}
+  .about-preview-visual{min-height:440px}
+  .about-portrait{max-height:455px}
+  .about-page-hero-visual{min-height:455px}
+  .about-page-portrait{max-height:465px}
+  .about-star--b,.about-page-star--b{display:none}
+  .cosmic-zodiac--home{opacity:.055}
+}
+
 </style>
 </head>
 <body>
@@ -2585,14 +2934,14 @@ function projectCard(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'
 function cardsMarkup(items){return items.map(projectCard).join("")}
 function home(){
   return nav()+'<main class="route-fade">'+
-  '<section class="hero-target hero-target--strategy"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><h1>From personal<br/>potential to a<br/>business worth<br/>building.</h1><div class="hero-rule"></div><div class="hero-bottom hero-bottom--strategy"><div class="hero-positioning"><div class="hero-positioning-left"><p class="hero-signature">I help define what should exist before I design how it should look.</p><div class="hero-mini-label">Strategy → concept → brand</div></div><div class="hero-positioning-right"><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div></div></div></div></section>'+
+  '<section class="hero-target hero-target--strategy"><div class="hero-target-inner"><img class="decor-star hero-star" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><h1>From personal<br/>potential to a<br/>business worth<br/>building.</h1><div class="hero-rule"></div><div class="hero-bottom hero-bottom--strategy"><div class="hero-positioning"><div class="hero-positioning-left"><p class="hero-signature">I help define what should exist before I design how it should look.</p><div class="hero-mini-label">Strategy → concept → brand</div></div><div class="hero-positioning-right"><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">What I actually do</div><div><h2>I do not just design brands. I help define what should exist in the first place.</h2><p class="editorial-lead">You can come with a vague ambition, several competing ideas, a clear concept or an existing business. We start exactly where you are.</p></div></div><div class="stage-grid"><div class="stage-card"><div class="num">01 · No idea yet</div><h3>I want something of my own.</h3><p>We explore your strengths, interests, working style, resources and constraints to find directions that make sense for both you and the market.</p></div><div class="stage-card"><div class="num">02 · Early idea</div><h3>I have ideas, but they are not clear.</h3><p>We turn scattered possibilities into a focused concept with an audience, offer, positioning and realistic path forward.</p></div><div class="stage-card"><div class="num">03 · Defined concept</div><h3>I know what I want to build.</h3><p>We shape the name, narrative, brand strategy, identity and the wider system around the business.</p></div><div class="stage-card"><div class="num">04 · Existing business</div><h3>I need a stronger direction.</h3><p>We clarify what the brand stands for, where it should move next and how strategy should translate into design.</p></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">From you to the brand</div><div><h2>A business can begin before the business idea does.</h2></div></div><div class="path-grid"><div class="path-step"><div class="path-num">01</div><h3>You</h3><p>Strengths, interests, experience, motivations and preferred way of working.</p></div><div class="path-step"><div class="path-num">02</div><h3>Direction</h3><p>What fits, what does not, and which business territories deserve further exploration.</p></div><div class="path-step"><div class="path-num">03</div><h3>Concept</h3><p>Offer, audience, business format, positioning and the reason the idea should exist.</p></div><div class="path-step"><div class="path-num">04</div><h3>Brand</h3><p>Naming, narrative, personality, strategic territory and communication principles.</p></div><div class="path-step"><div class="path-num">05</div><h3>Identity</h3><p>Visual system, website direction, packaging, campaigns and key touchpoints.</p></div><div class="path-step"><div class="path-num">06</div><h3>Growth</h3><p>A direction for how the idea can expand without losing what makes it distinct.</p></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Featured work</div><div><h2>Ideas built from a blank page.</h2><p class="editorial-lead">Selected self-initiated business and brand concepts, developed from the original idea through strategy and visual execution.</p></div></div><div class="work-grid">'+cardsMarkup(projects.slice(0,4))+'</div><div class="work-note"><div class="editorial-kicker">About the portfolio</div><div><p>These projects were not created from client briefs. <span>I created the brief.</span> Each one began with a business idea, then developed through naming, positioning, identity and a possible direction for growth.</p>'+routeLink("#/work","View all 10 concepts","text-link")+'</div></div></div></section>'+
-  '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">The method · Venture Shaping</div><div><h2>Venture Shaping starts with the person building it.</h2><p class="editorial-lead">Traditional consulting often begins with the market. I begin one step earlier, with the person, and then connect that insight to practical and strategic reality.</p></div></div><div class="method-columns"><div class="method-column"><h3>Personal</h3><p>Strengths, motivations, experience, lifestyle priorities and the kind of work you can realistically sustain.</p></div><div class="method-column"><h3>Practical</h3><p>Budget, time, geography, resources, constraints and the scale that is actually possible now.</p></div><div class="method-column"><h3>Strategic</h3><p>Audience, offer, differentiation, positioning, commercial logic and routes for development.</p></div><div class="method-column"><h3>Astrological</h3><p>When relevant, natal astrology adds a deeper reflective layer around recurring strengths, motivations, working patterns and personal fit.</p></div></div><div class="method-note"><div class="editorial-kicker">Important</div><p>Astrology does not replace market research, financial judgment or business strategy. It adds another perspective to the discovery process, and it is always optional.</p></div>'+routeLink("#/method","Explore the method","text-link")+'</div></section>'+
+  '<section class="editorial-section cosmic-method-section"><img class="decor-zodiac cosmic-zodiac cosmic-zodiac--home" src="./assets/decor/zodiac-wheel.webp" width="901" height="903" alt="" aria-hidden="true"/><img class="decor-star cosmic-method-star" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">The method · Venture Shaping</div><div><h2>Venture Shaping starts with the person building it.</h2><p class="editorial-lead">Traditional consulting often begins with the market. I begin one step earlier, with the person, and then connect that insight to practical and strategic reality.</p></div></div><div class="method-columns"><div class="method-column"><h3>Personal</h3><p>Strengths, motivations, experience, lifestyle priorities and the kind of work you can realistically sustain.</p></div><div class="method-column"><h3>Practical</h3><p>Budget, time, geography, resources, constraints and the scale that is actually possible now.</p></div><div class="method-column"><h3>Strategic</h3><p>Audience, offer, differentiation, positioning, commercial logic and routes for development.</p></div><div class="method-column"><h3>Astrological</h3><p>When relevant, natal astrology adds a deeper reflective layer around recurring strengths, motivations, working patterns and personal fit.</p></div></div><div class="method-note"><div class="editorial-kicker">Important</div><p>Astrology does not replace market research, financial judgment or business strategy. It adds another perspective to the discovery process, and it is always optional.</p></div>'+routeLink("#/method","Explore the method","text-link")+'</div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Services</div><div><h2>Start where you are.</h2><p class="editorial-lead">The work can begin with self-discovery, a half-formed idea, a defined business concept or a brand that already exists.</p></div></div><div class="service-grid"><div class="service-card"><div class="num">01</div><h3>Direction &amp; Potential</h3><p>For people who know they want to build something but do not yet know what.</p></div><div class="service-card"><div class="num">02</div><h3>Business Concept</h3><p>For turning a promising direction into a clear offer, audience, format and position.</p></div><div class="service-card"><div class="num">03</div><h3>Brand Strategy &amp; Identity</h3><p>For ideas that are ready to become a coherent name, narrative and visual system.</p></div><div class="service-card"><div class="num">04</div><h3>Full Concept-to-Brand</h3><p>From “I want to create something” to a complete strategic and visual brand foundation.</p></div></div>'+routeLink("#/services","Explore services","text-link")+'</div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Philosophy</div><div><h2>A profitable idea is not automatically the right idea.</h2><p class="editorial-lead">I am interested in the overlap between what can work commercially, what fits you naturally and what has enough character to become something more than another trend-led brand.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Can you sustain it?</h3><p>The business should fit the life, energy and working style of the person who has to run it.</p></div><div class="value-card"><div class="num">02</div><h3>Are you good at it?</h3><p>We look for directions that use real strengths rather than forcing a fashionable niche.</p></div><div class="value-card"><div class="num">03</div><h3>Does anyone need it?</h3><p>Personal fit still has to meet a real audience, a useful offer and strategic logic.</p></div><div class="value-card"><div class="num">04</div><h3>Can it grow with you?</h3><p>The concept should leave room for evolution rather than locking you into a role you will outgrow.</p></div></div></div></section>'+
-  '<section class="editorial-section"><div class="editorial-inner about-preview"><h2>About</h2><div class="about-preview-copy"><p>After 12+ years in design, I care less about chasing trends and more about creating brands with a point of view. The question that interests me most comes before the visual work: <em>what should this business be in the first place?</em></p><p class="small">I combine concept development, brand strategy and visual execution in one process. The goal is contemporary work with its own character, not a polished copy of what competitors are already doing.</p>'+routeLink("#/about","About Aleksandra","text-link")+'</div></div></section>'+
+  '<section class="editorial-section home-about-section"><div class="editorial-inner about-preview about-preview--portrait"><div class="about-preview-visual"><img class="decor-blob about-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><img class="about-portrait" src="./assets/decor/portrait.webp" width="1200" height="1681" alt="Aleksandra Iagovkina" loading="lazy" decoding="async"/><img class="decor-star about-star about-star--a" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><img class="decor-star about-star about-star--b" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/></div><div class="about-preview-copy"><div class="editorial-kicker">About</div><h2>12+ years in design.<br/>Less trend-chasing.<br/>More point of view.</h2><p>After 12+ years in design, I care less about chasing trends and more about creating brands with a point of view. The question that interests me most comes before the visual work: <em>what should this business be in the first place?</em></p><p class="small">I combine concept development, brand strategy and visual execution in one process. The goal is contemporary work with its own character, not a polished copy of what competitors are already doing.</p>'+routeLink("#/about","About Aleksandra","text-link")+'</div></div></section>'+
   '<section class="editorial-section cta-panel"><div class="editorial-inner"><div class="editorial-kicker">Start a project</div><h2>You do not need<br/>to have the idea yet.</h2><p>Tell me where you are now. “I do not know yet” is a perfectly valid place to begin.</p>'+routeLink("#/start-a-project","Tell me where you are","btn-primary")+'</div></section>'+
   '</main>'+footer()
 }
@@ -2603,8 +2952,8 @@ function servicesPage(){return nav()+'<main class="page-view route-fade"><div cl
 '<section class="service-detail"><h3>Brand Strategy &amp; Identity</h3><div class="service-detail-copy"><p>For a defined idea or existing business that needs a distinctive brand. Strategy and creative direction are translated into a name, narrative, identity and visual system rather than treated as separate exercises.</p><div class="deliverables"><span class="pill">Positioning</span><span class="pill">Naming</span><span class="pill">Brand narrative</span><span class="pill">Identity</span><span class="pill">Creative direction</span><span class="pill">Digital / packaging direction</span></div></div></section>'+
 '<section class="service-detail"><h3>Full Concept-to-Brand</h3><div class="service-detail-copy"><p>The flagship engagement. We can begin at “I know I want something of my own” and move all the way through business direction, concept, positioning, naming, identity and the visual ecosystem around it.</p><div class="deliverables"><span class="pill">Personal discovery</span><span class="pill">Business direction</span><span class="pill">Concept</span><span class="pill">Naming</span><span class="pill">Strategy</span><span class="pill">Identity</span><span class="pill">Creative direction</span></div>'+routeLink("#/start-a-project","Discuss a project","btn-primary")+'</div></section>'+'<section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">Execution &amp; handoff</div><div><h2 class="statement-title">Clear ownership<br/>from idea to production.</h2><p class="statement-copy">I stay closely involved through design, technical preparation and handoff, while specialist production work is handled by the appropriate expert when needed.</p></div></div><div class="scope-grid"><div class="scope-card"><h3>What I handle</h3><p>I can take the project from concept through the complete visual system and prepare it properly for real-world use.</p><div class="scope-list"><div class="scope-item">Brand strategy, naming, identity and creative direction</div><div class="scope-item">Website UX/UI and visual design, including simple micro-interactions and light interface motion</div><div class="scope-item">Packaging, print layouts and production-ready artwork</div><div class="scope-item">Technical print preparation: bleeds, colour setup, dielines, export specifications and proof corrections</div><div class="scope-item">Direct communication with your selected print house to resolve production details and protect design quality</div></div></div><div class="scope-card"><h3>Specialist handoff</h3><p>Some production disciplines sit outside my scope. I define what is needed, prepare the design for handoff and can collaborate with the specialist you appoint.</p><div class="scope-list"><div class="scope-item">3D modelling and specialist CGI production</div><div class="scope-item">Website development and coding</div><div class="scope-item">Complex motion design, character animation or full-scale animation production</div><div class="scope-item">Sourcing or selecting print houses and production vendors</div></div></div></div><p class="scope-note">For print projects, you choose the production partner. Once selected, I can communicate with them directly on technical requirements, files, proofs and adjustments so the final result stays as close as possible to the approved design.</p></section>'+
 '</div></main>'+footer()}
-function methodPage(){var steps=[["01","Understand the person","Strengths, interests, experience, motivations, lifestyle priorities and preferred way of working."],["02","Understand the reality","Budget, time, geography, resources, constraints and the level of risk that is actually possible."],["03","Find the direction","Identify business territories that make sense at the intersection of personal fit and external opportunity."],["04","Shape the concept","Define the offer, audience, format, reason to exist and the first version of the positioning."],["05","Test the strategic logic","Pressure-test the idea against real needs, differentiation, feasibility and possible development."],["06","Build the brand","Create naming, narrative, personality, strategic territory and communication principles."],["07","Build the visual system","Translate the strategy into identity, digital direction, packaging, campaigns and touchpoints."],["08","Define what comes next","Map how the business and brand can expand while keeping a coherent core."]];return nav()+'<main class="page-view route-fade method-page"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title method-name-title">Venture Shaping</h1><div class="method-title-flow" aria-label="Person to Business to Brand"><div class="method-title-row method-title-row--single"><span>Person</span><span class="method-flow-arrow">→</span><span>Business</span><span class="method-flow-arrow">→</span><span>Brand</span></div></div><div class="page-intro"><div class="editorial-kicker">The principle</div><p>A business should work on paper and for the person running it. My process connects personal insight with practical constraints, commercial logic and brand-building.</p></div><section class="method-journey" aria-label="Eight-step method"><div class="method-journey-line" aria-hidden="true"></div>'+steps.map(function(s,i){var side=i%2===0?"left":"right";return '<article class="method-step method-step--'+side+'"><div class="method-step-content"><div class="method-step-label">Step '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><div class="method-step-node" aria-hidden="true"><span>'+s[0]+'</span></div></article>'}).join("")+'</section><section class="page-section method-astro-section"><div class="astrology-box"><h3>The astrological layer is optional.</h3><div><p>When relevant, I use natal astrology as an additional reflective framework to go deeper into recurring strengths, motivations, natural working patterns, friction points and the kinds of roles or environments that may feel more sustainable for you.</p><p>It is not used to “predict the right business” or replace research, financial judgment, market analysis or strategy. Its value is in helping surface patterns that are easy to overlook, so the final direction is tested not only for commercial logic but also for personal fit.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">The goal</div><div><h2 class="statement-title">Not a “hot niche”.<br/>A direction you can actually build.</h2><p class="statement-copy">The aim is not to manufacture certainty or promise an easy path. It is to make a more informed choice about what deserves your energy, then give that choice a strong strategic and visual form.</p>'+routeLink("#/start-a-project","Start the process","btn-primary")+'</div></div></section></div></main>'+footer()}
-function aboutPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>After 12+ years in design, I am less interested in chasing what is fashionable and more interested in building what feels unmistakably yours.</p><p class="small">I have worked across graphic design, brand identity, digital design, photography and creative direction. The longer I work in this field, the less useful I find endless competitor races, copy-paste references and “let’s make it like Apple” thinking. A brand can be contemporary without becoming another version of what is already everywhere.</p><p class="small">What interests me now is the question before the design: what should exist, why should it exist, and why are you the right person to build it? From there, I help shape the business concept, positioning, name, identity, website direction, packaging and the wider visual world.</p></div></div><section class="page-section"><div class="page-section-head"><div class="editorial-kicker">Design philosophy</div><div><h2>Modern does not have to mean familiar.</h2><p>I want the work to feel current, commercially intelligent and beautifully made, but never built from borrowed personality.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>No trend chasing</h3><p>Trends can be useful context, but they should not become the brief. The brand needs a reason to look the way it does beyond “this is popular now.”</p></div><div class="value-card"><div class="num">02</div><h3>No competitor cosplay</h3><p>Competitor research should reveal the landscape, not turn into a shopping list of things to imitate.</p></div><div class="value-card"><div class="num">03</div><h3>Commercial, with a pulse</h3><p>The work still needs to function, sell and grow. It just should not lose its character in the process.</p></div><div class="value-card"><div class="num">04</div><h3>Something you can care about</h3><p>I am interested in building ideas that feel worth your time, attention and energy, not brands created only because a category looks profitable this month.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">What I bring</div><div><h2 class="statement-title">Strategy does not disappear<br/>into a deck.</h2><p class="statement-copy">I work across concept and execution, so the strategic decisions can continue all the way into the actual brand world. The thinking and the design stay connected.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Concept thinking</h3><p>Finding the central idea and turning ambiguity into a direction.</p></div><div class="value-card"><div class="num">02</div><h3>Brand strategy</h3><p>Making audience, positioning, narrative and differentiation work as one system.</p></div><div class="value-card"><div class="num">03</div><h3>Creative direction</h3><p>Defining the visual language and maintaining coherence across touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Design execution</h3><p>Taking the strategy into identity, digital, packaging and communication.</p></div></div></section>'+routeLink("#/start-a-project","Start a project","btn-primary")+'</div></main>'+footer()}
+function methodPage(){var steps=[["01","Understand the person","Strengths, interests, experience, motivations, lifestyle priorities and preferred way of working."],["02","Understand the reality","Budget, time, geography, resources, constraints and the level of risk that is actually possible."],["03","Find the direction","Identify business territories that make sense at the intersection of personal fit and external opportunity."],["04","Shape the concept","Define the offer, audience, format, reason to exist and the first version of the positioning."],["05","Test the strategic logic","Pressure-test the idea against real needs, differentiation, feasibility and possible development."],["06","Build the brand","Create naming, narrative, personality, strategic territory and communication principles."],["07","Build the visual system","Translate the strategy into identity, digital direction, packaging, campaigns and touchpoints."],["08","Define what comes next","Map how the business and brand can expand while keeping a coherent core."]];return nav()+'<main class="page-view route-fade method-page"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title method-name-title">Venture Shaping</h1><div class="method-title-flow" aria-label="Person to Business to Brand"><div class="method-title-row method-title-row--single"><span>Person</span><span class="method-flow-arrow">→</span><span>Business</span><span class="method-flow-arrow">→</span><span>Brand</span></div></div><div class="page-intro"><div class="editorial-kicker">The principle</div><p>A business should work on paper and for the person running it. My process connects personal insight with practical constraints, commercial logic and brand-building.</p></div><section class="method-journey" aria-label="Eight-step method"><div class="method-journey-line" aria-hidden="true"></div>'+steps.map(function(s,i){var side=i%2===0?"left":"right";return '<article class="method-step method-step--'+side+'"><div class="method-step-content"><div class="method-step-label">Step '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><div class="method-step-node" aria-hidden="true"><span>'+s[0]+'</span></div></article>'}).join("")+'</section><section class="page-section method-astro-section cosmic-astro-section"><img class="decor-zodiac cosmic-zodiac cosmic-zodiac--method" src="./assets/decor/zodiac-wheel.webp" width="901" height="903" alt="" aria-hidden="true"/><img class="decor-star cosmic-astro-star" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/><div class="astrology-box"><h3>The astrological layer is optional.</h3><div><p>When relevant, I use natal astrology as an additional reflective framework to go deeper into recurring strengths, motivations, natural working patterns, friction points and the kinds of roles or environments that may feel more sustainable for you.</p><p>It is not used to “predict the right business” or replace research, financial judgment, market analysis or strategy. Its value is in helping surface patterns that are easy to overlook, so the final direction is tested not only for commercial logic but also for personal fit.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">The goal</div><div><h2 class="statement-title">Not a “hot niche”.<br/>A direction you can actually build.</h2><p class="statement-copy">The aim is not to manufacture certainty or promise an easy path. It is to make a more informed choice about what deserves your energy, then give that choice a strong strategic and visual form.</p>'+routeLink("#/start-a-project","Start the process","btn-primary")+'</div></div></section></div></main>'+footer()}
+function aboutPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><section class="about-page-hero"><div class="about-page-hero-copy"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><p class="about-hero-role">Venture-to-Brand Strategist · Creative Director</p></div><div class="about-page-hero-visual"><img class="decor-blob about-page-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><img class="about-page-portrait" src="./assets/decor/portrait.webp" width="1200" height="1681" alt="Aleksandra Iagovkina" loading="eager" decoding="async"/><img class="decor-star about-page-star about-page-star--a" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><img class="decor-star about-page-star about-page-star--b" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/></div></section><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>After 12+ years in design, I am less interested in chasing what is fashionable and more interested in building what feels unmistakably yours.</p><p class="small">I have worked across graphic design, brand identity, digital design, photography and creative direction. The longer I work in this field, the less useful I find endless competitor races, copy-paste references and “let’s make it like Apple” thinking. A brand can be contemporary without becoming another version of what is already everywhere.</p><p class="small">What interests me now is the question before the design: what should exist, why should it exist, and why are you the right person to build it? From there, I help shape the business concept, positioning, name, identity, website direction, packaging and the wider visual world.</p></div></div><section class="page-section"><div class="page-section-head"><div class="editorial-kicker">Design philosophy</div><div><h2>Modern does not have to mean familiar.</h2><p>I want the work to feel current, commercially intelligent and beautifully made, but never built from borrowed personality.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>No trend chasing</h3><p>Trends can be useful context, but they should not become the brief. The brand needs a reason to look the way it does beyond “this is popular now.”</p></div><div class="value-card"><div class="num">02</div><h3>No competitor cosplay</h3><p>Competitor research should reveal the landscape, not turn into a shopping list of things to imitate.</p></div><div class="value-card"><div class="num">03</div><h3>Commercial, with a pulse</h3><p>The work still needs to function, sell and grow. It just should not lose its character in the process.</p></div><div class="value-card"><div class="num">04</div><h3>Something you can care about</h3><p>I am interested in building ideas that feel worth your time, attention and energy, not brands created only because a category looks profitable this month.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">What I bring</div><div><h2 class="statement-title">Strategy does not disappear<br/>into a deck.</h2><p class="statement-copy">I work across concept and execution, so the strategic decisions can continue all the way into the actual brand world. The thinking and the design stay connected.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Concept thinking</h3><p>Finding the central idea and turning ambiguity into a direction.</p></div><div class="value-card"><div class="num">02</div><h3>Brand strategy</h3><p>Making audience, positioning, narrative and differentiation work as one system.</p></div><div class="value-card"><div class="num">03</div><h3>Creative direction</h3><p>Defining the visual language and maintaining coherence across touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Design execution</h3><p>Taking the strategy into identity, digital, packaging and communication.</p></div></div></section>'+routeLink("#/start-a-project","Start a project","btn-primary")+'</div></main>'+footer()}
 function startPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Start a project</div><h1 class="page-title">Start a Project</h1><div class="page-intro"><div class="editorial-kicker">Begin here</div><p>You do not need a perfect brief. Tell me what you know so far. “I do not know yet” is also a valid answer.</p></div><div class="start-layout"><div class="start-copy"><h2>Where are you now?</h2><p>The form is designed to give me enough context for a useful first conversation, not to make you write a business plan before we speak.</p><p>If you prefer, you can contact me directly.</p><div class="start-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div><p class="scope-note">Please note: I do not provide 3D modelling, website development/coding, complex animation production or print-vendor sourcing. I can prepare production-ready files and coordinate directly with your selected print house or other production specialist.</p></div><form class="project-form" id="project-form"><div class="form-field"><label for="pf-name">Name</label><input id="pf-name" name="name" required/></div><div class="form-field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required/></div><div class="form-field"><label for="pf-stage">Where are you currently?</label><select id="pf-stage" name="stage"><option>I do not know what business to build yet</option><option>I have several ideas</option><option>I already have a business idea</option><option>I have an existing brand</option></select></div><div class="form-field"><label for="pf-help">What would you like help with?</label><select id="pf-help" name="help"><option>Direction & Potential</option><option>Business concept</option><option>Naming / brand strategy</option><option>Visual identity</option><option>Full concept-to-brand</option><option>I am not sure yet</option></select></div><div class="form-field"><label for="pf-astro">Include the astrological layer?</label><select id="pf-astro" name="astro"><option>I am curious but not sure</option><option>Yes</option><option>No</option></select></div><div class="form-field"><label for="pf-budget">Approximate budget</label><select id="pf-budget" name="budget"><option>Not sure yet</option><option>Under €1,000</option><option>€1,000–€3,000</option><option>€3,000–€7,000</option><option>€7,000+</option></select></div><div class="form-field form-field--full"><label for="pf-timeline">Timeline</label><input id="pf-timeline" name="timeline" placeholder="When would you like to begin?"/></div><div class="form-field form-field--full"><label for="pf-details">Tell me about yourself / the project</label><textarea id="pf-details" name="details" placeholder="What are you thinking about, what feels unclear, and what would a useful outcome look like?"></textarea></div><button type="submit" class="btn-primary form-submit">Email this brief</button><div class="form-note">Submitting opens your email client with the brief pre-filled. Nothing is uploaded or stored by this page.</div></form></div></div></main>'+footer()}
 function caseImageMarkup(img,i,caption,variant){
   if(!img){return '<div class="case-shot"><div class="case-placeholder">Image '+String(i+1).padStart(2,"0")+'</div></div>'}
