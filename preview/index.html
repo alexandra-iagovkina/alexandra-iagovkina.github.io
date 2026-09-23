@@ -4434,6 +4434,140 @@ html,body,#app{
   }
 }
 
+
+/* ===== FINAL PORTRAIT + ZODIAC CORRECTION ===== */
+
+/* Zodiac wheel must remain whole and fully visible */
+.cosmic-method-section,
+.cosmic-astro-section,
+.method-astro-section,
+.method-page .page-shell{
+  overflow:visible!important;
+}
+.cosmic-zodiac--method{
+  position:absolute!important;
+  width:min(34vw,470px)!important;
+  max-width:470px!important;
+  height:auto!important;
+  right:4vw!important;
+  left:auto!important;
+  top:50%!important;
+  transform:translateY(-50%) rotate(-3deg)!important;
+  opacity:.05!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+
+/* Portrait areas must not crop decorative layers */
+.home-about-section,
+.about-preview--portrait,
+.about-preview,
+.about-preview-visual,
+.about-page-hero,
+.about-page-hero-visual{
+  overflow:visible!important;
+}
+
+/* Portrait itself stays untouched: no masking */
+.about-portrait,
+.about-page-portrait{
+  -webkit-mask:none!important;
+  mask:none!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  position:relative!important;
+  z-index:3!important;
+}
+
+/* Big red abstract shape returns to intended scale */
+.about-blob,
+.about-page-blob{
+  position:absolute!important;
+  width:min(220%,1180px)!important;
+  max-width:none!important;
+  height:auto!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:-6%!important;
+  opacity:.78!important;
+  pointer-events:none!important;
+  z-index:0!important;
+  -webkit-mask:none!important;
+  mask:none!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+}
+.about-blob{
+  transform:translateX(-50%) rotate(-8deg)!important;
+}
+.about-page-blob{
+  transform:translateX(-50%) rotate(8deg)!important;
+}
+
+/* Full outline circle behind portrait, never clipped */
+.about-preview-visual::after,
+.about-page-hero-visual::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  width:min(82%,460px)!important;
+  aspect-ratio:1!important;
+  height:auto!important;
+  left:50%!important;
+  right:auto!important;
+  top:10%!important;
+  bottom:auto!important;
+  transform:translateX(-50%)!important;
+  border:1px solid rgba(242,193,170,.10)!important;
+  border-radius:50%!important;
+  background:none!important;
+  pointer-events:none!important;
+  z-index:1!important;
+}
+
+/* Only a soft bottom fade, separate from the image */
+.about-preview-visual::before,
+.about-page-hero-visual::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  left:-2%!important;
+  right:-2%!important;
+  bottom:-2px!important;
+  top:auto!important;
+  width:auto!important;
+  height:24%!important;
+  background:linear-gradient(
+    to bottom,
+    rgba(10,10,10,0) 0%,
+    rgba(10,10,10,.08) 34%,
+    rgba(10,10,10,.52) 72%,
+    #0a0a0a 100%
+  )!important;
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important;
+  pointer-events:none!important;
+  z-index:5!important;
+}
+
+@media(max-width:800px){
+  .cosmic-zodiac--method{
+    width:min(56vw,340px)!important;
+    right:14px!important;
+    opacity:.045!important;
+  }
+  .about-blob,
+  .about-page-blob{
+    width:min(230%,820px)!important;
+    bottom:-4%!important;
+  }
+  .about-preview-visual::after,
+  .about-page-hero-visual::before{
+    width:min(76%,360px)!important;
+  }
+}
+
 </style>
 </head>
 <body>
