@@ -2497,6 +2497,27 @@ img{max-width:100%}
   }
 }
 
+
+/* Fix timeline layering: line stays continuous between all steps */
+.method-page .method-journey{
+  isolation:isolate;
+}
+.method-page .method-journey-line{
+  z-index:1!important;
+}
+.method-page .method-step,
+.method-page .method-step-content{
+  background:transparent!important;
+}
+.method-page .method-step{
+  z-index:2;
+}
+.method-page .method-step-node{
+  position:relative;
+  z-index:3!important;
+  background:#0a0a0a!important;
+}
+
 </style>
 </head>
 <body>
