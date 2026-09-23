@@ -3621,6 +3621,150 @@ img{max-width:100%}
   display:none!important;
 }
 
+
+/* ===== FINAL TECHNICAL QA — FULL BLEED / CROPS / SPACING ===== */
+
+/* Zodiac watermark: quieter again, especially the central Method version */
+.cosmic-zodiac--home{
+  opacity:.075!important;
+}
+.cosmic-zodiac--method{
+  opacity:.10!important;
+}
+
+/* Full-bleed colour blocks: no black gutters at the sides */
+.accent-section--ivory{
+  width:100vw!important;
+  max-width:none!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+  padding-left:max(24px,calc((100vw - 1370px)/2 + 24px))!important;
+  padding-right:max(24px,calc((100vw - 1370px)/2 + 24px))!important;
+  border-top:0!important;
+}
+.accent-section--red{
+  width:100%!important;
+  margin:0!important;
+  padding-top:82px!important;
+  padding-bottom:82px!important;
+  border-top:0!important;
+}
+
+/* Portrait artwork: no hard horizontal cut, no red strip escaping underneath */
+.about-preview-visual,
+.about-page-hero-visual{
+  overflow:hidden!important;
+  background:#0a0a0a!important;
+}
+.about-preview-visual::before,
+.about-page-hero-visual::after{
+  content:none!important;
+  display:none!important;
+}
+.about-portrait,
+.about-page-portrait{
+  bottom:0!important;
+  -webkit-mask-image:linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 67%,
+    rgba(0,0,0,.96) 76%,
+    rgba(0,0,0,.72) 84%,
+    rgba(0,0,0,.32) 92%,
+    transparent 100%
+  )!important;
+  mask-image:linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 67%,
+    rgba(0,0,0,.96) 76%,
+    rgba(0,0,0,.72) 84%,
+    rgba(0,0,0,.32) 92%,
+    transparent 100%
+  )!important;
+}
+.about-page-hero{
+  border-bottom:0!important;
+  padding-bottom:0!important;
+}
+
+/* Keep the enlarged red form, but feather it before any container edge can crop it */
+.about-blob,
+.about-page-blob{
+  bottom:0!important;
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 0%,#000 54%,rgba(0,0,0,.74) 69%,rgba(0,0,0,.28) 80%,transparent 91%)!important;
+  mask-image:radial-gradient(ellipse at center,#000 0%,#000 54%,rgba(0,0,0,.74) 69%,rgba(0,0,0,.28) 80%,transparent 91%)!important;
+}
+
+/* Remove accidental separator directly under portrait compositions */
+.home-about-section{
+  border-top:0!important;
+}
+.home-about-section + .cta-panel{
+  border-top:0!important;
+}
+
+/* Services page: less dead air and fewer redundant rules */
+.services-page{
+  padding-top:72px!important;
+}
+.services-page .page-title{
+  margin-top:26px!important;
+  margin-bottom:26px!important;
+}
+.services-page .page-intro{
+  border-top:0!important;
+  padding-top:0!important;
+  padding-bottom:44px!important;
+  gap:56px!important;
+}
+.services-page .service-detail{
+  padding-top:42px!important;
+  padding-bottom:42px!important;
+  border-top:1px solid rgba(255,255,255,.11)!important;
+}
+.services-page .service-detail:first-of-type{
+  border-top:0!important;
+}
+.services-page .service-detail + .service-detail{
+  margin-top:0!important;
+}
+
+/* Slightly tighter top rhythm on standard internal pages */
+@media(min-width:801px){
+  .page-view:not(.case-page){
+    padding-top:86px!important;
+  }
+}
+
+/* Responsive full bleed and crop safety */
+@media(max-width:800px){
+  .accent-section--ivory{
+    padding-left:20px!important;
+    padding-right:20px!important;
+  }
+  .accent-section--red{
+    padding-top:64px!important;
+    padding-bottom:64px!important;
+  }
+  .services-page{
+    padding-top:64px!important;
+  }
+  .services-page .page-intro{
+    padding-bottom:34px!important;
+    gap:18px!important;
+  }
+  .services-page .service-detail{
+    padding-top:34px!important;
+    padding-bottom:34px!important;
+  }
+  .cosmic-zodiac--method{
+    opacity:.075!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3700,7 +3844,7 @@ function home(){
   '</main>'+footer()
 }
 function workPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Work</div><h1 class="page-title">Selected Concepts</h1><div class="page-intro"><div class="editorial-kicker">10 self-initiated projects</div><p>Ten business and brand concepts developed from scratch, from the original idea and naming to positioning, identity and visual direction. <span class="muted">Each project began without a client brief. I created the brief.</span></p></div><div class="work-grid">'+cardsMarkup(projects)+'</div><div class="work-note"><div class="editorial-kicker">Why self-initiated?</div><div><p>This is not only a portfolio of design outcomes. <span>It is a portfolio of ideas, decisions and systems.</span></p></div></div></div></main>'+footer()}
-function servicesPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Services</div><h1 class="page-title">Start Where You Are</h1><div class="page-intro"><div class="editorial-kicker">How we can work</div><p>You can come with a business, an early idea or simply the feeling that you want to create something of your own. The scope begins with the question you actually need answered.</p></div>'+
+function servicesPage(){return nav()+'<main class="page-view route-fade services-page"><div class="page-shell"><div class="page-kicker">Services</div><h1 class="page-title">Start Where You Are</h1><div class="page-intro"><div class="editorial-kicker">How we can work</div><p>You can come with a business, an early idea or simply the feeling that you want to create something of your own. The scope begins with the question you actually need answered.</p></div>'+
 '<section class="service-detail"><h3>Direction &amp; Potential</h3><div class="service-detail-copy"><p>For people who want to build something of their own but do not yet know which direction fits. We map strengths, interests, motivations, working style, resources and constraints, then identify business territories worth exploring.</p><div class="deliverables"><span class="pill">Deep consultation</span><span class="pill">Strengths &amp; patterns</span><span class="pill">Possible directions</span><span class="pill">Fit &amp; constraints</span><span class="pill">Next-step recommendations</span></div></div></section>'+
 '<section class="service-detail"><h3>Business Concept Development</h3><div class="service-detail-copy"><p>For turning a direction or rough idea into a coherent concept. We define what the business offers, who it is for, why it should exist, how it can be positioned and where the strongest opportunities lie.</p><div class="deliverables"><span class="pill">Concept</span><span class="pill">Audience</span><span class="pill">Offer</span><span class="pill">Positioning</span><span class="pill">Business format</span><span class="pill">Growth territories</span></div></div></section>'+
 '<section class="service-detail"><h3>Brand Strategy &amp; Identity</h3><div class="service-detail-copy"><p>For a defined idea or existing business that needs a distinctive brand. Strategy and creative direction are translated into a name, narrative, identity and visual system rather than treated as separate exercises.</p><div class="deliverables"><span class="pill">Positioning</span><span class="pill">Naming</span><span class="pill">Brand narrative</span><span class="pill">Identity</span><span class="pill">Creative direction</span><span class="pill">Digital / packaging direction</span></div></div></section>'+
