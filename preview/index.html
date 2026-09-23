@@ -2404,6 +2404,99 @@ img{max-width:100%}
   background:rgba(173,0,38,.72)!important;
 }
 
+
+/* ===== HERO TEXT COMPOSITION REBALANCE ===== */
+.hero-bottom--strategy{
+  display:block!important;
+  padding-top:34px!important;
+}
+.hero-bottom--strategy .hero-positioning{
+  display:grid!important;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
+  gap:72px!important;
+  max-width:none!important;
+  width:100%!important;
+  align-items:start!important;
+}
+.hero-positioning-left,
+.hero-positioning-right{
+  min-width:0;
+}
+.hero-positioning-left{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  justify-content:space-between;
+  gap:36px;
+}
+.hero-signature{
+  margin:0!important;
+  max-width:560px!important;
+  font-size:clamp(30px,2.65vw,44px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.038em!important;
+}
+.hero-mini-label{
+  margin-top:10px;
+  color:#777;
+  font-size:9px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.hero-positioning-right .hero-copy{
+  max-width:680px!important;
+  margin:0!important;
+  font-size:18px!important;
+  line-height:1.62!important;
+}
+.hero-positioning-right .hero-actions{
+  margin-top:34px!important;
+  justify-content:flex-start!important;
+}
+.hero-bottom--strategy .hero-scroll{
+  display:none!important;
+}
+@media(min-width:801px) and (max-width:1100px){
+  .hero-bottom--strategy .hero-positioning{
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;
+    gap:44px!important;
+  }
+  .hero-signature{
+    font-size:clamp(28px,3.1vw,36px)!important;
+  }
+  .hero-positioning-right .hero-copy{
+    font-size:16px!important;
+    line-height:1.62!important;
+  }
+}
+@media(max-width:800px){
+  .hero-bottom--strategy{
+    padding-top:26px!important;
+  }
+  .hero-bottom--strategy .hero-positioning{
+    grid-template-columns:1fr!important;
+    gap:26px!important;
+  }
+  .hero-positioning-left{
+    gap:18px;
+  }
+  .hero-signature{
+    max-width:100%!important;
+    font-size:clamp(28px,8vw,38px)!important;
+  }
+  .hero-mini-label{
+    margin-top:0;
+  }
+  .hero-positioning-right .hero-copy{
+    max-width:100%!important;
+    font-size:15px!important;
+    line-height:1.62!important;
+  }
+  .hero-positioning-right .hero-actions{
+    margin-top:28px!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2458,7 +2551,7 @@ function projectCard(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'
 function cardsMarkup(items){return items.map(projectCard).join("")}
 function home(){
   return nav()+'<main class="route-fade">'+
-  '<section class="hero-target hero-target--strategy"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><h1>From personal<br/>potential to a<br/>business worth<br/>building.</h1><div class="hero-rule"></div><div class="hero-bottom"><div><div class="hero-positioning"><p class="hero-signature">I help define what should exist before I design how it should look.</p><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p></div><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div><div class="hero-scroll">Strategy → concept → brand</div></div></div></section>'+
+  '<section class="hero-target hero-target--strategy"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><h1>From personal<br/>potential to a<br/>business worth<br/>building.</h1><div class="hero-rule"></div><div class="hero-bottom hero-bottom--strategy"><div class="hero-positioning"><div class="hero-positioning-left"><p class="hero-signature">I help define what should exist before I design how it should look.</p><div class="hero-mini-label">Strategy → concept → brand</div></div><div class="hero-positioning-right"><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">What I actually do</div><div><h2>I do not just design brands. I help define what should exist in the first place.</h2><p class="editorial-lead">You can come with a vague ambition, several competing ideas, a clear concept or an existing business. We start exactly where you are.</p></div></div><div class="stage-grid"><div class="stage-card"><div class="num">01 · No idea yet</div><h3>I want something of my own.</h3><p>We explore your strengths, interests, working style, resources and constraints to find directions that make sense for both you and the market.</p></div><div class="stage-card"><div class="num">02 · Early idea</div><h3>I have ideas, but they are not clear.</h3><p>We turn scattered possibilities into a focused concept with an audience, offer, positioning and realistic path forward.</p></div><div class="stage-card"><div class="num">03 · Defined concept</div><h3>I know what I want to build.</h3><p>We shape the name, narrative, brand strategy, identity and the wider system around the business.</p></div><div class="stage-card"><div class="num">04 · Existing business</div><h3>I need a stronger direction.</h3><p>We clarify what the brand stands for, where it should move next and how strategy should translate into design.</p></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">From you to the brand</div><div><h2>A business can begin before the business idea does.</h2></div></div><div class="path-grid"><div class="path-step"><div class="path-num">01</div><h3>You</h3><p>Strengths, interests, experience, motivations and preferred way of working.</p></div><div class="path-step"><div class="path-num">02</div><h3>Direction</h3><p>What fits, what does not, and which business territories deserve further exploration.</p></div><div class="path-step"><div class="path-num">03</div><h3>Concept</h3><p>Offer, audience, business format, positioning and the reason the idea should exist.</p></div><div class="path-step"><div class="path-num">04</div><h3>Brand</h3><p>Naming, narrative, personality, strategic territory and communication principles.</p></div><div class="path-step"><div class="path-num">05</div><h3>Identity</h3><p>Visual system, website direction, packaging, campaigns and key touchpoints.</p></div><div class="path-step"><div class="path-num">06</div><h3>Growth</h3><p>A direction for how the idea can expand without losing what makes it distinct.</p></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Featured work</div><div><h2>Ideas built from a blank page.</h2><p class="editorial-lead">Selected self-initiated business and brand concepts, developed from the original idea through strategy and visual execution.</p></div></div><div class="work-grid">'+cardsMarkup(projects.slice(0,4))+'</div><div class="work-note"><div class="editorial-kicker">About the portfolio</div><div><p>These projects were not created from client briefs. <span>I created the brief.</span> Each one began with a business idea, then developed through naming, positioning, identity and a possible direction for growth.</p>'+routeLink("#/work","View all 10 concepts","text-link")+'</div></div></div></section>'+
