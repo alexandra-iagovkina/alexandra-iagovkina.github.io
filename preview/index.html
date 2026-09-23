@@ -5295,7 +5295,13 @@ function bind(){
       mobileMenu.setAttribute("aria-hidden",open?"false":"true");
     });
   }
-  document.querySelector("[data-project]");
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"&&document.body.classList.contains("menu-open")){
+      document.body.classList.remove("menu-open");
+      if(menuToggle){menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Open menu")}
+      if(mobileMenu){mobileMenu.setAttribute("aria-hidden","true")}
+    }
+  },{once:true});
   document.querySelectorAll("[data-project]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toRoute("#/work/"+a.getAttribute("data-project"))})});
   document.querySelectorAll("[data-route]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toRoute(a.getAttribute("data-route"))})});
   document.querySelectorAll(".js-home").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();location.hash="";window.scrollTo(0,0);render()})});
