@@ -5465,250 +5465,109 @@ html,body,#app{
 }
 
 
-/* ===== SCREENSHOT QA FIXES · 2026-09-24 ===== */
-.route-fade{animation:none!important}
-.reveal,.reveal.is-visible{
-  opacity:1!important;
-  transform:none!important;
-  transition:none!important;
-  will-change:auto!important;
-}
+/* ===== EXACT SCREENSHOT MARK FIXES · 2026-09-24 ===== */
 
-/* About: CTA belongs to the content column, not under the left label column. */
+/* About screenshot: CTA follows the paragraph in the right column. */
 .about-role-section .statement-layout .btn-primary{
   display:inline-flex!important;
   margin-top:34px!important;
 }
 
-/* Method: complete sequence on one line at desktop sizes. */
-.method-page .method-title-row--single{
-  display:flex!important;
-  align-items:center!important;
-  flex-wrap:nowrap!important;
-  gap:.16em!important;
-  width:max-content!important;
-  max-width:100%!important;
-  white-space:nowrap!important;
-  margin:0!important;
-}
-.method-page .method-title-row--single span:not(.method-flow-arrow){
-  font-family:"Playfair Display",serif!important;
-  font-size:clamp(34px,3.7vw,56px)!important;
-  line-height:1!important;
-  letter-spacing:-.04em!important;
-}
-.method-page .method-title-row--single .method-flow-arrow{
-  font-family:"DM Sans",sans-serif!important;
-  font-size:clamp(21px,2vw,30px)!important;
-  font-weight:300!important;
-  opacity:.88!important;
-}
-
-/* Services: remove the oversized dead zone before the astrology note. */
-.services-page .services-astro-section{
-  padding:34px 0 54px!important;
-  margin:0!important;
-  border-top:1px solid rgba(255,255,255,.11)!important;
-}
-.services-page .services-astro-section .astrology-box{
-  padding:34px 0 0!important;
-  border-top:0!important;
-}
-
-@media(max-width:800px){
-  .method-page .method-title-row--single{
-    width:100%!important;
-    flex-wrap:wrap!important;
-    gap:6px 10px!important;
-    white-space:normal!important;
-  }
-  .method-page .method-title-row--single span:not(.method-flow-arrow){
-    font-size:clamp(28px,8.5vw,38px)!important;
-  }
-  .method-page .method-title-row--single .method-flow-arrow{
-    font-size:18px!important;
-  }
-  .services-page .services-astro-section{
-    padding:24px 0 42px!important;
-  }
-  .services-page .services-astro-section .astrology-box{
-    padding:24px 0 0!important;
-  }
-}
-
-
-/* ===== RED-MARK REVIEW · 2026-09-24 ===== */
-
-/* 01 ABOUT — CTA stays with the copy it belongs to, never under the left-side label. */
-.about-role-section .statement-layout{
-  align-items:start!important;
-}
-.about-role-section .statement-layout>div:last-child{
-  display:block!important;
-}
-.about-role-section .statement-layout .btn-primary{
-  display:inline-flex!important;
-  margin-top:34px!important;
-}
-
-/* 02 METHOD — use the available width. One continuous sequence on desktop. */
+/* Method screenshot: PERSON → DIRECTION → BUSINESS → BRAND uses the full line. */
 .method-page .method-title-flow{
   width:100%!important;
   max-width:none!important;
   overflow:visible!important;
 }
 .method-page .method-title-row--single{
-  display:grid!important;
-  grid-template-columns:max-content auto max-content auto max-content auto max-content!important;
+  display:flex!important;
   align-items:center!important;
-  column-gap:clamp(12px,1.7vw,28px)!important;
+  justify-content:space-between!important;
+  gap:clamp(14px,2vw,34px)!important;
   width:100%!important;
   max-width:none!important;
+  margin:0!important;
   white-space:nowrap!important;
 }
 .method-page .method-title-row--single span:not(.method-flow-arrow){
   font-family:"Playfair Display",serif!important;
-  font-size:clamp(34px,3.5vw,54px)!important;
+  font-size:clamp(38px,4.1vw,64px)!important;
   line-height:1!important;
-  letter-spacing:-.04em!important;
+  letter-spacing:-.045em!important;
 }
 .method-page .method-title-row--single .method-flow-arrow{
-  width:100%!important;
-  min-width:42px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
+  flex:0 1 84px!important;
+  text-align:center!important;
   font-family:"DM Sans",sans-serif!important;
-  font-size:clamp(18px,1.6vw,25px)!important;
+  font-size:clamp(20px,1.9vw,29px)!important;
   font-weight:300!important;
-  opacity:.72!important;
+  opacity:.82!important;
 }
 
-/* 03 SERVICES — astrology follows Creative Direction without a dead floor of empty space. */
-.services-page .service-detail:last-of-type{
-  padding-bottom:34px!important;
-}
-.services-page .services-astro-section{
-  padding:0 0 52px!important;
-  margin:0!important;
-  border-top:0!important;
-}
+/* Services screenshot: body copy starts on the same vertical axis as Creative Direction above. */
 .services-page .services-astro-section .astrology-box{
-  margin-top:0!important;
-  padding:42px 0 0!important;
-  border-top:1px solid rgba(255,255,255,.11)!important;
-  gap:clamp(42px,6vw,82px)!important;
+  grid-template-columns:340px minmax(0,1fr)!important;
+  gap:70px!important;
 }
 
-/* 04 HOME HERO — remove the dead red cloud in the marked upper-right area.
-   The framework sits inside the red form instead of hanging at its bottom edge. */
-.hero-home-v4 .hero-stage-v4{
-  align-items:center!important;
-}
+/* Hero screenshot: remove the detached red mass in the upper-right.
+   Keep one contained red form behind the Venture Shaping framework. */
 .hero-home-v4 .hero-visual-v4{
-  min-height:500px!important;
   overflow:hidden!important;
 }
 .hero-home-v4 .hero-blob-v4{
-  width:min(62vw,820px)!important;
-  right:-18%!important;
-  top:53%!important;
-  opacity:.68!important;
+  width:min(48vw,690px)!important;
+  right:-7%!important;
+  top:58%!important;
+  opacity:.62!important;
   transform:translateY(-50%) rotate(-8deg)!important;
-  filter:saturate(.9) contrast(.98)!important;
 }
 .hero-home-v4 .hero-visual-copy{
-  left:7%!important;
-  right:auto!important;
-  top:27%!important;
-  bottom:auto!important;
-  width:min(500px,88%)!important;
-  transform:none!important;
-}
-.hero-home-v4 .hero-visual-copy::before{
-  margin-bottom:18px!important;
-}
-.hero-home-v4 .hero-visual-copy .hero-framework-kicker{
-  margin-bottom:14px!important;
-}
-.hero-home-v4 .hero-axis{
-  font-size:clamp(31px,2.7vw,45px)!important;
-  line-height:.98!important;
-}
-.hero-home-v4 .hero-visual-caption{
-  max-width:370px!important;
-  margin-top:18px!important;
-}
-
-/* The green rectangles in supplied screenshots are browser paint-flash overlays,
-   so the site itself must not imitate or compensate for them. */
-.hero-home-v4,
-.about-page-hero-visual,
-.about-preview-visual,
-.editorial-pause,
-.philosophy-section,
-.cta-panel,
-.services-astro-section{
-  -webkit-backface-visibility:hidden;
-  backface-visibility:hidden;
+  left:44px!important;
+  bottom:62px!important;
+  width:min(430px,82%)!important;
 }
 
 @media(max-width:1100px) and (min-width:801px){
-  .method-page .method-title-row--single{
-    column-gap:12px!important;
-  }
   .method-page .method-title-row--single span:not(.method-flow-arrow){
-    font-size:clamp(29px,3.25vw,39px)!important;
+    font-size:clamp(31px,3.7vw,44px)!important;
+  }
+  .services-page .services-astro-section .astrology-box{
+    grid-template-columns:340px minmax(0,1fr)!important;
+    gap:70px!important;
   }
   .hero-home-v4 .hero-blob-v4{
-    width:min(72vw,720px)!important;
-    right:-25%!important;
-  }
-  .hero-home-v4 .hero-visual-copy{
-    left:4%!important;
-    top:25%!important;
-    width:min(430px,90%)!important;
+    width:min(58vw,620px)!important;
+    right:-15%!important;
   }
 }
 @media(max-width:800px){
   .method-page .method-title-row--single{
-    display:flex!important;
+    justify-content:flex-start!important;
     flex-wrap:wrap!important;
     gap:7px 10px!important;
-    width:100%!important;
     white-space:normal!important;
   }
   .method-page .method-title-row--single span:not(.method-flow-arrow){
-    font-size:clamp(28px,8.4vw,38px)!important;
+    font-size:clamp(28px,8.2vw,38px)!important;
   }
   .method-page .method-title-row--single .method-flow-arrow{
-    width:auto!important;
-    min-width:0!important;
+    flex:0 0 auto!important;
     font-size:18px!important;
   }
-  .services-page .service-detail:last-of-type{
-    padding-bottom:26px!important;
-  }
-  .services-page .services-astro-section{
-    padding-bottom:42px!important;
-  }
   .services-page .services-astro-section .astrology-box{
-    padding-top:30px!important;
-  }
-  .hero-home-v4 .hero-visual-v4{
-    min-height:315px!important;
-    overflow:hidden!important;
+    grid-template-columns:1fr!important;
+    gap:18px!important;
   }
   .hero-home-v4 .hero-blob-v4{
-    width:610px!important;
-    right:-275px!important;
-    top:50%!important;
+    width:520px!important;
+    right:-245px!important;
+    top:52%!important;
   }
   .hero-home-v4 .hero-visual-copy{
     left:0!important;
-    top:auto!important;
-    bottom:22px!important;
-    width:min(335px,84%)!important;
+    bottom:24px!important;
+    width:min(330px,82%)!important;
   }
 }
 
@@ -5814,7 +5673,7 @@ routeLink("#/start-a-project","Start a conversation","btn-primary")+
 
 function methodPage(){var steps=[["01","Read what already exists","Experience, strengths, recurring patterns, motivations, resources, limits and preferred way of working."],["02","Name the real question","What is changing, what no longer fits, and what the next chapter actually has to solve."],["03","Build possible directions","Generate paths from real assets rather than from trends or category imitation."],["04","Choose the direction","Compare the options against personal fit, commercial logic, feasibility and sustainability."],["05","Shape the business","Define the offer, audience, format, position and the assumptions that need testing."],["06","Build the brand","Translate the strategic idea into naming, narrative, identity and the key touchpoints the venture needs."]];return nav()+'<main class="page-view route-fade method-page"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title method-name-title">Venture Shaping</h1><div class="method-title-flow" aria-label="Person to Direction to Business to Brand"><div class="method-title-row method-title-row--single"><span>Person</span><span class="method-flow-arrow">→</span><span>Direction</span><span class="method-flow-arrow">→</span><span>Business</span><span class="method-flow-arrow">→</span><span>Brand</span></div></div><div class="page-intro"><div class="editorial-kicker">The principle</div><p>Strategy starts before identity. First we understand what is already true, then decide what is worth building, then give it a coherent business and visual form.</p></div><section class="method-journey" aria-label="Six-step method"><div class="method-journey-line" aria-hidden="true"></div>'+steps.map(function(s,i){var side=i%2===0?"left":"right";return '<article class="method-step method-step--'+side+'"><div class="method-step-content"><div class="method-step-label">Step '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><div class="method-step-node" aria-hidden="true"><span>'+s[0]+'</span></div></article>'}).join("")+'</section><section class="quote-break quote-break--compact"><div class="quote-break-inner"><blockquote>The goal is not to copy a market<br/>It is to find a direction worth building</blockquote></div></section><section class="page-section method-astro-section"><div class="astrology-box"><h3>An optional reflective layer, not the business case</h3><div><p>When useful, natal astrology can add another lens on recurring strengths, motivations, tensions and working patterns.</p><p>It does not choose the venture, predict commercial success or replace research. The final direction still has to make sense in practical and strategic terms.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">The outcome</div><div><h2 class="statement-title">A direction you can explain<br/>defend and build</h2><p class="statement-copy">The goal is enough clarity to commit, enough logic to test and enough character to become a distinctive brand.</p>'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></section></div></main>'+footer()}
 
-function aboutPage(){return nav()+'<main class="page-view route-fade about-page"><div class="page-shell"><section class="about-page-hero"><div class="about-page-hero-copy"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><p class="about-hero-role">Venture-to-Brand Strategist · Creative Director</p></div><div class="about-page-hero-visual"><img class="decor-blob about-page-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><img class="about-page-portrait" src="./assets/decor/portrait.webp" width="1200" height="1681" alt="Aleksandra Iagovkina" loading="eager" decoding="async"/><img class="decor-star about-page-star about-page-star--a" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><img class="decor-star about-page-star about-page-star--b" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/></div></section><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>After more than 12 years in design, the question that interests me most is no longer “what should this brand look like?” It is “what is actually worth building, and what would make it coherent for this person?”</p><p class="small">I have worked across graphic design, identity, digital design, photography and creative direction. That breadth is useful because I can see the venture before it gets divided into departments: the person, the idea, the commercial logic, the story and the visual system.</p><p class="small">I am less interested in chasing the dominant aesthetic of a category and more interested in finding the specific logic and character that make a brand recognisable as itself.</p></div></div><section class="page-section accent-section accent-section--ivory about-philosophy"><div class="page-section-head"><div class="editorial-kicker">The worldview</div><div><h2>Commercially grounded<br/>personally coherent</h2><p>A direction becomes stronger when market reality and personal fit are considered together rather than treated as competing ideas.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Pattern recognition</h3><p>I look for the strengths, contradictions and assets that are easy to miss when you are standing inside your own situation.</p></div><div class="value-card"><div class="num">02</div><h3>Strategic synthesis</h3><p>Personal fit, market logic, resources and constraints have to resolve into one direction that can survive contact with reality.</p></div><div class="value-card"><div class="num">03</div><h3>Creative translation</h3><p>The reasoning should remain visible in the name, story, identity, interface, packaging and other key touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Selective execution</h3><p>I stay close to the decisions that matter and collaborate or hand off where specialist production is the better answer.</p></div></div></section><section class="page-section statement-section about-role-section"><div class="statement-layout"><div class="editorial-kicker">The role</div><div><h2 class="statement-title">A thinking partner<br/>with a designer&#39;s hands</h2><p class="statement-copy">The advantage of working across strategy and creative direction is continuity. The reasoning does not disappear when the design begins.</p>'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></section></div></main>'+footer()}
+function aboutPage(){return nav()+'<main class="page-view route-fade about-page"><div class="page-shell"><section class="about-page-hero"><div class="about-page-hero-copy"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><p class="about-hero-role">Venture-to-Brand Strategist · Creative Director</p></div><div class="about-page-hero-visual"><img class="decor-blob about-page-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><img class="about-page-portrait" src="./assets/decor/portrait.webp" width="1200" height="1681" alt="Aleksandra Iagovkina" loading="eager" decoding="async"/><img class="decor-star about-page-star about-page-star--a" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><img class="decor-star about-page-star about-page-star--b" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/></div></section><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>After more than 12 years in design, the question that interests me most is no longer “what should this brand look like?” It is “what is actually worth building, and what would make it coherent for this person?”</p><p class="small">I have worked across graphic design, identity, digital design, photography and creative direction. That breadth is useful because I can see the venture before it gets divided into departments: the person, the idea, the commercial logic, the story and the visual system.</p><p class="small">I am less interested in chasing the dominant aesthetic of a category and more interested in finding the specific logic and character that make a brand recognisable as itself.</p></div></div><section class="page-section accent-section accent-section--ivory about-philosophy"><div class="page-section-head"><div class="editorial-kicker">The worldview</div><div><h2>Commercially grounded<br/>personally coherent</h2><p>A direction becomes stronger when market reality and personal fit are considered together rather than treated as competing ideas.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Pattern recognition</h3><p>I look for the strengths, contradictions and assets that are easy to miss when you are standing inside your own situation.</p></div><div class="value-card"><div class="num">02</div><h3>Strategic synthesis</h3><p>Personal fit, market logic, resources and constraints have to resolve into one direction that can survive contact with reality.</p></div><div class="value-card"><div class="num">03</div><h3>Creative translation</h3><p>The reasoning should remain visible in the name, story, identity, interface, packaging and other key touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Selective execution</h3><p>I stay close to the decisions that matter and collaborate or hand off where specialist production is the better answer.</p></div></div></section><section class="page-section statement-section about-role-section"><div class="statement-layout"><div class="editorial-kicker">The role</div><div><h2 class="statement-title">A thinking partner<br/>with a designer&#39;s hands</h2><p class="statement-copy">The advantage of working across strategy and creative direction is continuity. The reasoning does not disappear when the design begins.</p>'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></section></div></div></main>'+footer()}
 
 function startPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Start a conversation</div><h1 class="page-title">Bring the Situation</h1><div class="page-intro"><div class="editorial-kicker">No perfect brief required</div><p>Tell me what is changing, what you already have to work with and what you are trying to decide.</p></div><div class="start-layout"><div class="start-copy"><h2>What are you trying to figure out?</h2><p>You do not need to choose a service before contacting me. I will look at the situation first and suggest the depth of work that makes sense.</p><p>If you prefer, you can contact me directly.</p><div class="start-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div><p class="scope-note">I lead strategy, brand direction and key design work. Specialist production is handed off when needed.</p></div><form class="project-form" id="project-form"><div class="form-field"><label for="pf-name">Name</label><input id="pf-name" name="name" autocomplete="name" required/></div><div class="form-field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" autocomplete="email" required/></div><div class="form-field form-field--full"><label for="pf-decision">What are you trying to figure out?</label><textarea id="pf-decision" name="decision" placeholder="The situation, options or uncertainty you are dealing with."></textarea></div><div class="form-field form-field--full"><label for="pf-assets">What do you already have to build from?</label><textarea id="pf-assets" name="assets" placeholder="Experience, skills, audience, existing business, network, resources, ideas, constraints..."></textarea></div><div class="form-field form-field--full"><label for="pf-details">Timing, links or anything else useful</label><textarea id="pf-details" name="details" placeholder="Website, current brand, preferred timing or other context."></textarea></div><button type="submit" class="btn-primary form-submit">Open email draft</button><div class="form-note">This opens your email client with the message pre-filled. Nothing is uploaded or stored by this page.</div></form></div></div></main>'+footer()}
 
@@ -5903,7 +5762,25 @@ function render(){
   requestAnimationFrame(initReveal)
 }
 function toRoute(target){if(location.hash===target){render();window.scrollTo(0,0)}else{location.hash=target}}
-function initReveal(){}
+function initReveal(){
+  var selectors=[
+    ".hero-kicker",".hero-home-final h1",".hero-signature-v4",".hero-visual-v4",
+    ".editorial-head",".editorial-pause-inner",".work-card",".about-page-hero-copy",
+    ".about-page-hero-visual",".page-title",".page-intro",".case-title",".case-description",
+    ".case-text-block",".case-feature",".case-closing",".case-quote"
+  ];
+  var items=Array.from(document.querySelectorAll(selectors.join(",")));
+  items.forEach(function(el){
+    el.classList.add("reveal");
+    var parent=el.parentElement;
+    var siblings=parent ? Array.from(parent.children).filter(function(x){return items.indexOf(x)!==-1}) : [];
+    var idx=Math.max(0,siblings.indexOf(el));
+    el.style.setProperty("--reveal-delay", Math.min(idx*70,280)+"ms");
+  });
+  if(!("IntersectionObserver" in window)){items.forEach(function(el){el.classList.add("is-visible")});return}
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:"0px 0px -6% 0px"});
+  items.forEach(function(el){observer.observe(el)})
+}
 function bind(){
   var menuToggle=document.querySelector(".target-menu-toggle");
   var mobileMenu=document.querySelector(".mobile-menu");
