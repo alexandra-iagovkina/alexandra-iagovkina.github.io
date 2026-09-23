@@ -3060,6 +3060,285 @@ img{max-width:100%}
   }
 }
 
+
+/* ===== HOME HERO V2 — EDITORIAL / STRATEGIC / CELESTIAL ===== */
+.hero-home-v2{
+  min-height:100svh;
+  padding:118px 24px 42px!important;
+  align-items:stretch!important;
+  overflow:hidden;
+}
+.hero-home-v2 .hero-target-inner{
+  width:min(1450px,100%);
+  display:flex;
+  flex-direction:column;
+  min-height:calc(100svh - 160px);
+}
+.hero-home-v2 .hero-kicker{
+  margin:0 0 34px!important;
+  color:#938e89!important;
+  letter-spacing:.17em!important;
+}
+.hero-main-v2{
+  flex:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.22fr) minmax(360px,.78fr);
+  gap:clamp(36px,5vw,82px);
+  align-items:center;
+  min-height:560px;
+}
+.hero-title-v2{
+  position:relative;
+  z-index:3;
+  align-self:center;
+}
+.hero-home-v2 h1{
+  max-width:980px!important;
+  margin:0!important;
+  font-size:clamp(68px,6.25vw,112px)!important;
+  line-height:.89!important;
+  letter-spacing:-.055em!important;
+}
+.hero-word-accent{
+  color:#d10b35;
+  font-style:italic;
+  text-transform:none;
+}
+.hero-title-v2 .hero-signature{
+  margin:34px 0 0!important;
+  max-width:670px!important;
+  font-size:clamp(25px,2vw,34px)!important;
+  line-height:1.12!important;
+}
+
+/* Right-side concept object */
+.hero-concept-v2{
+  position:relative;
+  min-height:520px;
+  isolation:isolate;
+}
+.hero-concept-blob{
+  position:absolute;
+  z-index:0;
+  width:780px;
+  max-width:none;
+  height:auto;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) rotate(-11deg);
+  opacity:.88;
+  filter:saturate(.88) contrast(1.04);
+}
+.hero-orbit{
+  position:absolute;
+  z-index:1;
+  border:1px solid rgba(236,197,178,.26);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero-orbit--one{
+  width:450px;
+  aspect-ratio:1;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+.hero-orbit--two{
+  width:570px;
+  aspect-ratio:1;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-color:rgba(236,197,178,.10);
+}
+.hero-concept-star{
+  position:absolute;
+  z-index:3;
+  width:68px;
+  height:auto;
+  right:4%;
+  top:12%;
+  opacity:.86;
+  transform:rotate(12deg);
+}
+.hero-concept-card{
+  position:absolute;
+  z-index:4;
+  width:min(88%,430px);
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  padding:26px 28px 28px;
+  border:1px solid rgba(245,237,231,.34);
+  background:rgba(10,10,10,.76);
+  backdrop-filter:blur(8px);
+}
+.hero-concept-kicker{
+  margin-bottom:34px;
+  color:#e8c4b3;
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.hero-concept-flow{
+  display:flex;
+  align-items:center;
+  gap:.22em;
+  flex-wrap:nowrap;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(25px,2.35vw,38px);
+  line-height:1;
+  letter-spacing:-.035em;
+  color:#fff8f3;
+  white-space:nowrap;
+}
+.hero-concept-flow b{
+  font-family:"DM Sans",sans-serif;
+  font-weight:300;
+  font-size:.72em;
+  color:#e8c4b3;
+}
+.hero-concept-note{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(245,237,231,.14);
+  color:#aaa29c;
+  font-size:11px;
+  line-height:1.45;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* Bottom band becomes quieter and more intentional */
+.hero-home-v2 .hero-rule{
+  margin-top:18px!important;
+  background:rgba(255,255,255,.16)!important;
+}
+.hero-home-v2 .hero-bottom--strategy{
+  padding-top:24px!important;
+}
+.hero-positioning--v2{
+  grid-template-columns:minmax(220px,.55fr) minmax(0,1.45fr)!important;
+  gap:clamp(36px,7vw,120px)!important;
+  align-items:start!important;
+}
+.hero-positioning--v2 .hero-mini-label{
+  max-width:280px;
+  margin:4px 0 0!important;
+  color:#d9b5a4!important;
+  font-size:9px!important;
+  letter-spacing:.17em!important;
+  line-height:1.7;
+}
+.hero-positioning--v2 .hero-copy{
+  max-width:760px!important;
+  font-size:17px!important;
+  line-height:1.62!important;
+}
+.hero-positioning--v2 .hero-copy .muted{
+  color:#ad0026!important;
+}
+.hero-positioning--v2 .hero-actions{
+  margin-top:28px!important;
+}
+
+/* Buttons gain a little more personality on the first screen */
+.hero-home-v2 .btn-primary{
+  background:#f2ece7;
+  color:#0a0a0a;
+  border-color:#f2ece7;
+}
+.hero-home-v2 .btn-secondary{
+  border-color:rgba(232,196,179,.45);
+  color:#f2ece7;
+}
+.hero-home-v2 .btn-secondary:hover{
+  background:#ad0026;
+  border-color:#ad0026;
+  color:#fff;
+}
+
+@media(min-width:801px) and (max-width:1150px){
+  .hero-main-v2{
+    grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+    gap:32px;
+  }
+  .hero-home-v2 h1{
+    font-size:clamp(62px,7vw,88px)!important;
+  }
+  .hero-concept-v2{min-height:470px}
+  .hero-concept-blob{width:650px}
+  .hero-orbit--one{width:370px}
+  .hero-orbit--two{width:470px}
+  .hero-concept-card{width:min(90%,390px)}
+}
+
+@media(max-width:800px){
+  .hero-home-v2{
+    padding:100px 16px 34px!important;
+  }
+  .hero-home-v2 .hero-target-inner{
+    min-height:auto;
+  }
+  .hero-main-v2{
+    grid-template-columns:1fr;
+    gap:18px;
+    min-height:0;
+  }
+  .hero-home-v2 h1{
+    font-size:clamp(50px,13vw,72px)!important;
+    line-height:.92!important;
+  }
+  .hero-title-v2 .hero-signature{
+    margin-top:26px!important;
+    max-width:100%!important;
+    font-size:clamp(24px,7vw,32px)!important;
+  }
+  .hero-concept-v2{
+    min-height:390px;
+    margin-top:8px;
+  }
+  .hero-concept-blob{width:560px}
+  .hero-orbit--one{width:310px}
+  .hero-orbit--two{width:390px}
+  .hero-concept-card{
+    width:min(88%,350px);
+    padding:22px;
+  }
+  .hero-concept-flow{
+    font-size:clamp(23px,7vw,31px);
+  }
+  .hero-concept-star{
+    width:48px;
+    right:6%;
+    top:8%;
+  }
+  .hero-home-v2 .hero-rule{
+    margin-top:6px!important;
+  }
+  .hero-positioning--v2{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+  }
+  .hero-positioning--v2 .hero-mini-label{
+    max-width:none;
+  }
+  .hero-positioning--v2 .hero-copy{
+    font-size:15px!important;
+  }
+}
+@media(max-width:460px){
+  .hero-concept-v2{min-height:340px}
+  .hero-concept-blob{width:500px}
+  .hero-orbit--one{width:270px}
+  .hero-orbit--two{width:340px}
+  .hero-concept-card{
+    width:92%;
+    padding:20px;
+  }
+  .hero-concept-star{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -3127,7 +3406,7 @@ function projectCard(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'
 function cardsMarkup(items){return items.map(projectCard).join("")}
 function home(){
   return nav()+'<main class="route-fade">'+
-  '<section class="hero-target hero-target--strategy"><div class="hero-target-inner"><img class="decor-star hero-star" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><h1>From personal<br/>potential to a<br/>business worth<br/>building.</h1><div class="hero-rule"></div><div class="hero-bottom hero-bottom--strategy"><div class="hero-positioning"><div class="hero-positioning-left"><p class="hero-signature">I help define what should exist before I design how it should look.</p><div class="hero-mini-label">Strategy → concept → brand</div></div><div class="hero-positioning-right"><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div></div></div></div></section>'+
+  '<section class="hero-target hero-target--strategy hero-home-v2"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><div class="hero-main-v2"><div class="hero-title-v2"><h1>From personal <span class="hero-word-accent">potential</span><br/>to a business<br/>worth building.</h1><p class="hero-signature">I help define what should exist before I design how it should look.</p></div><div class="hero-concept-v2" aria-label="Venture Shaping framework"><img class="hero-concept-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><div class="hero-orbit hero-orbit--one"></div><div class="hero-orbit hero-orbit--two"></div><img class="hero-concept-star" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/><div class="hero-concept-card"><div class="hero-concept-kicker">Venture Shaping</div><div class="hero-concept-flow"><span>Person</span><b>→</b><span>Business</span><b>→</b><span>Brand</span></div><div class="hero-concept-note">Strategy begins before identity.</div></div></div></div><div class="hero-rule"></div><div class="hero-bottom hero-bottom--strategy"><div class="hero-positioning hero-positioning--v2"><div class="hero-positioning-left"><div class="hero-mini-label">Direction · Concept · Strategy · Identity</div></div><div class="hero-positioning-right"><p class="hero-copy">I help people turn their strengths, ideas and ambitions into clear business concepts, then build the positioning, name, identity and visual world around them. <span class="muted">You do not need to come with a finished business idea. We can start before the idea exists.</span></p><div class="hero-actions">'+routeLink("#/work","Explore my work","btn-primary")+routeLink("#/start-a-project","Start a project","btn-secondary")+'</div></div></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">What I actually do</div><div><h2>I do not just design brands. I help define what should exist in the first place.</h2><p class="editorial-lead">You can come with a vague ambition, several competing ideas, a clear concept or an existing business. We start exactly where you are.</p></div></div><div class="stage-grid"><div class="stage-card"><div class="num">01 · No idea yet</div><h3>I want something of my own.</h3><p>We explore your strengths, interests, working style, resources and constraints to find directions that make sense for both you and the market.</p></div><div class="stage-card"><div class="num">02 · Early idea</div><h3>I have ideas, but they are not clear.</h3><p>We turn scattered possibilities into a focused concept with an audience, offer, positioning and realistic path forward.</p></div><div class="stage-card"><div class="num">03 · Defined concept</div><h3>I know what I want to build.</h3><p>We shape the name, narrative, brand strategy, identity and the wider system around the business.</p></div><div class="stage-card"><div class="num">04 · Existing business</div><h3>I need a stronger direction.</h3><p>We clarify what the brand stands for, where it should move next and how strategy should translate into design.</p></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">From you to the brand</div><div><h2>A business can begin before the business idea does.</h2></div></div><div class="path-grid"><div class="path-step"><div class="path-num">01</div><h3>You</h3><p>Strengths, interests, experience, motivations and preferred way of working.</p></div><div class="path-step"><div class="path-num">02</div><h3>Direction</h3><p>What fits, what does not, and which business territories deserve further exploration.</p></div><div class="path-step"><div class="path-num">03</div><h3>Concept</h3><p>Offer, audience, business format, positioning and the reason the idea should exist.</p></div><div class="path-step"><div class="path-num">04</div><h3>Brand</h3><p>Naming, narrative, personality, strategic territory and communication principles.</p></div><div class="path-step"><div class="path-num">05</div><h3>Identity</h3><p>Visual system, website direction, packaging, campaigns and key touchpoints.</p></div><div class="path-step"><div class="path-num">06</div><h3>Growth</h3><p>A direction for how the idea can expand without losing what makes it distinct.</p></div></div></div></section>'+
   '<section class="editorial-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Featured work</div><div><h2>Ideas built from a blank page.</h2><p class="editorial-lead">Selected self-initiated business and brand concepts, developed from the original idea through strategy and visual execution.</p></div></div><div class="work-grid">'+cardsMarkup(projects.slice(0,4))+'</div><div class="work-note"><div class="editorial-kicker">About the portfolio</div><div><p>These projects were not created from client briefs. <span>I created the brief.</span> Each one began with a business idea, then developed through naming, positioning, identity and a possible direction for growth.</p>'+routeLink("#/work","View all 10 concepts","text-link")+'</div></div></div></section>'+
