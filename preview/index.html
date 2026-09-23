@@ -5464,6 +5464,78 @@ html,body,#app{
   }
 }
 
+
+/* ===== SCREENSHOT QA FIXES · 2026-09-24 ===== */
+.route-fade{animation:none!important}
+.reveal,.reveal.is-visible{
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+
+/* About: CTA belongs to the content column, not under the left label column. */
+.about-role-section .statement-layout .btn-primary{
+  display:inline-flex!important;
+  margin-top:34px!important;
+}
+
+/* Method: complete sequence on one line at desktop sizes. */
+.method-page .method-title-row--single{
+  display:flex!important;
+  align-items:center!important;
+  flex-wrap:nowrap!important;
+  gap:.16em!important;
+  width:max-content!important;
+  max-width:100%!important;
+  white-space:nowrap!important;
+  margin:0!important;
+}
+.method-page .method-title-row--single span:not(.method-flow-arrow){
+  font-family:"Playfair Display",serif!important;
+  font-size:clamp(34px,3.7vw,56px)!important;
+  line-height:1!important;
+  letter-spacing:-.04em!important;
+}
+.method-page .method-title-row--single .method-flow-arrow{
+  font-family:"DM Sans",sans-serif!important;
+  font-size:clamp(21px,2vw,30px)!important;
+  font-weight:300!important;
+  opacity:.88!important;
+}
+
+/* Services: remove the oversized dead zone before the astrology note. */
+.services-page .services-astro-section{
+  padding:34px 0 54px!important;
+  margin:0!important;
+  border-top:1px solid rgba(255,255,255,.11)!important;
+}
+.services-page .services-astro-section .astrology-box{
+  padding:34px 0 0!important;
+  border-top:0!important;
+}
+
+@media(max-width:800px){
+  .method-page .method-title-row--single{
+    width:100%!important;
+    flex-wrap:wrap!important;
+    gap:6px 10px!important;
+    white-space:normal!important;
+  }
+  .method-page .method-title-row--single span:not(.method-flow-arrow){
+    font-size:clamp(28px,8.5vw,38px)!important;
+  }
+  .method-page .method-title-row--single .method-flow-arrow{
+    font-size:18px!important;
+  }
+  .services-page .services-astro-section{
+    padding:24px 0 42px!important;
+  }
+  .services-page .services-astro-section .astrology-box{
+    padding:24px 0 0!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -5559,14 +5631,14 @@ function servicesPage(){return nav()+'<main class="page-view route-fade services
 '<section class="service-detail"><h3>Venture Shaping</h3><div class="service-detail-copy"><div class="service-context">You have a direction or idea, but it is not a business yet</div><p>We turn it into a venture with a clear offer, audience, business format, position and priorities for testing.</p><div class="deliverables"><span class="pill">Venture concept</span><span class="pill">Audience</span><span class="pill">Offer</span><span class="pill">Business format</span><span class="pill">Positioning</span><span class="pill">Launch priorities</span></div></div></section>'+
 '<section class="service-detail"><h3>Venture-to-Brand</h3><div class="service-detail-copy"><div class="service-context">You know what you want to build and need to turn it into a brand</div><p>I carry the strategic idea into the name, narrative, identity and the key applications the venture actually needs.</p><div class="deliverables"><span class="pill">Naming</span><span class="pill">Brand narrative</span><span class="pill">Positioning refinement</span><span class="pill">Visual identity</span><span class="pill">Website UX/UI</span><span class="pill">Packaging &amp; print</span><span class="pill">Creative direction</span><span class="pill">Production-ready artwork</span></div></div></section>'+
 '<section class="service-detail"><h3>Creative Direction</h3><div class="service-detail-copy"><div class="service-context">You already have a business or brand, but its next chapter is unclear</div><p>I define the strategic and visual direction, then stay close to the high-value design decisions without turning the engagement into unlimited production.</p><div class="deliverables"><span class="pill">Brand evolution</span><span class="pill">Campaign direction</span><span class="pill">Digital direction</span><span class="pill">Packaging direction</span><span class="pill">Design-system extension</span><span class="pill">Launch review</span></div></div></section>'+
-'<section class="page-section"><div class="astrology-box"><h3>Optional natal astrology</h3><div><p>If useful, it can be included in the discovery stage as an additional reflective framework for recurring strengths, motivations and working patterns.</p><p>It does not replace market research, psychology, financial reality, strategic judgment or common sense.</p></div></div></section>'+
+'<section class="page-section services-astro-section"><div class="astrology-box"><h3>Optional natal astrology</h3><div><p>If useful, it can be included in the discovery stage as an additional reflective framework for recurring strengths, motivations and working patterns.</p><p>It does not replace market research, psychology, financial reality, strategic judgment or common sense.</p></div></div></section>'+
 '<section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">Scope &amp; boundaries</div><div><h2 class="statement-title">Clear ownership<br/>clean handoffs</h2><p class="statement-copy">I lead the strategy, brand system and key design work. Specialist production is handed to the appropriate expert when the project needs it.</p></div></div><div class="scope-grid"><div class="scope-card"><h3>What I handle</h3><div class="scope-list"><div class="scope-item">Deep consultation, strengths and pattern analysis</div><div class="scope-item">Business direction, venture concept, offer and audience</div><div class="scope-item">Positioning, naming and brand narrative</div><div class="scope-item">Identity, website UX/UI, packaging and print</div><div class="scope-item">Production-ready artwork for agreed print deliverables</div><div class="scope-item">Communication with the client&#39;s chosen print house</div></div></div><div class="scope-card"><h3>Outside my scope</h3><div class="scope-list"><div class="scope-item">Website coding and development</div><div class="scope-item">3D modelling and specialist CGI</div><div class="scope-item">Complex animation production</div><div class="scope-item">Print-house sourcing and procurement</div></div></div></div><p class="scope-note">I can collaborate with specialists, but I do not present specialist production disciplines as work I personally perform.</p></section>'+
 routeLink("#/start-a-project","Start a conversation","btn-primary")+
 '</div></main>'+footer()}
 
-function methodPage(){var steps=[["01","Read what already exists","Experience, strengths, recurring patterns, motivations, resources, limits and preferred way of working."],["02","Name the real question","What is changing, what no longer fits, and what the next chapter actually has to solve."],["03","Build possible directions","Generate paths from real assets rather than from trends or category imitation."],["04","Choose the direction","Compare the options against personal fit, commercial logic, feasibility and sustainability."],["05","Shape the business","Define the offer, audience, format, position and the assumptions that need testing."],["06","Build the brand","Translate the strategic idea into naming, narrative, identity and the key touchpoints the venture needs."]];return nav()+'<main class="page-view route-fade method-page"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title method-name-title">Venture Shaping</h1><div class="method-title-flow" aria-label="Person to Direction to Business to Brand"><div class="method-title-row method-title-row--top"><span>Person</span><span class="method-flow-arrow">→</span><span>Direction</span></div><div class="method-title-row method-title-row--bottom"><span>Business</span><span class="method-flow-arrow">→</span><span>Brand</span></div></div><div class="page-intro"><div class="editorial-kicker">The principle</div><p>Strategy starts before identity. First we understand what is already true, then decide what is worth building, then give it a coherent business and visual form.</p></div><section class="method-journey" aria-label="Six-step method"><div class="method-journey-line" aria-hidden="true"></div>'+steps.map(function(s,i){var side=i%2===0?"left":"right";return '<article class="method-step method-step--'+side+'"><div class="method-step-content"><div class="method-step-label">Step '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><div class="method-step-node" aria-hidden="true"><span>'+s[0]+'</span></div></article>'}).join("")+'</section><section class="quote-break quote-break--compact"><div class="quote-break-inner"><blockquote>The goal is not to copy a market<br/>It is to find a direction worth building</blockquote></div></section><section class="page-section method-astro-section"><div class="astrology-box"><h3>An optional reflective layer, not the business case</h3><div><p>When useful, natal astrology can add another lens on recurring strengths, motivations, tensions and working patterns.</p><p>It does not choose the venture, predict commercial success or replace research. The final direction still has to make sense in practical and strategic terms.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">The outcome</div><div><h2 class="statement-title">A direction you can explain<br/>defend and build</h2><p class="statement-copy">The goal is enough clarity to commit, enough logic to test and enough character to become a distinctive brand.</p>'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></section></div></main>'+footer()}
+function methodPage(){var steps=[["01","Read what already exists","Experience, strengths, recurring patterns, motivations, resources, limits and preferred way of working."],["02","Name the real question","What is changing, what no longer fits, and what the next chapter actually has to solve."],["03","Build possible directions","Generate paths from real assets rather than from trends or category imitation."],["04","Choose the direction","Compare the options against personal fit, commercial logic, feasibility and sustainability."],["05","Shape the business","Define the offer, audience, format, position and the assumptions that need testing."],["06","Build the brand","Translate the strategic idea into naming, narrative, identity and the key touchpoints the venture needs."]];return nav()+'<main class="page-view route-fade method-page"><div class="page-shell"><div class="page-kicker">Method</div><h1 class="page-title method-name-title">Venture Shaping</h1><div class="method-title-flow" aria-label="Person to Direction to Business to Brand"><div class="method-title-row method-title-row--single"><span>Person</span><span class="method-flow-arrow">→</span><span>Direction</span><span class="method-flow-arrow">→</span><span>Business</span><span class="method-flow-arrow">→</span><span>Brand</span></div></div><div class="page-intro"><div class="editorial-kicker">The principle</div><p>Strategy starts before identity. First we understand what is already true, then decide what is worth building, then give it a coherent business and visual form.</p></div><section class="method-journey" aria-label="Six-step method"><div class="method-journey-line" aria-hidden="true"></div>'+steps.map(function(s,i){var side=i%2===0?"left":"right";return '<article class="method-step method-step--'+side+'"><div class="method-step-content"><div class="method-step-label">Step '+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><div class="method-step-node" aria-hidden="true"><span>'+s[0]+'</span></div></article>'}).join("")+'</section><section class="quote-break quote-break--compact"><div class="quote-break-inner"><blockquote>The goal is not to copy a market<br/>It is to find a direction worth building</blockquote></div></section><section class="page-section method-astro-section"><div class="astrology-box"><h3>An optional reflective layer, not the business case</h3><div><p>When useful, natal astrology can add another lens on recurring strengths, motivations, tensions and working patterns.</p><p>It does not choose the venture, predict commercial success or replace research. The final direction still has to make sense in practical and strategic terms.</p></div></div></section><section class="page-section statement-section"><div class="statement-layout"><div class="editorial-kicker">The outcome</div><div><h2 class="statement-title">A direction you can explain<br/>defend and build</h2><p class="statement-copy">The goal is enough clarity to commit, enough logic to test and enough character to become a distinctive brand.</p>'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></section></div></main>'+footer()}
 
-function aboutPage(){return nav()+'<main class="page-view route-fade about-page"><div class="page-shell"><section class="about-page-hero"><div class="about-page-hero-copy"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><p class="about-hero-role">Venture-to-Brand Strategist · Creative Director</p></div><div class="about-page-hero-visual"><img class="decor-blob about-page-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><img class="about-page-portrait" src="./assets/decor/portrait.webp" width="1200" height="1681" alt="Aleksandra Iagovkina" loading="eager" decoding="async"/><img class="decor-star about-page-star about-page-star--a" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><img class="decor-star about-page-star about-page-star--b" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/></div></section><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>After more than 12 years in design, the question that interests me most is no longer “what should this brand look like?” It is “what is actually worth building, and what would make it coherent for this person?”</p><p class="small">I have worked across graphic design, identity, digital design, photography and creative direction. That breadth is useful because I can see the venture before it gets divided into departments: the person, the idea, the commercial logic, the story and the visual system.</p><p class="small">I am less interested in chasing the dominant aesthetic of a category and more interested in finding the specific logic and character that make a brand recognisable as itself.</p></div></div><section class="page-section accent-section accent-section--ivory about-philosophy"><div class="page-section-head"><div class="editorial-kicker">The worldview</div><div><h2>Commercially grounded<br/>personally coherent</h2><p>A direction becomes stronger when market reality and personal fit are considered together rather than treated as competing ideas.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Pattern recognition</h3><p>I look for the strengths, contradictions and assets that are easy to miss when you are standing inside your own situation.</p></div><div class="value-card"><div class="num">02</div><h3>Strategic synthesis</h3><p>Personal fit, market logic, resources and constraints have to resolve into one direction that can survive contact with reality.</p></div><div class="value-card"><div class="num">03</div><h3>Creative translation</h3><p>The reasoning should remain visible in the name, story, identity, interface, packaging and other key touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Selective execution</h3><p>I stay close to the decisions that matter and collaborate or hand off where specialist production is the better answer.</p></div></div></section><section class="page-section statement-section about-role-section"><div class="statement-layout"><div class="editorial-kicker">The role</div><div><h2 class="statement-title">A thinking partner<br/>with a designer&#39;s hands</h2><p class="statement-copy">The advantage of working across strategy and creative direction is continuity. The reasoning does not disappear when the design begins.</p></div></div></section><div class="about-close">'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></main>'+footer()}
+function aboutPage(){return nav()+'<main class="page-view route-fade about-page"><div class="page-shell"><section class="about-page-hero"><div class="about-page-hero-copy"><div class="page-kicker">About</div><h1 class="page-title">Aleksandra Iagovkina</h1><p class="about-hero-role">Venture-to-Brand Strategist · Creative Director</p></div><div class="about-page-hero-visual"><img class="decor-blob about-page-blob" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><img class="about-page-portrait" src="./assets/decor/portrait.webp" width="1200" height="1681" alt="Aleksandra Iagovkina" loading="eager" decoding="async"/><img class="decor-star about-page-star about-page-star--a" src="./assets/decor/stars-a.webp" width="64" height="106" alt="" aria-hidden="true"/><img class="decor-star about-page-star about-page-star--b" src="./assets/decor/stars-b.webp" width="83" height="68" alt="" aria-hidden="true"/></div></section><div class="about-story"><div class="about-story-label">Why this practice exists</div><div class="about-story-copy"><p>After more than 12 years in design, the question that interests me most is no longer “what should this brand look like?” It is “what is actually worth building, and what would make it coherent for this person?”</p><p class="small">I have worked across graphic design, identity, digital design, photography and creative direction. That breadth is useful because I can see the venture before it gets divided into departments: the person, the idea, the commercial logic, the story and the visual system.</p><p class="small">I am less interested in chasing the dominant aesthetic of a category and more interested in finding the specific logic and character that make a brand recognisable as itself.</p></div></div><section class="page-section accent-section accent-section--ivory about-philosophy"><div class="page-section-head"><div class="editorial-kicker">The worldview</div><div><h2>Commercially grounded<br/>personally coherent</h2><p>A direction becomes stronger when market reality and personal fit are considered together rather than treated as competing ideas.</p></div></div><div class="value-grid"><div class="value-card"><div class="num">01</div><h3>Pattern recognition</h3><p>I look for the strengths, contradictions and assets that are easy to miss when you are standing inside your own situation.</p></div><div class="value-card"><div class="num">02</div><h3>Strategic synthesis</h3><p>Personal fit, market logic, resources and constraints have to resolve into one direction that can survive contact with reality.</p></div><div class="value-card"><div class="num">03</div><h3>Creative translation</h3><p>The reasoning should remain visible in the name, story, identity, interface, packaging and other key touchpoints.</p></div><div class="value-card"><div class="num">04</div><h3>Selective execution</h3><p>I stay close to the decisions that matter and collaborate or hand off where specialist production is the better answer.</p></div></div></section><section class="page-section statement-section about-role-section"><div class="statement-layout"><div class="editorial-kicker">The role</div><div><h2 class="statement-title">A thinking partner<br/>with a designer&#39;s hands</h2><p class="statement-copy">The advantage of working across strategy and creative direction is continuity. The reasoning does not disappear when the design begins.</p>'+routeLink("#/start-a-project","Start a conversation","btn-primary")+'</div></div></section></div></main>'+footer()}
 
 function startPage(){return nav()+'<main class="page-view route-fade"><div class="page-shell"><div class="page-kicker">Start a conversation</div><h1 class="page-title">Bring the Situation</h1><div class="page-intro"><div class="editorial-kicker">No perfect brief required</div><p>Tell me what is changing, what you already have to work with and what you are trying to decide.</p></div><div class="start-layout"><div class="start-copy"><h2>What are you trying to figure out?</h2><p>You do not need to choose a service before contacting me. I will look at the situation first and suggest the depth of work that makes sense.</p><p>If you prefer, you can contact me directly.</p><div class="start-links"><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a></div><p class="scope-note">I lead strategy, brand direction and key design work. Specialist production is handed off when needed.</p></div><form class="project-form" id="project-form"><div class="form-field"><label for="pf-name">Name</label><input id="pf-name" name="name" autocomplete="name" required/></div><div class="form-field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" autocomplete="email" required/></div><div class="form-field form-field--full"><label for="pf-decision">What are you trying to figure out?</label><textarea id="pf-decision" name="decision" placeholder="The situation, options or uncertainty you are dealing with."></textarea></div><div class="form-field form-field--full"><label for="pf-assets">What do you already have to build from?</label><textarea id="pf-assets" name="assets" placeholder="Experience, skills, audience, existing business, network, resources, ideas, constraints..."></textarea></div><div class="form-field form-field--full"><label for="pf-details">Timing, links or anything else useful</label><textarea id="pf-details" name="details" placeholder="Website, current brand, preferred timing or other context."></textarea></div><button type="submit" class="btn-primary form-submit">Open email draft</button><div class="form-note">This opens your email client with the message pre-filled. Nothing is uploaded or stored by this page.</div></form></div></div></main>'+footer()}
 
@@ -5655,25 +5727,7 @@ function render(){
   requestAnimationFrame(initReveal)
 }
 function toRoute(target){if(location.hash===target){render();window.scrollTo(0,0)}else{location.hash=target}}
-function initReveal(){
-  var selectors=[
-    ".hero-kicker",".hero-home-final h1",".hero-signature-v4",".hero-visual-v4",
-    ".editorial-head",".editorial-pause-inner",".work-card",".about-page-hero-copy",
-    ".about-page-hero-visual",".page-title",".page-intro",".case-title",".case-description",
-    ".case-text-block",".case-feature",".case-closing",".case-quote"
-  ];
-  var items=Array.from(document.querySelectorAll(selectors.join(",")));
-  items.forEach(function(el){
-    el.classList.add("reveal");
-    var parent=el.parentElement;
-    var siblings=parent ? Array.from(parent.children).filter(function(x){return items.indexOf(x)!==-1}) : [];
-    var idx=Math.max(0,siblings.indexOf(el));
-    el.style.setProperty("--reveal-delay", Math.min(idx*70,280)+"ms");
-  });
-  if(!("IntersectionObserver" in window)){items.forEach(function(el){el.classList.add("is-visible")});return}
-  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:"0px 0px -6% 0px"});
-  items.forEach(function(el){observer.observe(el)})
-}
+function initReveal(){}
 function bind(){
   var menuToggle=document.querySelector(".target-menu-toggle");
   var mobileMenu=document.querySelector(".mobile-menu");
