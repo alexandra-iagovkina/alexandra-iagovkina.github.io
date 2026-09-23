@@ -5536,6 +5536,182 @@ html,body,#app{
   }
 }
 
+
+/* ===== RED-MARK REVIEW · 2026-09-24 ===== */
+
+/* 01 ABOUT — CTA stays with the copy it belongs to, never under the left-side label. */
+.about-role-section .statement-layout{
+  align-items:start!important;
+}
+.about-role-section .statement-layout>div:last-child{
+  display:block!important;
+}
+.about-role-section .statement-layout .btn-primary{
+  display:inline-flex!important;
+  margin-top:34px!important;
+}
+
+/* 02 METHOD — use the available width. One continuous sequence on desktop. */
+.method-page .method-title-flow{
+  width:100%!important;
+  max-width:none!important;
+  overflow:visible!important;
+}
+.method-page .method-title-row--single{
+  display:grid!important;
+  grid-template-columns:max-content auto max-content auto max-content auto max-content!important;
+  align-items:center!important;
+  column-gap:clamp(12px,1.7vw,28px)!important;
+  width:100%!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+}
+.method-page .method-title-row--single span:not(.method-flow-arrow){
+  font-family:"Playfair Display",serif!important;
+  font-size:clamp(34px,3.5vw,54px)!important;
+  line-height:1!important;
+  letter-spacing:-.04em!important;
+}
+.method-page .method-title-row--single .method-flow-arrow{
+  width:100%!important;
+  min-width:42px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-family:"DM Sans",sans-serif!important;
+  font-size:clamp(18px,1.6vw,25px)!important;
+  font-weight:300!important;
+  opacity:.72!important;
+}
+
+/* 03 SERVICES — astrology follows Creative Direction without a dead floor of empty space. */
+.services-page .service-detail:last-of-type{
+  padding-bottom:34px!important;
+}
+.services-page .services-astro-section{
+  padding:0 0 52px!important;
+  margin:0!important;
+  border-top:0!important;
+}
+.services-page .services-astro-section .astrology-box{
+  margin-top:0!important;
+  padding:42px 0 0!important;
+  border-top:1px solid rgba(255,255,255,.11)!important;
+  gap:clamp(42px,6vw,82px)!important;
+}
+
+/* 04 HOME HERO — remove the dead red cloud in the marked upper-right area.
+   The framework sits inside the red form instead of hanging at its bottom edge. */
+.hero-home-v4 .hero-stage-v4{
+  align-items:center!important;
+}
+.hero-home-v4 .hero-visual-v4{
+  min-height:500px!important;
+  overflow:hidden!important;
+}
+.hero-home-v4 .hero-blob-v4{
+  width:min(62vw,820px)!important;
+  right:-18%!important;
+  top:53%!important;
+  opacity:.68!important;
+  transform:translateY(-50%) rotate(-8deg)!important;
+  filter:saturate(.9) contrast(.98)!important;
+}
+.hero-home-v4 .hero-visual-copy{
+  left:7%!important;
+  right:auto!important;
+  top:27%!important;
+  bottom:auto!important;
+  width:min(500px,88%)!important;
+  transform:none!important;
+}
+.hero-home-v4 .hero-visual-copy::before{
+  margin-bottom:18px!important;
+}
+.hero-home-v4 .hero-visual-copy .hero-framework-kicker{
+  margin-bottom:14px!important;
+}
+.hero-home-v4 .hero-axis{
+  font-size:clamp(31px,2.7vw,45px)!important;
+  line-height:.98!important;
+}
+.hero-home-v4 .hero-visual-caption{
+  max-width:370px!important;
+  margin-top:18px!important;
+}
+
+/* The green rectangles in supplied screenshots are browser paint-flash overlays,
+   so the site itself must not imitate or compensate for them. */
+.hero-home-v4,
+.about-page-hero-visual,
+.about-preview-visual,
+.editorial-pause,
+.philosophy-section,
+.cta-panel,
+.services-astro-section{
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}
+
+@media(max-width:1100px) and (min-width:801px){
+  .method-page .method-title-row--single{
+    column-gap:12px!important;
+  }
+  .method-page .method-title-row--single span:not(.method-flow-arrow){
+    font-size:clamp(29px,3.25vw,39px)!important;
+  }
+  .hero-home-v4 .hero-blob-v4{
+    width:min(72vw,720px)!important;
+    right:-25%!important;
+  }
+  .hero-home-v4 .hero-visual-copy{
+    left:4%!important;
+    top:25%!important;
+    width:min(430px,90%)!important;
+  }
+}
+@media(max-width:800px){
+  .method-page .method-title-row--single{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    gap:7px 10px!important;
+    width:100%!important;
+    white-space:normal!important;
+  }
+  .method-page .method-title-row--single span:not(.method-flow-arrow){
+    font-size:clamp(28px,8.4vw,38px)!important;
+  }
+  .method-page .method-title-row--single .method-flow-arrow{
+    width:auto!important;
+    min-width:0!important;
+    font-size:18px!important;
+  }
+  .services-page .service-detail:last-of-type{
+    padding-bottom:26px!important;
+  }
+  .services-page .services-astro-section{
+    padding-bottom:42px!important;
+  }
+  .services-page .services-astro-section .astrology-box{
+    padding-top:30px!important;
+  }
+  .hero-home-v4 .hero-visual-v4{
+    min-height:315px!important;
+    overflow:hidden!important;
+  }
+  .hero-home-v4 .hero-blob-v4{
+    width:610px!important;
+    right:-275px!important;
+    top:50%!important;
+  }
+  .hero-home-v4 .hero-visual-copy{
+    left:0!important;
+    top:auto!important;
+    bottom:22px!important;
+    width:min(335px,84%)!important;
+  }
+}
+
 </style>
 </head>
 <body>
