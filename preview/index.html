@@ -2166,6 +2166,132 @@ img{max-width:100%}
   }
 }
 
+
+/* ===== METHOD + CASE HEADER CORRECTION ===== */
+
+/* Case header: never let the concept pill collide with Back to Work */
+.case-top{
+  display:block;
+}
+.case-back{
+  display:block!important;
+  width:max-content;
+  margin:0 0 18px!important;
+}
+.case-concept-label{
+  display:inline-flex!important;
+  margin:0 0 0 0!important;
+  vertical-align:top;
+}
+.case-concept-label + .case-title{
+  margin-top:48px!important;
+}
+
+/* Method page: Venture Shaping is the page heading, the equation is supporting content */
+.method-page .method-name-title{
+  max-width:760px!important;
+  margin:30px 0 20px!important;
+  font-size:clamp(52px,4.8vw,78px)!important;
+  line-height:.98!important;
+  letter-spacing:-.042em!important;
+  text-transform:none!important;
+}
+
+/* compact conceptual equation, not a second hero */
+.method-page .method-title-flow{
+  width:min(760px,100%)!important;
+  max-width:760px!important;
+  margin:0 0 46px!important;
+  padding:22px 0 26px!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:1px solid var(--line)!important;
+  font-size:clamp(28px,2.6vw,42px)!important;
+  line-height:1!important;
+  letter-spacing:-.035em!important;
+}
+.method-page .method-title-row{
+  width:max-content!important;
+  max-width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:.16em!important;
+  white-space:nowrap!important;
+}
+.method-page .method-title-row--top{
+  margin:0!important;
+}
+.method-page .method-title-row--bottom{
+  margin:10px 0 0 36%!important;
+}
+.method-page .method-flow-arrow{
+  color:var(--fg)!important;
+  font-size:.62em!important;
+  opacity:.78!important;
+  transform:none!important;
+}
+
+/* create a calmer transition into the principle copy */
+.method-page .page-intro{
+  margin-top:0!important;
+  padding-top:24px!important;
+  padding-bottom:52px!important;
+}
+
+/* Desktop hierarchy safety */
+@media(min-width:1200px){
+  .method-page .method-name-title{
+    font-size:72px!important;
+  }
+  .method-page .method-title-flow{
+    font-size:38px!important;
+  }
+}
+
+/* Tablet */
+@media(min-width:801px) and (max-width:1199px){
+  .method-page .method-name-title{
+    font-size:clamp(54px,6vw,68px)!important;
+  }
+  .method-page .method-title-flow{
+    width:min(680px,100%)!important;
+    font-size:clamp(30px,3.2vw,38px)!important;
+  }
+  .method-page .method-title-row--bottom{
+    margin-left:31%!important;
+  }
+}
+
+/* Mobile */
+@media(max-width:800px){
+  .case-back{
+    margin-bottom:14px!important;
+  }
+  .case-concept-label{
+    font-size:8px!important;
+    line-height:1.35!important;
+    padding:7px 9px!important;
+  }
+  .case-concept-label + .case-title{
+    margin-top:38px!important;
+  }
+
+  .method-page .method-name-title{
+    margin:24px 0 16px!important;
+    font-size:clamp(42px,11vw,58px)!important;
+  }
+  .method-page .method-title-flow{
+    width:100%!important;
+    max-width:100%!important;
+    margin-bottom:34px!important;
+    padding:18px 0 22px!important;
+    font-size:clamp(24px,6.8vw,34px)!important;
+  }
+  .method-page .method-title-row--bottom{
+    margin-top:8px!important;
+    margin-left:22%!important;
+  }
+}
+
 </style>
 </head>
 <body>
