@@ -5074,6 +5074,116 @@ html,body,#app{
   .offer-section .service-ladder{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   .start-layout{gap:48px!important}
 }
+
+/* ===== HERO CORRECTION — remove dashboard/pitch-deck look ===== */
+.hero-stage-v4{
+  grid-template-columns:minmax(0,1.18fr) minmax(360px,.72fr)!important;
+  gap:clamp(50px,8vw,130px)!important;
+}
+.hero-visual-v4{
+  position:relative!important;
+  min-height:520px!important;
+  border:0!important;
+  background:transparent!important;
+  overflow:visible!important;
+}
+.hero-visual-v4::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:10%;
+  bottom:10%;
+  width:1px;
+  background:rgba(255,255,255,.12);
+}
+.hero-blob-v4{
+  width:min(72vw,980px)!important;
+  max-width:none!important;
+  right:-50%!important;
+  top:47%!important;
+  transform:translateY(-50%) rotate(-8deg)!important;
+  opacity:.72!important;
+  filter:saturate(.88) contrast(.96)!important;
+}
+.hero-visual-label,
+.hero-framework-v4{display:none!important}
+.hero-visual-copy{
+  position:absolute;
+  z-index:3;
+  left:52px;
+  bottom:56px;
+  width:min(390px,78%);
+}
+.hero-visual-copy::before{
+  content:"";
+  display:block;
+  width:42px;
+  height:1px;
+  margin-bottom:22px;
+  background:var(--accent);
+}
+.hero-visual-copy .hero-framework-kicker{
+  margin:0 0 18px!important;
+  color:#8f8984!important;
+}
+.hero-visual-statement{
+  margin:0;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(34px,3.2vw,52px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  color:#f0ebe6;
+}
+.hero-visual-caption{
+  margin:24px 0 0;
+  max-width:330px;
+  color:#8d8883;
+  font-size:13px;
+  line-height:1.65;
+}
+@media(min-width:801px) and (max-width:1100px){
+  .hero-stage-v4{
+    grid-template-columns:minmax(0,1fr) minmax(310px,.64fr)!important;
+    gap:48px!important;
+  }
+  .hero-blob-v4{right:-64%!important}
+  .hero-visual-copy{left:38px;bottom:44px}
+  .hero-visual-statement{font-size:clamp(31px,3.6vw,43px)}
+}
+@media(max-width:800px){
+  .hero-stage-v4{gap:18px!important}
+  .hero-visual-v4{
+    min-height:290px!important;
+    margin-top:14px;
+    overflow:hidden!important;
+  }
+  .hero-visual-v4::before{
+    left:0;
+    right:0;
+    top:0;
+    bottom:auto;
+    width:auto;
+    height:1px;
+  }
+  .hero-blob-v4{
+    width:620px!important;
+    right:-300px!important;
+    top:46%!important;
+    opacity:.58!important;
+  }
+  .hero-visual-copy{
+    left:0;
+    bottom:24px;
+    width:min(330px,82%);
+  }
+  .hero-visual-statement{
+    font-size:clamp(31px,9vw,42px);
+  }
+  .hero-visual-caption{
+    margin-top:18px;
+    font-size:12px;
+  }
+}
 </style>
 </head>
 <body>
@@ -5149,7 +5259,7 @@ function projectCard(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'
 function cardsMarkup(items){return items.map(projectCard).join("")}
 function home(){
   return nav()+'<main class="route-fade">'+
-  '<section class="hero-target hero-target--strategy hero-home-v4"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><div class="hero-stage-v4"><div class="hero-copy-v4"><h1>Turn experience<br/>into a venture<br/>worth building</h1><div class="hero-signature-v4"><span></span><p>I help people at a professional turning point decide what to build, shape the business, and turn it into a brand.</p></div><div class="hero-actions hero-actions--primary">'+routeLink("#/start-a-project","Start with a Venture Diagnostic","btn-primary")+routeLink("#/services","See how we can work","btn-secondary")+'</div></div><div class="hero-visual-v4" aria-label="Venture Shaping framework"><img class="hero-blob-v4" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><div class="hero-visual-label">Venture Shaping / Strategic practice</div><div class="hero-framework-v4"><div class="hero-framework-kicker">From complexity to direction</div><div class="hero-framework-flow"><span>You</span><b>→</b><span>Direction</span><b>→</b><span>Venture</span><b>→</b><span>Brand</span></div></div></div></div><div class="hero-foot-v4"><div class="hero-mini-label">12+ years in design &amp; creative direction</div><p>For experienced professionals, founders and creatives with more than one possible next move.</p><div class="hero-foot-actions">'+routeLink("#/work","View selected ventures","text-link")+'</div></div></div></section>'+
+  '<section class="hero-target hero-target--strategy hero-home-v4"><div class="hero-target-inner"><div class="hero-kicker">Aleksandra Iagovkina · Venture-to-Brand Strategist · Creative Director</div><div class="hero-stage-v4"><div class="hero-copy-v4"><h1>Turn experience<br/>into a venture<br/>worth building</h1><div class="hero-signature-v4"><span></span><p>I help people at a professional turning point decide what to build, shape the business, and turn it into a brand.</p></div><div class="hero-actions hero-actions--primary">'+routeLink("#/start-a-project","Start with a Venture Diagnostic","btn-primary")+routeLink("#/services","See how we can work","btn-secondary")+'</div></div><div class="hero-visual-v4" aria-label="Venture Shaping"><img class="hero-blob-v4" src="./assets/decor/red-blob.webp" width="1400" height="1311" alt="" aria-hidden="true"/><div class="hero-visual-copy"><div class="hero-framework-kicker">Venture Shaping</div><p class="hero-visual-statement">Find the direction.<br/>Shape the venture.<br/>Build the brand.</p><p class="hero-visual-caption">Strategy and creative direction from the decision to the visible system.</p></div></div></div><div class="hero-foot-v4"><div class="hero-mini-label">12+ years in design &amp; creative direction</div><p>For experienced professionals, founders and creatives with more than one possible next move.</p><div class="hero-foot-actions">'+routeLink("#/work","View selected ventures","text-link")+'</div></div></div></section>'+
   '<section class="editorial-section audience-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">The moment I work with</div><div><h2>You already have something to build from</h2><p class="editorial-lead">The question is not whether you have potential. It is what to do with the experience, skills and options already in your hands.</p></div></div><div class="stage-grid"><div class="stage-card"><div class="num">01 · Turning point</div><h3>The old path works, but no longer fits.</h3><p>We identify what should carry forward and what belongs to the previous chapter.</p></div><div class="stage-card"><div class="num">02 · Too many directions</div><h3>Several futures look possible.</h3><p>We turn competing possibilities into one decision you can actually build around.</p></div><div class="stage-card"><div class="num">03 · Early venture</div><h3>The idea exists, but the business does not yet.</h3><p>We shape the offer, audience, business logic and position before investing in the brand.</p></div><div class="stage-card"><div class="num">04 · Existing business</div><h3>The next chapter needs a clearer direction.</h3><p>We decide what needs to change, what should stay, and how the brand should evolve with it.</p></div></div></div></section>'+
   '<section class="editorial-section offer-section accent-section--ivory"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">Ways to work together</div><div><h2>One path. Different depths.</h2><p class="editorial-lead">Start with the decision you need now. Go deeper only when the venture is ready for the next layer.</p></div></div><div class="service-grid service-ladder"><div class="service-card service-card--entry"><div class="num">01 · Start here</div><h3>Venture Diagnostic</h3><p>Clarify what is worth building next and why.</p></div><div class="service-card"><div class="num">02</div><h3>Venture Shaping</h3><p>Turn the direction into an offer, audience, business format and position.</p></div><div class="service-card"><div class="num">03</div><h3>Venture-to-Brand</h3><p>Translate the venture into naming, narrative, identity and key launch touchpoints.</p></div><div class="service-card"><div class="num">04</div><h3>Creative Direction</h3><p>Guide the brand&#39;s next stage without turning the engagement into endless production.</p></div></div>'+routeLink("#/services","Compare services","text-link")+'</div></section>'+
   '<section class="editorial-section method-home-section"><div class="editorial-inner"><div class="editorial-head"><div class="editorial-kicker">The method · Venture Shaping</div><div><h2>Strategy before aesthetics</h2><p class="editorial-lead">The brand is the visible result of a decision. First we understand what is already true, choose the direction, and pressure-test the venture logic.</p></div></div><div class="path-grid"><div class="path-step"><div class="path-num">01</div><h3>Experience</h3><p>Skills, assets, patterns, resources and constraints</p></div><div class="path-step"><div class="path-num">02</div><h3>Direction</h3><p>The decision: what is actually worth building</p></div><div class="path-step"><div class="path-num">03</div><h3>Venture</h3><p>Offer, audience, business format and commercial logic</p></div><div class="path-step"><div class="path-num">04</div><h3>Position</h3><p>A clear reason to exist and a place in the market</p></div><div class="path-step"><div class="path-num">05</div><h3>Brand</h3><p>Name, narrative, identity and key touchpoints</p></div><div class="path-step"><div class="path-num">06</div><h3>Growth</h3><p>A system that can evolve without losing its core</p></div></div><div class="method-note method-note--important"><div class="editorial-kicker">Optional diagnostic layer</div><p>Natal astrology can be used as one reflective lens on recurring patterns and personal fit. It never replaces research, strategic judgment or commercial logic.</p></div>'+routeLink("#/method","Explore Venture Shaping","text-link")+'</div></section>'+
