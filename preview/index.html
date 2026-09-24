@@ -5999,6 +5999,89 @@ body{background:var(--bg)!important}
   .target-header-inner{width:100%!important}
 }
 
+
+/* ===== HERO REFERENCE GEOMETRY CORRECTION · 2026-09-24 =====
+   Reference-measured proportions:
+   red blob image ≈93.6% viewport width, centered at ≈42.7% hero height;
+   left stars ≈8% / 69%; right stars ≈8.7% from right / 18%.
+*/
+.hero-home-v4{
+  position:relative!important;
+  overflow:hidden!important;
+}
+.hero-home-v4 .hero-target-inner{
+  position:static!important;
+}
+.hero-home-v4 .hero-stage-v4{
+  position:static!important;
+}
+.hero-home-v4 .hero-kicker,
+.hero-home-v4 .hero-copy-v4,
+.hero-home-v4 .hero-foot-v4{
+  position:relative!important;
+  z-index:3!important;
+}
+.hero-home-v4 .hero-ref-blob{
+  position:absolute!important;
+  z-index:0!important;
+  left:50%!important;
+  top:42.7%!important;
+  width:93.6vw!important;
+  max-width:none!important;
+  height:auto!important;
+  transform:translate(-50%,-50%)!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+.hero-home-v4 .hero-ref-stars{
+  position:absolute!important;
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.hero-home-v4 .hero-ref-stars--left{
+  left:8%!important;
+  top:68.7%!important;
+  bottom:auto!important;
+  width:83px!important;
+}
+.hero-home-v4 .hero-ref-stars--right{
+  right:8.7%!important;
+  top:17.9%!important;
+  width:64px!important;
+}
+.hero-home-v4 .hero-stage-v4{
+  padding-top:58px!important;
+  padding-bottom:52px!important;
+}
+@media(max-width:1000px) and (min-width:801px){
+  .hero-home-v4 .hero-ref-blob{
+    width:96vw!important;
+    top:43%!important;
+  }
+  .hero-home-v4 .hero-ref-stars--left{left:7%!important}
+  .hero-home-v4 .hero-ref-stars--right{right:7%!important}
+}
+@media(max-width:800px){
+  .hero-home-v4{overflow:hidden!important}
+  .hero-home-v4 .hero-target-inner{position:static!important}
+  .hero-home-v4 .hero-stage-v4{position:static!important}
+  .hero-home-v4 .hero-ref-blob{
+    width:168vw!important;
+    top:43%!important;
+    left:50%!important;
+  }
+  .hero-home-v4 .hero-ref-stars--left{
+    left:3%!important;
+    top:66%!important;
+    width:68px!important;
+  }
+  .hero-home-v4 .hero-ref-stars--right{
+    right:3%!important;
+    top:18%!important;
+    width:54px!important;
+  }
+}
+
 </style>
 </head>
 <body>
