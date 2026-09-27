@@ -146,6 +146,8 @@ a { color: inherit; text-decoration: none; }
   transform:translateZ(0);
 }
 .work-card:hover .work-media img { transform:scale(1.012); }
+.work-media img.work-image--cadoo { filter:none; transform:none; }
+.work-card:hover .work-media img.work-image--cadoo { transform:scale(1.012); }
 .work-placeholder {
   width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
   border:1px solid rgba(255,255,255,.07);
@@ -252,6 +254,10 @@ a { color: inherit; text-decoration: none; }
   image-rendering:auto;
   filter:contrast(1.025) saturate(1.008);
   transform:translateZ(0);
+}
+.case-shot img.case-img--cadoo {
+  filter:none;
+  transform:none;
 }
 .case-caption {
   margin-top:12px;
@@ -7231,20 +7237,20 @@ html,body{max-width:100%;overflow-x:hidden}
 <div id="app"></div>
 <script>
 const projects=[
-{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-02-800.webp",gallery:["https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-01.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-02.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-03.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-04.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-05.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-06.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-07.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-08.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-09.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-10.webp","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@3a87160fc420a9a79c41e1204e81e1fca40f1f3c/preview/assets/cadoo/cadoo-11.webp"],duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a premium cat-care brand system built to feel expressive, emotionally warm and commercially polished. The project covers the brand from core identity through packaging, campaign imagery, product extensions and social communication.","The challenge was to give a playful mascot-led brand enough structure to scale. Every application needed to feel recognisable without looking like the exact same composition repeated again and again."],blocks:[
+{id:"1",slug:"cadoo",number:"01",title:"Cadoo",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-02-1200.webp",gallery:["https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-01","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-02","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-03","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-04","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-05","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-06","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-07","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-09","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-10","https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@95b2f4d4cb850229c4546d53dbb3950ad840d074/preview/assets/cadoo/cadoo-11.webp"],duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Visual System",scope:"Naming · Logo · Mascot · Packaging · Campaign Visuals · Social Media · Brand Applications",description:["Cadoo is a premium cat-care brand system built to feel expressive, emotionally warm and commercially polished. The project covers the brand from core identity through packaging, campaign imagery, product extensions and social communication.","The challenge was to give a playful mascot-led brand enough structure to scale. Every application needed to feel recognisable without looking like the exact same composition repeated again and again."],blocks:[
 {type:"image",images:[1],size:"full",caption:"Final Cadoo product family with the mascot-led packaging system shown across multiple formats."},
-{type:"feature",image:8,imageSide:"right",eyebrow:"Identity system",title:"A mascot-led identity built as a real brand system",body:["The Cadoo identity begins with a compact wordmark and a character system designed to feel playful without becoming visually chaotic. The mascot is expressive, but the surrounding structure remains clean and commercially usable.","Colour, eye details, linework and recurring graphic symbols create recognition across packaging, communication and product extensions."],caption:"Brand identity board showing the wordmark, mascot sketches, construction logic, colour palette and core graphic elements."},
+{type:"feature",image:7,imageSide:"right",eyebrow:"Identity system",title:"A mascot-led identity built as a real brand system",body:["The Cadoo identity begins with a compact wordmark and a character system designed to feel playful without becoming visually chaotic. The mascot is expressive, but the surrounding structure remains clean and commercially usable.","Colour, eye details, linework and recurring graphic symbols create recognition across packaging, communication and product extensions."],caption:"Brand identity board showing the wordmark, mascot sketches, construction logic, colour palette and core graphic elements."},
 {type:"quote",text:"Happy cats. Brighter tomorrows."},
 {type:"pair",variant:"asym-left",images:[0,6],captions:["Sterilised packaging close-up showing the final Chicken & Pomegranate design and print detail.","Front, side and back packaging architecture showing how information hierarchy works across the full pack."]},
 {type:"text",eyebrow:"Packaging architecture",title:"Designed as a family, not a set of isolated packs",body:["The system uses a consistent mascot scale, information hierarchy and structural layout while colour separates recipes and functional ranges. This keeps the collection immediately recognisable without making every SKU identical.","Sterilised and non-sterilised products share one visual DNA, with colour coding and supporting labels creating clear navigation between ranges."]},
-{type:"feature",image:10,imageSide:"left",eyebrow:"Range system",title:"Two product lines, one unmistakable visual language",body:["The final range demonstrates how Cadoo can expand across sterilised and non-sterilised formulas while preserving the same core architecture. Colour becomes a practical navigation tool rather than decoration.","The result is a scalable packaging framework that can support new recipes and formats without rebuilding the identity from scratch."],caption:"Sterilised and non-sterilised packaging lines presented together as one coherent range."},
+{type:"feature",image:9,imageSide:"left",eyebrow:"Range system",title:"Two product lines, one unmistakable visual language",body:["The final range demonstrates how Cadoo can expand across sterilised and non-sterilised formulas while preserving the same core architecture. Colour becomes a practical navigation tool rather than decoration.","The result is a scalable packaging framework that can support new recipes and formats without rebuilding the identity from scratch."],caption:"Sterilised and non-sterilised packaging lines presented together as one coherent range."},
 {type:"pair",variant:"even",images:[2,3],captions:["Treats, catnip and feeding accessories extending the character system into adjacent product categories.","Collars, feather toy, scratcher and plush accessory translating Cadoo into a wider cat-care ecosystem."]},
 {type:"text",eyebrow:"Brand world",title:"The mascot can move from pack to product to campaign",body:["Once the packaging system was established, the same graphic language was extended across accessories, treats, retail communication and digital content. The mascot changes pose and context rather than being repeated as one static sticker.","That flexibility lets the brand remain lively while still feeling controlled and recognisable across very different touchpoints."]},
-{type:"pair",variant:"asym-left",images:[7,9],captions:["Social media direction combining product, ingredients and concise brand messaging.","A second social expression focused more strongly on mascot storytelling and editorial composition."]},
+{type:"image",images:[8],size:"medium",caption:"Social media direction combining product, ingredients, mascot storytelling and concise brand messaging."},
 {type:"feature",image:4,imageSide:"right",eyebrow:"Campaign direction",title:"Built to stay recognisable at large scale",body:["The campaign language strips the system back to its strongest assets: the wordmark, mascot, pack and a soft architectural environment. At billboard scale, the identity stays legible without needing extra decoration.","This creates a visual world that feels friendly and distinctive while remaining clean enough for commercial outdoor use."],caption:"Outdoor campaign application translating Cadoo into a simple, high-impact brand-awareness visual."},
 {type:"image",images:[5],size:"medium",caption:"Non-sterilised Salmon & Carrot pack demonstrating the alternate range colour system."},
 {type:"closing",eyebrow:"System logic",title:"One visual DNA, many touchpoints",body:"The final Cadoo identity works as a modular system rather than a single packaging template. Wordmark, mascot, colour coding, eye motif and supporting graphics can be recombined across food, treats, accessories, social media and campaign applications without losing the core character of the brand."}
-]},
+]}
 {id:"2",slug:"lushy",number:"02",title:"LUSHY",thumbnail:"https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@87e980b91855a5190e0f0cae3e4b1fc05e8904cb/preview/assets/lushy/lushy-01-800.webp",gallery:Array.from({length:9},function(_,i){return "https://cdn.jsdelivr.net/gh/alexandra-iagovkina/alexandra-iagovkina.github.io@87e980b91855a5190e0f0cae3e4b1fc05e8904cb/preview/assets/lushy/lushy-"+String(i+1).padStart(2,"0")}),duration:"Independent Brand Project",role:"Art Direction · Brand Identity · Packaging · Website · Campaign Visuals",scope:"Identity · Packaging System · Product Imagery · Social Media · Web Design · Brand Applications",description:["LUSHY is a premium skincare concept built around luminosity, clarity and elevated beauty minimalism. The project combines brand identity, packaging, digital design and campaign imagery into one cohesive brand world designed to feel clean, aspirational and commercially polished.","The visual direction centres on glow, fluidity and material beauty. Cool luminous blues, glossy reflections, smooth creams and transparent forms create a sensorial system that feels fresh, contemporary and highly desirable across both physical and digital touchpoints."],blocks:[
 {type:"image",images:[0],size:"full",caption:"Website hero presentation showing the desktop and mobile experience within the wider LUSHY visual world."},
 {type:"feature",image:1,imageSide:"right",eyebrow:"Concept",title:"A luminous skincare world",body:["LUSHY was developed as a beauty concept that feels bright, refined and sensorial. The aim was to create a skincare identity that communicates glow and clarity while keeping the overall system minimal, premium and commercially believable.","Instead of relying on busy beauty clichés, the art direction uses controlled light, soft gradients and reflective forms to create a more elevated and immersive brand atmosphere."],caption:"Social media direction combining product focus, reflective surfaces and clean editorial framing."},
@@ -7348,7 +7354,7 @@ function nav(){
 
 function footer(){return '<footer class="site-footer"><div class="site-footer-inner"><div class="site-footer-left"><div class="site-footer-title">Aleksandra Iagovkina</div><div class="site-footer-sub">Venture-to-Brand Strategist · Creative Director</div></div><nav class="site-footer-nav" aria-label="Footer navigation">'+routeLink("#/services","Services")+routeLink("#/method","Method")+routeLink("#/work","Work")+routeLink("#/about","About")+'</nav><div class="site-footer-right"><a href="mailto:aleksandra.iagovkina@gmail.com">Email</a><a href="https://t.me/twelveeyed" target="_blank" rel="noreferrer">Telegram</a><a href="https://wa.me/79967151380" target="_blank" rel="noreferrer">WhatsApp</a></div></div></footer>'}
 
-function projectCard(p){var media=p.thumbnail?'<img src="'+p.thumbnail+'" alt="'+esc(p.title)+'" width="720" height="405" loading="lazy" decoding="async" fetchpriority="low"/>':'<div class="work-placeholder"><span>'+p.number+'</span><strong>'+esc(p.title)+'</strong><small>Visual coming soon</small></div>';return '<a href="#/work/'+p.slug+'" data-project="'+p.slug+'" class="work-card"><div class="work-media">'+media+'</div><div class="work-meta"><div><div class="work-title">'+esc(p.title)+'</div><div class="work-card-sub">Self-initiated venture &amp; brand concept</div></div><div class="work-num">'+p.number+'</div></div></a>'}
+function projectCard(p){var imgClass=p.slug==="cadoo"?"work-image work-image--cadoo":"work-image";var media=p.thumbnail?'<img class="'+imgClass+'" src="'+p.thumbnail+'" alt="'+esc(p.title)+'" width="1200" height="675" loading="lazy" decoding="async" fetchpriority="low"/>':'<div class="work-placeholder"><span>'+p.number+'</span><strong>'+esc(p.title)+'</strong><small>Visual coming soon</small></div>';return '<a href="#/work/'+p.slug+'" data-project="'+p.slug+'" class="work-card"><div class="work-media">'+media+'</div><div class="work-meta"><div><div class="work-title">'+esc(p.title)+'</div><div class="work-card-sub">Self-initiated venture &amp; brand concept</div></div><div class="work-num">'+p.number+'</div></div></a>'}
 function cardsMarkup(items){return items.map(projectCard).join("")}
 function home(){
   return nav()+'<main class="route-fade">'+
@@ -7381,18 +7387,17 @@ function startPage(){return nav()+'<main class="page-view route-fade start-page"
 function caseImageMarkup(img,i,caption,variant){
   if(!img){return '<div class="case-shot"><div class="case-placeholder">Image '+String(i+1).padStart(2,"0")+'</div></div>'}
   variant=variant||"full";
+  var isCadoo=img.indexOf("/cadoo/")!==-1;
+  var imgClass=isCadoo?"case-img case-img--cadoo":"case-img";
   if(/\.(?:webp|png|jpe?g)$/i.test(img)){
-    var eagerDirect=i===0;
-    return '<div class="case-media case-media--'+variant+'"><div class="case-shot"><img src="'+img+'" width="1672" height="941" alt="Project image '+(i+1)+'" loading="'+(eagerDirect?"eager":"lazy")+'" fetchpriority="'+(eagerDirect?"high":"low")+'" decoding="async"/></div>'+(caption?'<div class="case-caption">'+esc(caption)+'</div>':'')+'</div>'
+    var eagerDirect=isCadoo?(i===1):i===0;
+    return '<div class="case-media case-media--'+variant+'"><div class="case-shot"><img class="'+imgClass+'" src="'+img+'" width="1672" height="941" alt="Project image '+(i+1)+'" loading="'+(eagerDirect?"eager":"lazy")+'" fetchpriority="'+(eagerDirect?"high":"low")+'" decoding="async"/></div>'+(caption?'<div class="case-caption">'+esc(caption)+'</div>':'')+'</div>'
   }
   var mobile=img+"-800.webp";
   var desktop=img+"-1440.webp";
   var hq=img+"-hq.webp";
-  var eager=i===0;
-  var isCadoo=img.indexOf("/cadoo/")!==-1;
-  var forceOriginal=isCadoo && (variant==="full" || variant==="medium");
-  var original=img+".png";
-  var src=forceOriginal?original:((variant==="pair")?mobile:(variant==="full"?hq:desktop));
+  var eager=isCadoo?(i===1):i===0;
+  var src=(variant==="pair")?mobile:(variant==="full"?hq:desktop);
   var sizes=variant==="pair"
     ? "(max-width:800px) calc(100vw - 32px), min(760px, 48vw)"
     : variant==="narrow"
@@ -7400,8 +7405,13 @@ function caseImageMarkup(img,i,caption,variant){
       : variant==="medium"
         ? "(max-width:800px) calc(100vw - 32px), min(1220px, 82vw)"
         : "(max-width:800px) calc(100vw - 32px), min(1600px, calc(100vw - 32px))";
-  var responsive=forceOriginal?'':' srcset="'+mobile+' 800w, '+desktop+' 1440w, '+hq+' 1672w" sizes="'+sizes+'"';
-  return '<div class="case-media case-media--'+variant+'"><div class="case-shot"><img src="'+src+'"'+responsive+' width="1672" height="941" alt="Project image '+(i+1)+'" loading="'+(eager?"eager":"lazy")+'" fetchpriority="'+(eager?"high":"low")+'" decoding="async"/></div>'+(caption?'<div class="case-caption">'+esc(caption)+'</div>':'')+'</div>'
+  var responsive;
+  if(isCadoo){
+    responsive=' srcset="'+img+'-720.webp 720w, '+mobile+' 800w, '+img+'-960.webp 960w, '+img+'-1200.webp 1200w, '+desktop+' 1440w, '+hq+' 1672w" sizes="'+sizes+'"';
+  }else{
+    responsive=' srcset="'+mobile+' 800w, '+desktop+' 1440w, '+hq+' 1672w" sizes="'+sizes+'"';
+  }
+  return '<div class="case-media case-media--'+variant+'"><div class="case-shot"><img class="'+imgClass+'" src="'+src+'"'+responsive+' width="1672" height="941" alt="Project image '+(i+1)+'" loading="'+(eager?"eager":"lazy")+'" fetchpriority="'+(eager?"high":"low")+'" decoding="async"/></div>'+(caption?'<div class="case-caption">'+esc(caption)+'</div>':'')+'</div>'
 }
 function caseBlocks(p){
   if(!p.blocks){
