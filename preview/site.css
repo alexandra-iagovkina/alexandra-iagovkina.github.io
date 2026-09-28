@@ -6,7 +6,7 @@
   --fg: #f2efea;
   --muted: #8d8d8d;
   --line: rgba(255,255,255,.14);
-  --accent:#d34b69;
+  --accent:#ad0026;
 }
 
 html {
@@ -1107,7 +1107,7 @@ img{max-width:100%}
 
 
 /* Final art-direction pass — typography, accents, journey, forms */
-:root{--accent:#d34b69}
+:root{--accent:#ad0026}
 
 /* Accent language: red means hierarchy / direction, grey means supporting copy */
 .page-kicker,
@@ -5359,7 +5359,7 @@ html,body,#app{
 }
 
 /* ===== ART DIRECTOR SYSTEM LOCK · 2026-09-24 ===== */
-:root{--bg:#0a0a0a;--fg:#f1ede8;--muted:#918b86;--line:rgba(255,255,255,.11);--accent:#d34b69;--ivory:#e7ded0;--ivory-ink:#171310}
+:root{--bg:#0a0a0a;--fg:#f1ede8;--muted:#918b86;--line:rgba(255,255,255,.11);--accent:#ad0026;--ivory:#e7ded0;--ivory-ink:#171310}
 html,body,#app{width:100%;max-width:100%;overflow-x:clip!important}
 body{background:var(--bg)!important}
 *{box-sizing:border-box}
@@ -7227,11 +7227,11 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible{
-  outline:2px solid #d34b69;
+  outline:2px solid #ad0026;
   outline-offset:4px;
 }
 .target-menu-toggle:focus-visible{outline-offset:2px}
-.form-note a{color:#d34b69;text-decoration:underline;text-underline-offset:3px}
+.form-note a{color:#ad0026;text-decoration:underline;text-underline-offset:3px}
 
 /* Privacy */
 .privacy-page .page-shell{max-width:1320px}
