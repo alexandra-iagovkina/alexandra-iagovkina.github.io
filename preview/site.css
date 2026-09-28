@@ -7288,3 +7288,18 @@ textarea:focus-visible{
   html{scroll-behavior:auto!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* Selected commercial context */
+.about-commercial{
+  display:grid;
+  grid-template-columns:240px minmax(0,1fr);
+  gap:64px;
+  padding:72px 0;
+  border-top:1px solid var(--line);
+}
+.about-commercial .about-story-copy{font-size:clamp(30px,3.1vw,46px);line-height:1.18}
+.about-commercial .about-story-copy .small{max-width:760px;font-size:16px;line-height:1.75}
+@media(max-width:800px){
+  .about-commercial{grid-template-columns:1fr;gap:18px;padding:52px 0}
+  .about-commercial .about-story-copy{font-size:clamp(30px,8.8vw,40px)}
+}
