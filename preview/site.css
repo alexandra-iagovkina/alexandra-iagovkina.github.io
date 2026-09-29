@@ -7968,3 +7968,13 @@ textarea:focus-visible{
   .home-about-approved .about-composite-image{width:142%!important;transform:translateX(-14%)!important}
   .about-page-hero-visual .about-composite-image{width:146%!important;transform:translateX(8%)!important}
 }
+
+/* Portrait scale lock: approximately 2x the former 720px desktop treatment */
+@media(min-width:1181px){
+  .home-about-approved .about-composite-image{
+    width:min(195%,1440px)!important;
+  }
+  .about-page-hero-visual .about-composite-image{
+    width:min(190%,1480px)!important;
+  }
+}
