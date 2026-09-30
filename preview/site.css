@@ -7549,3 +7549,103 @@ textarea:focus-visible{
     padding:34px 22px!important;
   }
 }
+
+/* HOME POLISH — 2026-09-30 · requested pass only */
+
+/* 1. Hero micro-copy: keep it secondary, but actually readable. */
+.hero-home-v4 .hero-kicker{
+  color:rgba(242,239,234,.72)!important;
+}
+.hero-home-v4 .hero-foot-v4 .hero-mini-label{
+  color:rgba(242,239,234,.72)!important;
+}
+.hero-home-v4 .hero-foot-v4>p{
+  color:rgba(242,239,234,.70)!important;
+}
+.hero-home-v4 .hero-foot-actions .text-link{
+  color:rgba(242,239,234,.84)!important;
+  border-color:rgba(242,239,234,.34)!important;
+}
+
+/* 2. Audience cards: identical two-line heading rhythm. */
+.audience-section .stage-card h3{
+  max-width:none!important;
+  min-height:2.14em!important;
+  line-height:1.07!important;
+}
+.audience-section .stage-card h3 br{
+  display:block!important;
+}
+
+/* 3. Ways to work together: remove grey cards entirely.
+   Four controlled red tones, one family, divided only by thin lines. */
+.offer-section .service-ladder{
+  background:transparent!important;
+  border:0!important;
+}
+.offer-section .service-card{
+  min-height:300px!important;
+  padding:27px 28px 30px!important;
+  border:0!important;
+  border-right:1px solid rgba(242,239,234,.18)!important;
+  border-bottom:0!important;
+  color:#f2efea!important;
+}
+.offer-section .service-card:nth-child(1){background:#680715!important}
+.offer-section .service-card:nth-child(2){background:#7b0a19!important}
+.offer-section .service-card:nth-child(3){background:#8f0e20!important}
+.offer-section .service-card:nth-child(4){background:#a41427!important}
+.offer-section .service-card:last-child{
+  border-right:0!important;
+}
+.offer-section .service-card .num{
+  color:rgba(242,239,234,.72)!important;
+}
+.offer-section .service-card h3{
+  color:#f2efea!important;
+  margin-top:58px!important;
+}
+.offer-section .service-card p{
+  color:rgba(242,239,234,.86)!important;
+  max-width:none!important;
+  min-height:4.35em!important;
+  line-height:1.45!important;
+}
+.offer-section .service-card p br{
+  display:block!important;
+}
+.offer-section .service-card--entry{
+  background:#680715!important;
+}
+.offer-section .service-card--entry .num,
+.offer-section .service-card--entry h3,
+.offer-section .service-card--entry p{
+  color:inherit!important;
+}
+
+/* Keep the red cards as one continuous band. */
+.offer-section .service-ladder{
+  overflow:hidden!important;
+}
+
+/* Mobile: allow natural wrapping again so explicit desktop line breaks do not create awkward narrow columns. */
+@media(max-width:800px){
+  .audience-section .stage-card h3{
+    min-height:0!important;
+  }
+  .audience-section .stage-card h3 br,
+  .offer-section .service-card p br{
+    display:none!important;
+  }
+  .offer-section .service-card{
+    min-height:auto!important;
+    border-right:0!important;
+    border-bottom:1px solid rgba(242,239,234,.18)!important;
+  }
+  .offer-section .service-card:last-child{
+    border-bottom:0!important;
+  }
+  .offer-section .service-card p{
+    min-height:0!important;
+  }
+}
