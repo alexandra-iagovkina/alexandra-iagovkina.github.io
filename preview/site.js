@@ -209,6 +209,33 @@ function bind(){
       }
     });
   }
+  var reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealTargets=Array.prototype.slice.call(document.querySelectorAll(
+    ".editorial-section,.page-intro,.service-detail,.services-investment-note,.support-detail,.statement-section,.method-step,.quote-break,.astrology-box,.work-card,.work-note,.about-story,.about-proof,.about-commercial,.about-philosophy,.about-role-section,.start-layout,.privacy-section,.terms-section,.case-text-block,.case-quote,.case-feature,.case-pair,.case-image-wrap,.case-closing"
+  ));
+  revealTargets.forEach(function(el,i){
+    el.classList.add("reveal-on-scroll");
+    el.style.setProperty("--reveal-delay","0ms");
+  });
+  document.querySelectorAll(".stage-grid,.service-ladder,.path-grid,.value-grid,.scope-grid,.work-grid,.about-proof").forEach(function(group){
+    Array.prototype.slice.call(group.children).forEach(function(el,i){
+      el.classList.add("reveal-on-scroll","reveal-stagger");
+      el.style.setProperty("--reveal-delay",Math.min(i,7)*80+"ms");
+    });
+  });
+  if(reduceMotion||!("IntersectionObserver" in window)){
+    revealTargets.concat(Array.prototype.slice.call(document.querySelectorAll(".reveal-stagger"))).forEach(function(el){el.classList.add("is-visible")});
+  }else{
+    var revealObserver=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:"0px 0px -7% 0px"});
+    document.querySelectorAll(".reveal-on-scroll").forEach(function(el){revealObserver.observe(el)});
+  }
   document.querySelectorAll("[data-contact-email]").forEach(function(link){
     link.addEventListener("click",function(e){
       e.preventDefault();

@@ -7649,3 +7649,128 @@ textarea:focus-visible{
     min-height:0!important;
   }
 }
+
+/* GLOBAL MOTION + INTERACTION PASS — 2026-09-30 */
+
+/* Elegant scroll reveal */
+.reveal-on-scroll{
+  opacity:0!important;
+  transform:translate3d(0,24px,0)!important;
+  transition:
+    opacity .72s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms),
+    transform .72s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms)!important;
+  will-change:opacity,transform;
+}
+.reveal-on-scroll.is-visible{
+  opacity:1!important;
+  transform:translate3d(0,0,0)!important;
+}
+.reveal-stagger{
+  transition-duration:.68s!important;
+}
+
+/* Keep route entry subtle as well. */
+.route-fade{
+  animation:routeReveal .42s cubic-bezier(.22,1,.36,1) both!important;
+}
+@keyframes routeReveal{
+  from{opacity:0;transform:translate3d(0,8px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+
+/* Buttons must feel alive. */
+.btn-primary,
+.btn-secondary,
+.form-submit,
+.target-menu-toggle{
+  transition:
+    background-color .24s ease,
+    color .24s ease,
+    border-color .24s ease,
+    transform .24s cubic-bezier(.22,1,.36,1),
+    box-shadow .24s ease!important;
+}
+.btn-primary:hover,
+.form-submit:hover{
+  background:#ad0026!important;
+  border-color:#ad0026!important;
+  color:#fff!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.16)!important;
+}
+.btn-secondary:hover{
+  background:rgba(242,239,234,.10)!important;
+  border-color:rgba(242,239,234,.72)!important;
+  color:#f2efea!important;
+  transform:translateY(-2px)!important;
+}
+.hero-home-v4 .hero-actions--primary .btn-primary:hover{
+  background:#0a0a0a!important;
+  border-color:#0a0a0a!important;
+  color:#f2efea!important;
+}
+.hero-home-v4 .hero-actions--primary .btn-secondary:hover{
+  background:rgba(10,10,10,.26)!important;
+  border-color:rgba(242,239,234,.78)!important;
+  color:#fff!important;
+}
+.btn-primary:active,
+.btn-secondary:active,
+.form-submit:active{
+  transform:translateY(0) scale(.985)!important;
+  box-shadow:none!important;
+}
+
+/* Text CTA interaction */
+.text-link{
+  transition:
+    color .22s ease,
+    border-color .22s ease,
+    transform .22s cubic-bezier(.22,1,.36,1),
+    letter-spacing .22s ease!important;
+}
+.text-link:hover{
+  transform:translateX(4px)!important;
+  letter-spacing:.16em!important;
+}
+
+/* Navigation gets a restrained hover state too. */
+.site-nav a,
+.mobile-menu-nav a,
+.site-footer a{
+  transition:color .2s ease,opacity .2s ease!important;
+}
+.site-nav a:hover,
+.site-footer a:hover{
+  color:#f2efea!important;
+  opacity:1!important;
+}
+
+/* Visible focus for keyboard users, matching interaction language. */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.form-submit:focus-visible,
+.text-link:focus-visible,
+.site-nav a:focus-visible{
+  outline:2px solid #ad0026!important;
+  outline-offset:4px!important;
+}
+
+/* Never force motion on users who request less. */
+@media(prefers-reduced-motion:reduce){
+  .route-fade{animation:none!important}
+  .reveal-on-scroll{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .form-submit,
+  .text-link,
+  .site-nav a,
+  .site-footer a{
+    transition:none!important;
+    transform:none!important;
+  }
+}
